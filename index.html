@@ -8,68 +8,75 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d0d0d;color:#f0f0f0;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px}
 .app{width:100%;max-width:680px}
+.header{text-align:center;padding:24px 0 16px}
+.header .bell{font-size:36px;margin-bottom:6px}
+.header h1{font-size:19px;font-weight:700;color:#fff}
+.header p{font-size:11px;color:#555;margin-top:3px}
 
-/* HEADER */
-.header{text-align:center;padding:28px 0 20px}
-.header .bell{font-size:38px;margin-bottom:6px}
-.header h1{font-size:20px;font-weight:700;color:#fff;letter-spacing:-0.3px}
-.header p{font-size:12px;color:#555;margin-top:3px}
-
-/* HOME SCREEN */
-.home-screen{}
-.mode-cards{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
-.mode-card{background:#161616;border:1.5px solid #222;border-radius:14px;padding:20px;cursor:pointer;transition:all .15s;text-align:left}
+/* HOME */
+.mode-cards{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.mode-card{background:#161616;border:1.5px solid #222;border-radius:14px;padding:18px;cursor:pointer;transition:all .15s}
 .mode-card:hover{border-color:#c8102e;background:#1a1a1a}
-.mode-card .mc-icon{font-size:28px;margin-bottom:10px}
-.mode-card .mc-title{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px}
-.mode-card .mc-desc{font-size:12px;color:#555;line-height:1.5}
-.mode-card.active{border-color:#c8102e;background:rgba(200,16,46,.08)}
+.mc-icon{font-size:26px;margin-bottom:8px}
+.mc-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:3px}
+.mc-desc{font-size:12px;color:#555;line-height:1.5}
 
-/* GROUP SCREEN */
+/* QUY TẮC PANEL */
+.rules-panel{background:#161616;border:1.5px solid #222;border-radius:14px;padding:16px;margin-bottom:16px}
+.rules-title{font-size:13px;font-weight:700;color:#f59e0b;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.rules-grid{display:flex;flex-direction:column;gap:6px}
+.rule-row{padding:10px 12px;background:#111;border-radius:8px;border-left:3px solid #333}
+.rule-row.r-tatca{border-color:#22c55e}
+.rule-row.r-khong{border-color:#ef4444}
+.rule-row.r-soli{border-color:#3b82f6}
+.rule-row.r-pillar{border-color:#f59e0b}
+.rule-row.r-luat{border-color:#a855f7}
+.rule-row.r-other{border-color:#555}
+.rule-num{font-size:10px;font-weight:700;color:#555;margin-bottom:3px;text-transform:uppercase;letter-spacing:.5px}
+.rule-text{font-size:12px;color:#ccc;line-height:1.5}
+.rule-text strong{color:#fff}
+
+/* GROUP */
 .group-screen{display:none}
-.group-tabs{display:flex;gap:8px;margin-bottom:16px}
+.group-tabs{display:flex;gap:8px;margin-bottom:14px}
 .gtab{flex:1;padding:8px;border-radius:8px;border:1.5px solid #222;background:#161616;color:#555;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s;text-align:center}
 .gtab.active{background:#c8102e;border-color:#c8102e;color:#fff}
-.group-list{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
-.group-item{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:#161616;border:1.5px solid #222;border-radius:12px;cursor:pointer;transition:all .15s}
-.group-item:hover{border-color:#c8102e;background:#1a1a1a}
-.group-item .gi-left .gi-name{font-size:14px;font-weight:600;color:#ddd}
-.group-item .gi-left .gi-desc{font-size:11px;color:#555;margin-top:2px}
-.group-item .gi-count{font-size:12px;color:#c8102e;font-weight:700;white-space:nowrap}
-.back-btn{display:flex;align-items:center;gap:6px;background:none;border:none;color:#555;font-size:13px;cursor:pointer;font-family:inherit;margin-bottom:16px;padding:4px 0}
+.group-list{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.group-item{display:flex;justify-content:space-between;align-items:center;padding:13px 15px;background:#161616;border:1.5px solid #222;border-radius:12px;cursor:pointer;transition:all .15s}
+.group-item:hover{border-color:#c8102e}
+.gi-name{font-size:13px;font-weight:600;color:#ddd}
+.gi-desc{font-size:11px;color:#555;margin-top:2px}
+.gi-count{font-size:12px;color:#c8102e;font-weight:700;white-space:nowrap;margin-left:12px}
+
+.back-btn{display:flex;align-items:center;gap:6px;background:none;border:none;color:#555;font-size:13px;cursor:pointer;font-family:inherit;margin-bottom:14px;padding:4px 0}
 .back-btn:hover{color:#aaa}
 
 /* PROGRESS */
-.progress-wrap{margin-bottom:16px}
+.progress-wrap{margin-bottom:14px}
 .progress-info{display:flex;justify-content:space-between;font-size:11px;color:#444;margin-bottom:5px}
 .progress-bar{height:3px;background:#1e1e1e;border-radius:2px;overflow:hidden}
-.progress-fill{height:100%;background:#c8102e;border-radius:2px;transition:width .4s ease}
-
-/* STATS */
-.stats{display:flex;gap:8px;margin-bottom:16px}
-.stat{flex:1;background:#161616;border:1px solid #1e1e1e;border-radius:10px;padding:10px;text-align:center}
-.stat .val{font-size:20px;font-weight:700}
+.progress-fill{height:100%;background:#c8102e;border-radius:2px;transition:width .4s}
+.stats{display:flex;gap:8px;margin-bottom:14px}
+.stat{flex:1;background:#161616;border:1px solid #1e1e1e;border-radius:10px;padding:9px;text-align:center}
+.stat .val{font-size:19px;font-weight:700}
 .stat .lbl{font-size:10px;color:#444;margin-top:1px}
-.stat.s-correct .val{color:#22c55e}
-.stat.s-wrong .val{color:#ef4444}
-.stat.s-left .val{color:#666}
+.s-correct .val{color:#22c55e}
+.s-wrong .val{color:#ef4444}
+.s-left .val{color:#666}
 
-/* TAGS */
-.tags-row{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
-.tag{display:inline-block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;padding:3px 8px;border-radius:4px}
-.tag-chapter{color:#c8102e;background:rgba(200,16,46,.1);border:1px solid rgba(200,16,46,.2)}
-.tag-group{color:#3b82f6;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2)}
+.tags-row{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+.tag{display:inline-block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:3px 7px;border-radius:4px}
+.tag-ch{color:#c8102e;background:rgba(200,16,46,.1);border:1px solid rgba(200,16,46,.2)}
+.tag-rule{color:#f59e0b;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2)}
 
 /* CARD */
-.card{background:#161616;border:1px solid #1e1e1e;border-radius:14px;padding:20px;margin-bottom:12px}
-.q-number{font-size:10px;color:#333;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-.q-text{font-size:15px;line-height:1.65;color:#e8e8e8;font-weight:500;margin-bottom:18px}
-
-/* OPTIONS */
-.options{display:flex;flex-direction:column;gap:8px}
-.option{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:#111;border:1.5px solid #1e1e1e;border-radius:10px;cursor:pointer;transition:all .15s;text-align:left;width:100%}
+.card{background:#161616;border:1px solid #1e1e1e;border-radius:14px;padding:18px;margin-bottom:10px}
+.q-num{font-size:10px;color:#333;margin-bottom:7px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.q-text{font-size:14px;line-height:1.65;color:#e8e8e8;font-weight:500;margin-bottom:16px}
+.options{display:flex;flex-direction:column;gap:7px}
+.option{display:flex;align-items:flex-start;gap:9px;padding:11px 13px;background:#111;border:1.5px solid #1e1e1e;border-radius:10px;cursor:pointer;transition:all .15s;text-align:left;width:100%}
 .option:hover:not(:disabled){border-color:#333;background:#161616}
-.opt-key{min-width:24px;height:24px;border-radius:5px;background:#1e1e1e;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#444;flex-shrink:0;margin-top:1px}
+.opt-key{min-width:22px;height:22px;border-radius:5px;background:#1e1e1e;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#444;flex-shrink:0;margin-top:1px}
 .opt-text{font-size:13px;line-height:1.5;color:#aaa}
 .option.correct{border-color:#22c55e;background:rgba(34,197,94,.08)}
 .option.correct .opt-key{background:#22c55e;color:#000}
@@ -77,39 +84,58 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .option.wrong{border-color:#ef4444;background:rgba(239,68,68,.08)}
 .option.wrong .opt-key{background:#ef4444;color:#fff}
 .option.wrong .opt-text{color:#fff}
-.option.dimmed{opacity:.3}
+.option.dimmed{opacity:.28}
 .option:disabled{cursor:default}
 
 /* FEEDBACK */
-.tip-box{display:none;margin-top:14px;padding:14px;border-radius:10px;border-left:3px solid #f59e0b;background:rgba(245,158,11,.06)}
-.tip-box.show{display:block}
-.tip-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#f59e0b;margin-bottom:5px}
-.tip-text{font-size:12px;line-height:1.6;color:#c9923a}
-.ok-box{display:none;margin-top:14px;padding:12px 14px;border-radius:10px;background:rgba(34,197,94,.06);border-left:3px solid #22c55e}
-.ok-box.show{display:block}
-.ok-text{font-size:12px;color:#86efac;line-height:1.5}
+.feedback{display:none;margin-top:14px;border-radius:12px;overflow:hidden}
+.feedback.show{display:block}
+.fb-head{padding:11px 15px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:7px}
+.feedback.fb-ok{border:1.5px solid #22c55e40}
+.feedback.fb-err{border:1.5px solid #ef444440}
+.fb-ok .fb-head{background:rgba(34,197,94,.1);color:#22c55e}
+.fb-err .fb-head{background:rgba(239,68,68,.1);color:#ef4444}
 
-/* NEXT */
-.btn-next{display:none;width:100%;padding:13px;background:#c8102e;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s;font-family:inherit}
+/* QUY TẮC ÁP DỤNG */
+.fb-rule-wrap{padding:11px 15px;background:#0f0f0f;border-top:1px solid #1a1a1a}
+.fb-rule-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#f59e0b;margin-bottom:5px}
+.fb-rule-body{font-size:13px;color:#d4a845;line-height:1.6;font-weight:600}
+
+/* GIẢI THÍCH TỪNG ĐÁP ÁN */
+.fb-why-wrap{padding:11px 15px;background:#0a0a0a;border-top:1px solid #161616}
+.fb-why-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#555;margin-bottom:7px}
+.fb-why-list{display:flex;flex-direction:column;gap:5px}
+.why-row{display:flex;align-items:flex-start;gap:7px;padding:7px 9px;border-radius:7px;font-size:12px;line-height:1.5}
+.why-row.wr-correct{background:rgba(34,197,94,.07);color:#86efac}
+.why-row.wr-missed{background:rgba(239,68,68,.08);color:#f87171}
+.why-row.wr-other{color:#444}
+.why-icon{flex-shrink:0;font-size:11px;margin-top:2px}
+.why-key{font-weight:700;margin-right:3px;flex-shrink:0}
+
+.btn-next{display:none;width:100%;padding:12px;background:#c8102e;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s;font-family:inherit;margin-top:10px}
 .btn-next:hover{background:#a50d26}
 .btn-next.show{display:block}
 
 /* RESULT */
-.result-screen{display:none;text-align:center;padding:32px 16px}
+.result-screen{display:none;text-align:center;padding:28px 12px}
 .result-screen.show{display:block}
-.result-pct{font-size:80px;font-weight:700;color:#c8102e;line-height:1}
-.result-sub{font-size:13px;color:#444;margin-top:6px;margin-bottom:28px}
-.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
-.ri{background:#161616;border:1px solid #1e1e1e;border-radius:12px;padding:18px}
-.ri .rv{font-size:30px;font-weight:700}
+.result-pct{font-size:76px;font-weight:700;color:#c8102e;line-height:1}
+.result-sub{font-size:12px;color:#444;margin-top:5px;margin-bottom:24px}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.ri{background:#161616;border:1px solid #1e1e1e;border-radius:12px;padding:16px}
+.ri .rv{font-size:28px;font-weight:700}
 .ri .rl{font-size:11px;color:#444;margin-top:3px}
-.ri.rc .rv{color:#22c55e}
-.ri.rw .rv{color:#ef4444}
-.result-msg{font-size:14px;color:#666;margin-bottom:24px;line-height:1.6}
-.btn-restart{padding:13px 28px;background:#c8102e;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;margin-right:8px}
+.rc .rv{color:#22c55e}
+.rw .rv{color:#ef4444}
+.result-msg{font-size:13px;color:#666;margin-bottom:22px;line-height:1.6}
+.btn-restart{padding:12px 24px;background:#c8102e;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;margin-right:8px}
 .btn-restart:hover{background:#a50d26}
-.btn-home{padding:13px 28px;background:#1a1a1a;color:#888;border:1.5px solid #222;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
+.btn-home{padding:12px 24px;background:#1a1a1a;color:#888;border:1.5px solid #222;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
 .btn-home:hover{border-color:#444;color:#ccc}
+
+/* TOGGLE QUY TẮC */
+.toggle-rules{width:100%;padding:12px;background:#161616;color:#f59e0b;border:1.5px solid #f59e0b30;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:6px}
+.toggle-rules:hover{background:#1a1a1a}
 </style>
 </head>
 <body>
@@ -117,31 +143,50 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="header">
     <div class="bell">🔔</div>
     <h1>Rung Chuông Vàng URC 2026</h1>
-    <p>360 câu hỏi chính thức · Plant 2</p>
+    <p>13 quy tắc chọn nhanh · Giải thích từng đáp án</p>
   </div>
 
   <!-- HOME -->
   <div id="homeScreen">
+    <button class="toggle-rules" onclick="toggleRules()">📌 Xem 13 quy tắc chọn nhanh ▼</button>
+    <div id="rulesPanel" class="rules-panel" style="display:none">
+      <div class="rules-title">📌 13 Quy tắc chọn nhanh</div>
+      <div class="rules-grid">
+        <div class="rule-row r-tatca"><div class="rule-num">QT1 — Tất cả đều đúng</div><div class="rule-text">Thấy <strong>"Tất cả / Cả A,B,C"</strong> → chọn luôn. Trừ khi có đáp án rõ ràng vô lý (vd: "tiếp tục làm khi nguy hiểm")</div></div>
+        <div class="rule-row r-khong"><div class="rule-num">QT2 — Câu có KHÔNG / ngoại trừ</div><div class="rule-text">Tìm đáp án <strong>lạc chủ đề nhất</strong>. Hỏi về nhà máy → loại đáp án thuộc tài chính, marketing, R&D</div></div>
+        <div class="rule-row r-soli"><div class="rule-num">QT3 — Câu hỏi về số bước / số lượng</div><div class="rule-text">Chọn <strong>số lớn nhất</strong>. PM=6 bước | Bất thường=7 loại | Bôi trơn=8 bước | Giai đoạn PM=4</div></div>
+        <div class="rule-row r-soli"><div class="rule-num">QT4 — Nhiều số giống nhau trong đáp án</div><div class="rule-text">Tìm <strong>số lạ để loại</strong>. Thẻ đỏ: thấy 45 → loại (đúng B=20). Bước 1: thấy 60% hoặc 75% → loại (đúng 70%)</div></div>
+        <div class="rule-row r-soli"><div class="rule-num">QT5 — Đáp án toàn tiếng Anh</div><div class="rule-text">Nhìn <strong>chữ cái đặc trưng</strong>: FEFO → "Expired" (đuôi -ed) | WMS → "Management" | PVA: P="Purpose" A="Ambition" | ISO: 9001=chất lượng, 14001=môi trường, 45001=an toàn</div></div>
+        <div class="rule-row r-other"><div class="rule-num">QT6 — Đáp án dài / liệt kê đầy đủ nhất</div><div class="rule-text">Câu về <strong>quy định, nghĩa vụ, mục đích</strong> → đáp án nêu nhiều ý nhất thường đúng</div></div>
+        <div class="rule-row r-other"><div class="rule-num">QT7 — Câu an toàn lao động</div><div class="rule-text">Loại ngay đáp án có <strong>"tiếp tục làm việc"</strong> hoặc <strong>"bỏ qua"</strong> khi có nguy hiểm</div></div>
+        <div class="rule-row r-luat"><div class="rule-num">QT8 — Câu luật lao động</div><div class="rule-text">Nhớ 3 con số: Có hạn=<strong>30 ngày</strong> | Không hạn=<strong>45 ngày</strong> | Cưới=<strong>3 ngày</strong> | Khám SK bình thường=<strong>1 năm</strong> | Độc hại=<strong>6 tháng</strong></div></div>
+        <div class="rule-row r-pillar"><div class="rule-num">QT9 — Câu về trụ cột</div><div class="rule-text">Ghép cặp cố định: Không lỗi=<strong>Quality</strong> | Không tai nạn=<strong>EHS</strong> | Dừng máy=<strong>PM</strong> | Đào tạo=<strong>E&T</strong> | Cải tiến=<strong>FI</strong> | Dự án mới=<strong>Initiative</strong></div></div>
+        <div class="rule-row r-luat"><div class="rule-num">QT10 — Câu lịch sử URC</div><div class="rule-text">Nhớ mốc năm: Thành lập=<strong>1954</strong> | Vào VN=<strong>2003</strong> | C2=<strong>2006</strong> | Cà phê=<strong>2014</strong> | Sách Xanh=<strong>2020</strong> | Agile=<strong>2024</strong></div></div>
+        <div class="rule-row r-other"><div class="rule-num">QT11 — Câu dạng Đúng / Sai</div><div class="rule-text">Chọn <strong>"Đúng"</strong> nếu nội dung hợp lý và công bằng. Chọn <strong>"Sai"</strong> nếu nội dung cứng nhắc hoặc bất lợi cho người lao động</div></div>
+        <div class="rule-row r-soli"><div class="rule-num">QT12 — Câu về hiệu suất / chi phí / thời gian sửa</div><div class="rule-text">Chọn <strong>số NHỎ nhất</strong>. MTTR thấp hơn target càng tốt | Tồn kho PM = dưới 1% (nhỏ nhất)</div></div>
+        <div class="rule-row r-other"><div class="rule-num">QT13 — Câu có hình ảnh</div><div class="rule-text">Tìm hình có <strong>dấu hiệu vi phạm rõ nhất</strong>: thiếu đồ bảo hộ, để đồ sai chỗ, hành vi sai quy định</div></div>
+      </div>
+    </div>
     <div class="mode-cards">
       <div class="mode-card" onclick="goGroups()">
         <div class="mc-icon">🎯</div>
         <div class="mc-title">Luyện theo nhóm</div>
-        <div class="mc-desc">Gom câu hỏi theo nhóm mẹo (Tất cả đúng, Không/ngoại trừ, Số liệu...) hoặc theo chủ đề kiến thức (Pillar, Luật lao động, Lịch sử URC...)</div>
+        <div class="mc-desc">Nhóm theo quy tắc (QT1→QT13) hoặc nhóm theo chương. Mỗi câu hiển thị quy tắc áp dụng.</div>
       </div>
       <div class="mode-card" onclick="startRandom()">
         <div class="mc-icon">🎲</div>
         <div class="mc-title">Thi ngẫu nhiên 360 câu</div>
-        <div class="mc-desc">Xáo trộn toàn bộ 360 câu gốc từ bộ đề chính thức. Mỗi lần thi là một thứ tự khác nhau.</div>
+        <div class="mc-desc">Xáo trộn toàn bộ. Trả lời sai → hiện quy tắc + giải thích từng đáp án.</div>
       </div>
     </div>
   </div>
 
-  <!-- GROUP SCREEN -->
+  <!-- GROUP -->
   <div id="groupScreen" class="group-screen">
     <button class="back-btn" onclick="goHome()">← Quay lại</button>
     <div class="group-tabs">
-      <button class="gtab active" onclick="switchTab('tip',this)">Nhóm mẹo</button>
-      <button class="gtab" onclick="switchTab('topic',this)">Nhóm chủ đề</button>
+      <button class="gtab active" onclick="switchTab('tip',this)">Nhóm quy tắc</button>
+      <button class="gtab" onclick="switchTab('topic',this)">Nhóm chương</button>
     </div>
     <div class="group-list" id="groupList"></div>
   </div>
@@ -150,26 +195,32 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div id="quizScreen" style="display:none">
     <button class="back-btn" onclick="goHome()">← Thoát</button>
     <div class="progress-wrap">
-      <div class="progress-info">
-        <span id="progressText">Câu 1/10</span>
-        <span id="scoreText">0 đúng</span>
-      </div>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <div class="progress-info"><span id="pText">Câu 1/10</span><span id="pScore">0 đúng</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="pFill" style="width:0%"></div></div>
     </div>
     <div class="stats">
-      <div class="stat s-correct"><div class="val" id="sCorrect">0</div><div class="lbl">✅ Đúng</div></div>
-      <div class="stat s-wrong"><div class="val" id="sWrong">0</div><div class="lbl">❌ Sai</div></div>
-      <div class="stat s-left"><div class="val" id="sLeft">0</div><div class="lbl">📝 Còn lại</div></div>
+      <div class="stat s-correct"><div class="val" id="sC">0</div><div class="lbl">✅ Đúng</div></div>
+      <div class="stat s-wrong"><div class="val" id="sW">0</div><div class="lbl">❌ Sai</div></div>
+      <div class="stat s-left"><div class="val" id="sL">0</div><div class="lbl">📝 Còn</div></div>
     </div>
     <div class="tags-row" id="tagsRow"></div>
     <div class="card">
-      <div class="q-number" id="qNum"></div>
+      <div class="q-num" id="qNum"></div>
       <div class="q-text" id="qText"></div>
       <div class="options" id="opts"></div>
-      <div class="tip-box" id="tipBox"><div class="tip-label">💡 Mẹo nhớ</div><div class="tip-text" id="tipText"></div></div>
-      <div class="ok-box" id="okBox"><div class="ok-text" id="okText"></div></div>
+      <div class="feedback" id="fb">
+        <div class="fb-head" id="fbHead"></div>
+        <div class="fb-rule-wrap">
+          <div class="fb-rule-label">📌 Quy tắc áp dụng</div>
+          <div class="fb-rule-body" id="fbRule"></div>
+        </div>
+        <div class="fb-why-wrap">
+          <div class="fb-why-label">🔍 Tại sao từng đáp án đúng / sai</div>
+          <div class="fb-why-list" id="fbWhy"></div>
+        </div>
+      </div>
     </div>
-    <button class="btn-next show" id="btnNext" onclick="nextQ()">Câu tiếp theo →</button>
+    <button class="btn-next" id="btnNext" onclick="nextQ()">Câu tiếp theo →</button>
   </div>
 
   <!-- RESULT -->
@@ -187,396 +238,563 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </div>
 
 <script>
-// =============================================
-// 360 CÂU HỎI GỐC TỪ PDF
-// =============================================
+// ===== 13 QUY TẮC =====
+const RULES = {
+  qt1: "QT1 — Thấy 'Tất cả / Cả A,B,C' → chọn luôn (trừ khi có đáp án rõ ràng vô lý)",
+  qt2: "QT2 — Câu có 'KHÔNG/ngoại trừ' → tìm đáp án lạc chủ đề nhất",
+  qt3: "QT3 — Câu hỏi số bước/số lượng → chọn số LỚN nhất",
+  qt4: "QT4 — Nhiều số giống nhau → tìm số lạ để loại ngay",
+  qt5: "QT5 — Đáp án tiếng Anh → nhìn chữ cái đặc trưng (FEFO=Expired, WMS=Management, PVA: P=Purpose A=Ambition)",
+  qt6: "QT6 — Câu về quy định/nghĩa vụ → đáp án dài, liệt kê đầy đủ nhất thường đúng",
+  qt7: "QT7 — Câu an toàn → loại ngay 'tiếp tục làm việc' hoặc 'bỏ qua' khi có nguy hiểm",
+  qt8: "QT8 — Luật lao động: Có hạn=30 ngày | Không hạn=45 ngày | Cưới=3 ngày | SK bình thường=1 năm | Độc hại=6 tháng",
+  qt9: "QT9 — Trụ cột: Không lỗi=Quality | Không tai nạn=EHS | Dừng máy=PM | Đào tạo=E&T | Cải tiến=FI | Dự án mới=Initiative",
+  qt10:"QT10 — Lịch sử URC: 1954 thành lập | 2003 vào VN | 2006 C2 | 2014 Cà phê | 2020 Sách Xanh | 2024 Agile",
+  qt11:"QT11 — Câu Đúng/Sai → chọn 'Đúng' nếu nội dung hợp lý và công bằng với người lao động",
+  qt12:"QT12 — Câu về hiệu suất/chi phí/thời gian sửa → chọn số NHỎ nhất (MTTR thấp=tốt, tồn kho PM <1%)",
+  qt13:"QT13 — Câu có hình ảnh → tìm hình có dấu hiệu vi phạm rõ nhất (thiếu bảo hộ, hành vi sai)",
+};
+
+// ===== DỮ LIỆU CÂU HỎI =====
+// Mỗi câu có:
+// rule: mã quy tắc áp dụng (qt1..qt13)
+// tip: mẹo ngắn gọn 1 dòng cho câu này (kèm giải thích từ tiếng Anh nếu có)
+// why: giải thích từng đáp án A,B,C,D
+
 const ALL_Q = [
-// CHƯƠNG I: TPM/ISCE (câu 1-40)
-{id:1,ch:"Chương I",q:"Mục tiêu chính của chương trình ISCE là gì?",o:["Tăng doanh thu bán hàng","Xây dựng năng lực chuỗi cung ứng toàn diện và loại bỏ tổn thất","Giảm chi phí nhân sự","Mở rộng thị trường quốc tế"],a:1,tip:"Mẹo Pillar: ISCE = chuỗi cung ứng + loại bỏ tổn thất.",tip2:"✅ ISCE tập trung chuỗi cung ứng toàn diện.",tips:["pillar"]},
-{id:2,ch:"Chương I",q:"ISCE kết hợp những chương trình nào?",o:["TPM và Lean Manufacturing","Agile và Scrum","Six Sigma và Kaizen","Chỉ TPM"],a:0,tip:"ISCE = TPM + Lean. Không phải Agile, Scrum hay Six Sigma.",tip2:"✅ ISCE kết hợp TPM và Lean Manufacturing.",tips:["topic"]},
-{id:3,ch:"Chương I",q:"Yếu tố nào KHÔNG phải là nền tảng của ISCE?",o:["Môi trường làm việc an toàn","Phát triển sản phẩm mới","Ổn định quy trình","Chi phí cạnh tranh"],a:1,tip:"Mẹo KHÔNG: Chọn lạc chủ đề nhất. 'Phát triển sản phẩm mới' là R&D, không liên quan ISCE vận hành.",tip2:"✅ Phát triển sản phẩm mới là việc của R&D, không phải nền tảng ISCE.",tips:["khong"]},
-{id:4,ch:"Chương I",q:"'The Power of ZERO and 100' trong ISCE ám chỉ điều gì?",o:["Zero lỗi và 100% hiệu suất","Zero chi phí và 100% lợi nhuận","Zero nhân sự và 100% tự động hóa","Zero đào tạo và 100% kinh nghiệm"],a:0,tip:"ZERO = không lỗi, không tai nạn | 100 = hiệu suất tối đa. Logic đơn giản.",tip2:"✅ Zero lỗi và 100% hiệu suất.",tips:["topic"]},
-{id:5,ch:"Chương I",q:"Nguyên tắc 'LEARN – DO – TEACH' trong ISCE nhấn mạnh điều gì?",o:["Chỉ học lý thuyết","Lãnh đạo tự học, thực hành, sau đó dạy lại cho tổ chức","Thuê chuyên gia đào tạo","Bỏ qua giai đoạn thực hành"],a:1,tip:"LEARN→DO→TEACH: học → làm → dạy. Lãnh đạo phải trải qua cả 3 bước.",tip2:"✅ Lãnh đạo tự học, thực hành rồi dạy lại.",tips:["topic"]},
-{id:6,ch:"Chương I",q:"5M/1E trong tiêu chuẩn ISCE bao gồm những yếu tố nào?",o:["Machine, Method, Money, Material, Market, Environment","Man, Machine, Method, Measurement, Material, Environment","Man, Machine, Money, Material, Method, Efficiency","Machine, Method, Material, Management, Measurement, Environment"],a:1,tip:"Mẹo số liệu: 5M = Man-Machine-Method-Measurement-Material + 1E = Environment. Không có Money, Market.",tip2:"✅ 5M1E = Man, Machine, Method, Measurement, Material, Environment.",tips:["soli"]},
-{id:7,ch:"Chương I",q:"Mục tiêu của Leadership Pillar là gì?",o:["Tối ưu hóa thiết bị","Đạt KBD (Key Business Deliverables) và mục tiêu văn hóa","Giảm chi phí bảo trì","Tăng tốc độ sản xuất"],a:1,tip:"Mẹo Pillar: Leadership = KBD + văn hóa tổ chức.",tip2:"✅ Leadership Pillar: KBD và mục tiêu văn hóa.",tips:["pillar"]},
-{id:8,ch:"Chương I",q:"Pillar nào chịu trách nhiệm về 'Zero Defect' trong sản xuất?",o:["Planned Maintenance Pillar","Quality Pillar","Supply Chain Pillar","Initiative Management Pillar"],a:1,tip:"Mẹo Pillar: Zero Defect → Quality Pillar. Chất lượng = Defect.",tip2:"✅ Quality Pillar = Zero Defect.",tips:["pillar"]},
-{id:9,ch:"Chương I",q:"Daily Stand-up (DSU) trong ISCE nhằm mục đích gì?",o:["Đánh giá kết quả cuối tháng","Đảm bảo kế hoạch ngày/shift được thực hiện","Phân tích dữ liệu tài chính","Lập kế hoạch dài hạn"],a:1,tip:"DSU = Daily Stand-up = họp ngắn hàng ngày để đảm bảo kế hoạch ngày được thực hiện.",tip2:"✅ DSU đảm bảo kế hoạch ngày/shift được thực hiện.",tips:["topic"]},
-{id:10,ch:"Chương I",q:"Phương pháp nào KHÔNG thuộc Focused Improvement Pillar?",o:["Why-Why Analysis","Pareto Analysis","6W2H","Phân tích SWOT"],a:3,tip:"Mẹo KHÔNG: SWOT là chiến lược kinh doanh, lạc chủ đề so với FI Pillar.",tip2:"✅ SWOT không thuộc FI Pillar.",tips:["khong"]},
-{id:11,ch:"Chương I",q:"Mục tiêu của Basic Equipment Care (BEC) Pillar là gì?",o:["Giảm chi phí nguyên vật liệu","Duy trì thiết bị ở điều kiện cơ bản, không lỗi","Tăng tốc độ vận hành máy","Tự động hóa toàn bộ nhà máy"],a:1,tip:"BEC = Basic Equipment Care = chăm sóc thiết bị CƠ BẢN, duy trì điều kiện không lỗi.",tip2:"✅ BEC duy trì thiết bị ở điều kiện cơ bản.",tips:["pillar"]},
-{id:12,ch:"Chương I",q:"Pillar nào tập trung vào 'Zero accidents' và 'Zero incidents'?",o:["EHS Pillar","Quality Pillar","Organization Pillar","Leadership Pillar"],a:0,tip:"Mẹo Pillar: Zero Accident → EHS (Environment, Health, Safety).",tip2:"✅ EHS Pillar = Zero accidents & incidents.",tips:["pillar"]},
-{id:13,ch:"Chương I",q:"Giá trị cốt lõi của ISCE là gì?",o:["Tăng lợi nhuận ngắn hạn","Loại bỏ tổn thất và cải tiến liên tục","Cắt giảm nhân sự","Tập trung vào nghiên cứu phát triển"],a:1,tip:"ISCE core = loại bỏ tổn thất + cải tiến liên tục (continuous improvement).",tip2:"✅ Giá trị cốt lõi: loại bỏ tổn thất và cải tiến liên tục.",tips:["topic"]},
-{id:14,ch:"Chương I",q:"'Visual Workplace' trong ISCE giúp gì?",o:["Tăng tính thẩm mỹ nhà máy","Làm lộ rõ tổn thất và tiêu chuẩn hóa","Giảm thời gian họp","Tăng số lượng báo cáo"],a:1,tip:"Visual Workplace = nơi làm việc trực quan → lộ rõ tổn thất, tiêu chuẩn hóa.",tip2:"✅ Visual Workplace làm lộ rõ tổn thất và tiêu chuẩn hóa.",tips:["topic"]},
-{id:15,ch:"Chương I",q:"Ai là người chịu trách nhiệm chính cho ISCE tại nhà máy?",o:["Kế toán trưởng","Plant Manager","Trưởng phòng Marketing","Nhân viên bảo trì"],a:1,tip:"ISCE cấp nhà máy → Plant Manager chịu trách nhiệm chính.",tip2:"✅ Plant Manager chịu trách nhiệm chính về ISCE.",tips:["topic"]},
-{id:16,ch:"Chương I",q:"PDCA trong ISCE là viết tắt của gì?",o:["Plan, Do, Check, Act","Prepare, Develop, Check, Achieve","Produce, Deliver, Control, Adjust","Plan, Develop, Control, Achieve"],a:0,tip:"PDCA = Plan-Do-Check-Act. Vòng cải tiến liên tục cơ bản nhất.",tip2:"✅ PDCA = Plan, Do, Check, Act.",tips:["soli"]},
-{id:17,ch:"Chương I",q:"Pillar nào liên quan đến 'End-to-End Supply Chain optimization'?",o:["Education & Training Pillar","Supply Chain Pillar","Initiative Management Pillar","Leadership Pillar"],a:1,tip:"Mẹo Pillar: End-to-End Supply Chain → Supply Chain Pillar.",tip2:"✅ Supply Chain Pillar = End-to-End optimization.",tips:["pillar"]},
-{id:18,ch:"Chương I",q:"Phương châm 'Servant Leadership' trong ISCE nhấn mạnh điều gì?",o:["Lãnh đạo tập trung vào quyền lực","Lãnh đạo phục vụ và hỗ trợ nhân viên","Nhân viên tự quyết định mọi việc","Giảm vai trò của lãnh đạo"],a:1,tip:"Servant Leadership = lãnh đạo phục vụ. 'Servant' = người phục vụ.",tip2:"✅ Servant Leadership = lãnh đạo phục vụ và hỗ trợ nhân viên.",tips:["topic"]},
-{id:19,ch:"Chương I",q:"Tiêu chuẩn '5M/1E' được áp dụng để làm gì?",o:["Phân tích nguyên nhân gốc rễ của vấn đề","Đo lường hiệu suất tài chính","Đánh giá năng lực nhân viên","Thiết kế sản phẩm mới"],a:0,tip:"5M1E = công cụ phân tích nguyên nhân gốc rễ (dùng trong Ishikawa diagram).",tip2:"✅ 5M1E dùng để phân tích nguyên nhân gốc rễ.",tips:["soli"]},
-{id:20,ch:"Chương I",q:"Pillar nào đảm bảo nhân viên được đào tạo đúng kỹ năng?",o:["Education & Training Pillar","Quality Pillar","Planned Maintenance Pillar","Supply Chain Pillar"],a:0,tip:"Mẹo Pillar: Đào tạo kỹ năng → Education & Training Pillar.",tip2:"✅ Education & Training Pillar phụ trách đào tạo.",tips:["pillar"]},
-{id:21,ch:"Chương I",q:"Mục tiêu của Planned Maintenance Pillar là gì?",o:["Giảm thời gian ngừng máy ngoài kế hoạch","Tăng tốc độ sản xuất","Cắt giảm chi phí đào tạo","Tự động hóa bảo trì"],a:0,tip:"Mẹo Pillar: PM = giảm dừng máy NGOÀI KẾ HOẠCH (unplanned downtime).",tip2:"✅ PM Pillar giảm thời gian ngừng máy ngoài kế hoạch.",tips:["pillar"]},
-{id:22,ch:"Chương I",q:"ISCE yêu cầu lãnh đạo dành bao nhiêu % thời gian ban đầu để học hỏi?",o:["5-10%","15-25%","30-40%","50% trở lên"],a:1,tip:"Mẹo số liệu: Lãnh đạo = 15-25% thời gian học hỏi ban đầu.",tip2:"✅ Lãnh đạo dành 15-25% thời gian để học.",tips:["soli"]},
-{id:23,ch:"Chương I",q:"'Self-Managed Teams' trong ISCE nghĩa là gì?",o:["Nhân viên tự quản lý không cần lãnh đạo","Nhóm tự chủ, đưa ra quyết định dựa trên dữ liệu","Tự động sa thải nhân viên kém","Không cần tiêu chuẩn làm việc"],a:1,tip:"Self-Managed Teams = tự chủ + dựa trên dữ liệu, KHÔNG phải không cần lãnh đạo.",tip2:"✅ Nhóm tự chủ, quyết định dựa trên dữ liệu.",tips:["topic"]},
-{id:24,ch:"Chương I",q:"Công cụ nào KHÔNG thuộc Supply Chain Pillar?",o:["Value Stream Mapping","Time Mapping","5S","Produce to Demand Tool"],a:2,tip:"Mẹo KHÔNG: 5S thuộc BEC/AM Pillar, không phải Supply Chain.",tip2:"✅ 5S không thuộc Supply Chain Pillar.",tips:["khong"]},
-{id:25,ch:"Chương I",q:"'Zero Tolerance for Defects' áp dụng cho Pillar nào?",o:["Chỉ Quality Pillar","Tất cả các Pillar","Chỉ Leadership Pillar","Chỉ EHS Pillar"],a:1,tip:"Mẹo Tất cả: Zero Tolerance = triết lý toàn công ty, áp dụng cho TẤT CẢ Pillar.",tip2:"✅ Zero Tolerance áp dụng cho tất cả Pillar.",tips:["tatca"]},
-{id:26,ch:"Chương I",q:"Phương pháp 'Just-in-Time Training' thuộc Pillar nào?",o:["Education & Training Pillar","Initiative Management Pillar","Organization Pillar","Focused Improvement Pillar"],a:0,tip:"Just-in-Time Training = đào tạo đúng lúc → Education & Training Pillar.",tip2:"✅ Just-in-Time Training thuộc E&T Pillar.",tips:["pillar"]},
-{id:27,ch:"Chương I",q:"'Masterplanning & SDDS' giúp gì trong ISCE?",o:["Liên kết OGSM với mục tiêu cá nhân","Giảm chi phí logistics","Tăng số lượng cuộc họp","Tập trung vào báo cáo tài chính"],a:0,tip:"SDDS = Strategy Deployment and Development System → liên kết OGSM với mục tiêu cá nhân.",tip2:"✅ Masterplanning & SDDS liên kết OGSM với mục tiêu cá nhân.",tips:["topic"]},
-{id:28,ch:"Chương I",q:"Pillar nào chịu trách nhiệm về 'Cost-effective Project Delivery'?",o:["Initiative Management Pillar","Supply Chain Pillar","Planned Maintenance Pillar","Basic Equipment Care Pillar"],a:0,tip:"Mẹo Pillar: Dự án hiệu quả → Initiative Management Pillar.",tip2:"✅ Initiative Management Pillar = Cost-effective Project Delivery.",tips:["pillar"]},
-{id:29,ch:"Chương I",q:"'Agile and Flexible Supply Chain' trong ISCE nhằm mục đích gì?",o:["Giảm số lượng nhà cung cấp","Tăng khả năng đáp ứng nhu cầu khách hàng","Tập trung vào sản xuất hàng loạt","Loại bỏ đào tạo nhân viên"],a:1,tip:"Agile + Flexible = linh hoạt để đáp ứng nhu cầu khách hàng.",tip2:"✅ Agile & Flexible Supply Chain tăng khả năng đáp ứng khách hàng.",tips:["topic"]},
-{id:30,ch:"Chương I",q:"'Root Cause Analysis' là trọng tâm của Pillar nào?",o:["Focused Improvement Pillar","Leadership Pillar","Education & Training Pillar","EHS Pillar"],a:0,tip:"Mẹo Pillar: Root Cause Analysis → Focused Improvement Pillar. Cải tiến = RCA.",tip2:"✅ RCA là trọng tâm của Focused Improvement Pillar.",tips:["pillar"]},
-{id:31,ch:"Chương I",q:"Tiêu chuẩn 'Clean, Inspect, Tighten, Lubricate' thuộc Pillar nào?",o:["Basic Equipment Care (BEC) Pillar","Planned Maintenance Pillar","Quality Pillar","Supply Chain Pillar"],a:0,tip:"CITL = Clean-Inspect-Tighten-Lubricate thuộc BEC, KHÔNG phải PM!",tip2:"✅ CITL thuộc BEC Pillar.",tips:["pillar"]},
-{id:32,ch:"Chương I",q:"Mục tiêu của 'End-to-End Synchronization' trong ISCE là gì?",o:["Đồng bộ hóa toàn bộ chuỗi cung ứng","Tăng tốc độ sản xuất đơn lẻ","Giảm số lượng sản phẩm","Tập trung vào một nhà cung cấp"],a:0,tip:"End-to-End = toàn bộ chuỗi từ đầu đến cuối → đồng bộ hóa.",tip2:"✅ End-to-End Synchronization = đồng bộ hóa toàn chuỗi.",tips:["topic"]},
-{id:33,ch:"Chương I",q:"'Cultural Transformation' trong ISCE đòi hỏi điều gì?",o:["Thay đổi hành vi và tư duy của tổ chức","Áp dụng công nghệ mới","Thuê nhân sự nước ngoài","Giảm quy mô sản xuất"],a:0,tip:"Cultural Transformation = thay đổi văn hóa = thay đổi hành vi + tư duy.",tip2:"✅ Cultural Transformation = thay đổi hành vi và tư duy.",tips:["topic"]},
-{id:34,ch:"Chương I",q:"'Daily Management Systems' giúp gì trong ISCE?",o:["Đảm bảo kết quả hàng ngày ổn định","Tăng số lượng báo cáo","Giảm tương tác giữa các phòng ban","Tự động hóa quyết định"],a:0,tip:"Daily Management = quản lý hàng ngày → đảm bảo kết quả ngày ổn định.",tip2:"✅ Daily Management Systems đảm bảo kết quả hàng ngày ổn định.",tips:["topic"]},
-{id:35,ch:"Chương I",q:"'Equipment Ownership System' yêu cầu gì ở nhân viên?",o:["Chỉ vận hành thiết bị","Sở hữu, bảo trì và cải tiến thiết bị","Báo cáo lỗi cho quản lý","Làm việc độc lập không cần nhóm"],a:1,tip:"Equipment Ownership = sở hữu thiết bị → trách nhiệm toàn diện: vận hành + bảo trì + cải tiến.",tip2:"✅ Nhân viên sở hữu, bảo trì và cải tiến thiết bị.",tips:["topic"]},
-{id:36,ch:"Chương I",q:"Pillar nào liên quan đến 'New Process/Equipment Startup'?",o:["Initiative Management Pillar","Education & Training Pillar","Planned Maintenance Pillar","Quality Pillar"],a:0,tip:"Mẹo Pillar: Dự án mới, thiết bị mới → Initiative Management Pillar.",tip2:"✅ Initiative Management Pillar = New Process/Equipment Startup.",tips:["pillar"]},
-{id:37,ch:"Chương I",q:"'Visual Controls' trong ISCE bao gồm những gì?",o:["Bảng hiệu, biển báo an toàn","Chỉ báo hiệu suất, Q-Factors","Cả A và B","Chỉ báo cáo tài chính"],a:2,tip:"Mẹo Tất cả: Visual Controls = bảng hiệu AN TOÀN + chỉ báo HIỆU SUẤT. Cả 2.",tip2:"✅ Visual Controls gồm cả bảng hiệu an toàn và chỉ báo hiệu suất.",tips:["tatca"]},
-{id:38,ch:"Chương I",q:"'Standard Routines' trong ISCE nhằm mục đích gì?",o:["Xác định lịch trình công việc tiêu chuẩn","Giảm thời gian nghỉ ngơi","Tăng số lượng cuộc họp","Loại bỏ đào tạo"],a:0,tip:"Standard Routines = lịch trình tiêu chuẩn → công việc nhất quán.",tip2:"✅ Standard Routines xác định lịch trình công việc tiêu chuẩn.",tips:["topic"]},
-{id:39,ch:"Chương I",q:"'Zero Defect' và 'Total Employee Involvement' là nguyên tắc của:",o:["Chỉ TPM","Chỉ Lean","Cả ISCE và TPM","Chỉ Six Sigma"],a:2,tip:"Mẹo Tất cả: Cả ISCE và TPM đều có Zero Defect và Total Employee Involvement.",tip2:"✅ Là nguyên tắc của cả ISCE và TPM.",tips:["tatca"]},
-{id:40,ch:"Chương I",q:"Tài liệu tham khảo nào KHÔNG thuộc ISCE?",o:["ISCE Overview Training","ISCE và Leadership Pillar Playbook","Financial Audit Guide","ISCE Training for Operators & Technicians"],a:2,tip:"Mẹo KHÔNG: 'Financial Audit Guide' là tài liệu tài chính/kiểm toán, lạc chủ đề ISCE.",tip2:"✅ Financial Audit Guide không thuộc ISCE.",tips:["khong"]},
+// CHƯƠNG I
+{id:1,ch:"Chương I",q:"Mục tiêu chính của chương trình ISCE là gì?",o:["Tăng doanh thu bán hàng","Xây dựng năng lực chuỗi cung ứng toàn diện và loại bỏ tổn thất","Giảm chi phí nhân sự","Mở rộng thị trường quốc tế"],a:1,rule:"qt9",
+tip:"ISCE (chương trình xuất sắc chuỗi cung ứng) → luôn gắn với chuỗi cung ứng + loại bỏ tổn thất",
+why:["❌ Doanh thu = mục tiêu kinh doanh, không phải ISCE","✅ ISCE xây dựng năng lực chuỗi cung ứng và loại bỏ tổn thất","❌ ISCE phát triển nhân sự, không cắt giảm","❌ Mở rộng thị trường = marketing, ngoài phạm vi ISCE"],tips:["pillar"]},
 
-// CHƯƠNG II: BEC (câu 41-80)
-{id:41,ch:"Chương II",q:"Mục tiêu chính của BEC Step 1 là gì?",o:["Thực hiện làm sạch ban đầu","Xác định các đường trung tâm quan trọng","Loại bỏ các nguồn gây ô nhiễm","Tăng hiệu suất sản xuất"],a:0,tip:"Nhớ: Step 1=Làm sạch | Step 2=Loại bỏ SOC | Step 3=Bôi trơn.",tip2:"✅ BEC Step 1 = Làm sạch ban đầu (Initial Cleaning).",tips:["soli"]},
-{id:42,ch:"Chương II",q:"Tại sao việc làm sạch ban đầu lại quan trọng trong BEC Step 1?",o:["Để loại bỏ bụi bẩn tích tụ","Để phát hiện các vấn đề tiềm ẩn","Để đảm bảo thiết bị hoạt động ổn định","Để giảm chi phí bảo trì"],a:1,tip:"Làm sạch = kiểm tra. Khi lau chùi sẽ phát hiện vấn đề tiềm ẩn (rỉ sét, vết nứt...).",tip2:"✅ Làm sạch để phát hiện vấn đề tiềm ẩn.",tips:["topic"]},
-{id:43,ch:"Chương II",q:"Trong BEC Step 1, việc làm sạch cũng là một hình thức gì?",o:["Kiểm tra","Bảo trì","Phòng ngừa","Sửa chữa"],a:0,tip:"'Cleaning is Inspection' = làm sạch chính là kiểm tra. Nguyên tắc cốt lõi BEC.",tip2:"✅ Làm sạch cũng là một hình thức kiểm tra.",tips:["topic"]},
-{id:44,ch:"Chương II",q:"Có bao nhiêu loại bất thường được xác định trong BEC Step 1?",o:["5","6","7","8"],a:2,tip:"Mẹo số lớn: BEC Step 1 = 7 loại bất thường.",tip2:"✅ BEC Step 1 có 7 loại bất thường.",tips:["soli"]},
-{id:45,ch:"Chương II",q:"Một trong những loại bất thường trong BEC Step 1 là gì?",o:["Các khu vực khó tiếp cận","Nguồn gây ô nhiễm","Các bộ phận không cần thiết","Cả 3 đáp án"],a:3,tip:"Mẹo Tất cả: Cả 3 đều là loại bất thường trong BEC Step 1.",tip2:"✅ Cả 3 đều là loại bất thường BEC Step 1.",tips:["tatca"]},
-{id:46,ch:"Chương II",q:"Mục đích của việc sử dụng thẻ Blue và Red trong BEC Step 1 là gì?",o:["Đánh dấu các lỗi cần sửa chữa","Phân loại lỗi do vận hành hoặc bảo trì","Theo dõi tiến độ sửa chữa","Đánh giá hiệu suất thiết bị"],a:1,tip:"Blue = operator xử lý | Red = maintenance xử lý. Phân loại trách nhiệm.",tip2:"✅ Blue/Red tag phân loại lỗi do vận hành hay bảo trì.",tips:["topic"]},
-{id:47,ch:"Chương II",q:"Trong BEC Step 1, việc làm sạch nên được thực hiện như thế nào?",o:["Chỉ làm sạch bề mặt bên ngoài","Làm sạch toàn bộ thiết bị, bao gồm cả các khu vực ẩn","Chỉ làm sạch các bộ phận chính","Làm sạch theo lịch trình định kỳ"],a:1,tip:"BEC Step 1 = làm sạch TOÀN BỘ, kể cả khu vực ẩn, để phát hiện vấn đề.",tip2:"✅ Làm sạch toàn bộ, kể cả khu vực ẩn.",tips:["topic"]},
-{id:48,ch:"Chương II",q:"Mục tiêu của việc kiểm tra bằng các giác quan trong BEC Step 1 là gì?",o:["Phát hiện các bất thường","Đánh giá tình trạng thiết bị","Xác định các vấn đề tiềm ẩn","Đo lường hiệu suất thiết bị"],a:0,tip:"Kiểm tra bằng giác quan = nhìn, nghe, ngửi, sờ → phát hiện bất thường.",tip2:"✅ Kiểm tra giác quan để phát hiện các bất thường.",tips:["topic"]},
-{id:49,ch:"Chương II",q:"Trong BEC Step 1, việc làm sạch giúp phát hiện ra điều gì?",o:["Các lỗi nhỏ","Các nguồn gây ô nhiễm","Các khu vực khó tiếp cận","Các lỗi phần mềm"],a:1,tip:"Làm sạch → phát hiện nguồn gây ô nhiễm (Sources of Contamination).",tip2:"✅ Làm sạch phát hiện nguồn gây ô nhiễm.",tips:["topic"]},
-{id:50,ch:"Chương II",q:"Kết quả mong đợi của BEC Step 1 là gì?",o:["Giảm 25% thời gian dừng máy nhỏ","Khôi phục 70% điều kiện cơ bản","Đạt 50% tuân thủ tiêu chuẩn BEC","Tăng hiệu suất sản xuất"],a:0,tip:"Bộ 3 số Step 1: Giảm 25% dừng máy | Phục hồi 70% | MTBF tăng 15%.",tip2:"✅ Step 1: Giảm 25% thời gian dừng máy nhỏ.",tips:["soli"]},
-{id:51,ch:"Chương II",q:"Mục tiêu chính của BEC Step 2 là gì?",o:["Loại bỏ các nguồn gây ô nhiễm","Thiết lập hệ thống quản lý Centerline","Tiếp tục tìm và sửa lỗi","Tăng hiệu suất sản xuất"],a:0,tip:"Nhớ: Step 1=Làm sạch | Step 2=Loại bỏ SOC (Sources of Contamination).",tip2:"✅ BEC Step 2 = Loại bỏ nguồn gây ô nhiễm.",tips:["soli"]},
-{id:52,ch:"Chương II",q:"Trong BEC Step 2, việc loại bỏ SOC giúp gì?",o:["Giảm thời gian dừng máy","Cải thiện chất lượng sản phẩm","Duy trì điều kiện cơ bản của thiết bị","Tăng tuổi thọ thiết bị"],a:0,tip:"Loại bỏ SOC → ít ô nhiễm → ít dừng máy để vệ sinh.",tip2:"✅ Loại bỏ SOC giúp giảm thời gian dừng máy.",tips:["topic"]},
-{id:53,ch:"Chương II",q:"Các khu vực khó tiếp cận (HTR) trong BEC Step 2 cần được xử lý như thế nào?",o:["Loại bỏ hoặc đơn giản hóa","Bỏ qua vì quá khó","Chỉ kiểm tra định kỳ","Tăng tần suất bảo trì"],a:0,tip:"HTR (Hard To Reach) = loại bỏ hoặc đơn giản hóa để dễ tiếp cận.",tip2:"✅ HTR cần được loại bỏ hoặc đơn giản hóa.",tips:["topic"]},
-{id:54,ch:"Chương II",q:"Mục đích của việc thiết lập Centerline trong BEC Step 2 là gì?",o:["Đảm bảo các thiết lập thiết bị nhất quán","Giảm sự khác biệt giữa các nhóm vận hành","Tối ưu hóa hiệu suất thiết bị","Tăng tốc độ sản xuất"],a:0,tip:"Centerline = thiết lập chuẩn → nhất quán giữa các ca, các nhóm.",tip2:"✅ Centerline đảm bảo thiết lập thiết bị nhất quán.",tips:["topic"]},
-{id:55,ch:"Chương II",q:"Trong BEC Step 2, Visual Control giúp gì?",o:["Dễ dàng nhận biết tình trạng thiết bị","Giảm thời gian kiểm tra","Đơn giản hóa quy trình vận hành","Tăng hiệu suất sản xuất"],a:0,tip:"Visual Control = kiểm soát trực quan → nhìn liếc là biết ngay tình trạng.",tip2:"✅ Visual Control giúp dễ nhận biết tình trạng thiết bị.",tips:["topic"]},
-{id:56,ch:"Chương II",q:"SOC trong BEC Step 2 có thể được loại bỏ bằng cách nào?",o:["Sửa chữa hoặc cải tiến đơn giản","Ngăn chặn hoặc chứa đựng","Tăng tần suất làm sạch","Thay thế thiết bị"],a:0,tip:"SOC = loại bỏ bằng sửa chữa đơn giản (cải tiến nhỏ), không cần thay toàn bộ.",tip2:"✅ SOC được loại bỏ qua sửa chữa hoặc cải tiến đơn giản.",tips:["topic"]},
-{id:57,ch:"Chương II",q:"Trong BEC Step 2, Centerline dựa trên những nguồn nào?",o:["Cài đặt từ quá trình vận hành","Tài liệu kỹ thuật của nhà cung cấp","Kinh nghiệm của chủ sở hữu thiết bị","Ý kiến của nhân viên"],a:0,tip:"Centerline lấy từ cài đặt thực tế khi máy vận hành tốt nhất.",tip2:"✅ Centerline dựa trên cài đặt từ quá trình vận hành.",tips:["topic"]},
-{id:58,ch:"Chương II",q:"Mục tiêu của BEC Checklist trong BEC Step 2 là gì?",o:["Ngăn chặn thời gian dừng máy ngoài kế hoạch","Duy trì điều kiện cơ bản của thiết bị","Tối ưu hóa hiệu suất thiết bị","Tăng tốc độ sản xuất"],a:0,tip:"BEC Checklist → kiểm tra định kỳ → ngăn dừng máy ngoài kế hoạch.",tip2:"✅ BEC Checklist ngăn chặn dừng máy ngoài kế hoạch.",tips:["topic"]},
-{id:59,ch:"Chương II",q:"Trong BEC Step 2, kiểm soát nhiễm bẩn được thực hiện thông qua gì?",o:["Ngăn chặn và DCS (Daily Cleaning Standard)","Tăng tần suất làm sạch","Sử dụng các biện pháp bảo vệ","Thay thế thiết bị"],a:0,tip:"Kiểm soát nhiễm bẩn = ngăn chặn nguồn + DCS hàng ngày.",tip2:"✅ Kiểm soát nhiễm bẩn qua ngăn chặn và DCS.",tips:["topic"]},
-{id:60,ch:"Chương II",q:"Kết quả mong đợi của BEC Step 2 là gì?",o:["Giảm 50-80% thời gian dừng máy nhỏ","Duy trì điều kiện cơ bản của thiết bị","Đạt được sự nhất quán trong vận hành","Tăng hiệu suất sản xuất"],a:0,tip:"Mẹo số liệu: Step 2 → Giảm 50-80%. Step 1=25%, Step 2=50-80% (tăng dần).",tip2:"✅ Step 2 giảm 50-80% thời gian dừng máy nhỏ.",tips:["soli"]},
-{id:61,ch:"Chương II",q:"Mục tiêu chính của BEC Step 3 là gì?",o:["Thiết lập tiêu chuẩn bôi trơn","Phát triển OPL (One Point Lesson)","Tích hợp tiêu chuẩn vào BEC và Centerline DMS","Tăng hiệu suất sản xuất"],a:0,tip:"Step 3 = Lubrication Standard. Nhớ: 1=Làm sạch | 2=Loại bỏ SOC | 3=Bôi trơn.",tip2:"✅ BEC Step 3 = Thiết lập tiêu chuẩn bôi trơn.",tips:["soli"]},
-{id:62,ch:"Chương II",q:"Trong BEC Step 3, tiêu chuẩn bôi trơn giúp gì?",o:["Giảm ma sát và mài mòn","Tăng tuổi thọ của thiết bị","Đảm bảo thiết bị hoạt động ổn định","Tăng tốc độ sản xuất"],a:0,tip:"Bôi trơn → giảm ma sát → giảm mài mòn. Logic vật lý cơ bản.",tip2:"✅ Bôi trơn giảm ma sát và mài mòn.",tips:["topic"]},
-{id:63,ch:"Chương II",q:"Các loại chất bôi trơn phổ biến được sử dụng tại URC là gì?",o:["Dầu bôi trơn","Mỡ bôi trơn","Cả hai loại trên","Không có loại nào"],a:2,tip:"Mẹo Tất cả: URC dùng cả dầu lẫn mỡ bôi trơn.",tip2:"✅ URC dùng cả dầu và mỡ bôi trơn.",tips:["tatca"]},
-{id:64,ch:"Chương II",q:"Mục đích của bản đồ bôi trơn trong BEC Step 3 là gì?",o:["Xác định các điểm bôi trơn trên thiết bị","Ghi lại loại, số lượng và tần suất bôi trơn","Đảm bảo kiểm soát trực quan","Tăng hiệu suất sản xuất"],a:0,tip:"Bản đồ bôi trơn = chỉ ra VỊ TRÍ cần bôi trơn trên thiết bị.",tip2:"✅ Bản đồ bôi trơn xác định các điểm bôi trơn.",tips:["topic"]},
-{id:65,ch:"Chương II",q:"Mục tiêu chính của EO (Equipment Ownership) là gì?",o:["Giảm tổn thất thiết bị","Tăng tính ổn định và độ tin cậy của thiết bị","Phát triển năng lực của nhân viên","Tăng hiệu suất sản xuất"],a:0,tip:"Equipment Ownership = sở hữu thiết bị → giảm tổn thất do thiết bị.",tip2:"✅ EO = giảm tổn thất thiết bị.",tips:["topic"]},
-{id:66,ch:"Chương II",q:"Vai trò của người vận hành trong EO là gì?",o:["Thực hiện DCS (Daily Cleaning Standard)","Thực hiện BEC Step 1, 2, và 3","Thúc đẩy loại bỏ tổn thất","Tăng hiệu suất sản xuất"],a:0,tip:"Operator trong EO = thực hiện DCS hàng ngày là vai trò chính.",tip2:"✅ Operator thực hiện DCS trong EO.",tips:["topic"]},
-{id:67,ch:"Chương II",q:"Mục đích của huấn luyện và đánh giá EO là gì?",o:["Đảm bảo thiết bị hoạt động ở công suất tối đa","Duy trì thiết bị theo tiêu chuẩn mục tiêu","Ngăn chặn sự cố và lỗi sản phẩm","Tăng hiệu suất sản xuất"],a:2,tip:"Huấn luyện EO → ngăn chặn sự cố và lỗi sản phẩm.",tip2:"✅ Huấn luyện EO để ngăn chặn sự cố và lỗi sản phẩm.",tips:["topic"]},
-{id:68,ch:"Chương II",q:"Trong EO, việc thực hiện BDA (Breakdown Analysis) giúp gì?",o:["Phân tích nguyên nhân gốc rễ của sự cố","Đề xuất các biện pháp khắc phục","Ngăn chặn sự cố tái diễn","Tăng hiệu suất sản xuất"],a:0,tip:"BDA = Breakdown Analysis = phân tích NGUYÊN NHÂN GỐC RỄ của sự cố.",tip2:"✅ BDA phân tích nguyên nhân gốc rễ sự cố.",tips:["topic"]},
-{id:69,ch:"Chương II",q:"Kỳ vọng của EO là gì?",o:["Thiết bị hoạt động 100% thời gian tại Centerline mục tiêu","Không tạo ra lỗi sản phẩm","Thực hiện các hoạt động theo kế hoạch trong thời gian mục tiêu","Tăng hiệu suất sản xuất"],a:0,tip:"EO kỳ vọng: máy chạy 100% tại Centerline mục tiêu (đúng thông số).",tip2:"✅ EO kỳ vọng thiết bị chạy 100% tại Centerline mục tiêu.",tips:["soli"]},
-{id:70,ch:"Chương II",q:"Mục tiêu của DCS (Daily Cleaning Standard) là gì?",o:["Kiểm soát nhiễm bẩn","Duy trì độ tin cậy của thiết bị","Đảm bảo chất lượng sản phẩm","Tăng hiệu suất sản xuất"],a:0,tip:"DCS = Daily Cleaning = làm sạch hàng ngày → kiểm soát nhiễm bẩn.",tip2:"✅ DCS mục tiêu kiểm soát nhiễm bẩn.",tips:["topic"]},
-{id:71,ch:"Chương II",q:"Ai là người chịu trách nhiệm thực hiện DCS?",o:["Người vận hành","Kỹ thuật viên bảo trì","Chủ sở hữu thiết bị","Quản lý sản xuất"],a:0,tip:"DCS = Daily Cleaning → người vận hành (operator) thực hiện hàng ngày.",tip2:"✅ Người vận hành thực hiện DCS.",tips:["topic"]},
-{id:72,ch:"Chương II",q:"Thời gian lý tưởng giữa các lần thực hiện DCS là bao lâu?",o:["Một ca làm việc","Một ngày","Một tuần","Một tháng"],a:0,tip:"DCS = Daily → lý tưởng là mỗi ca, không phải mỗi ngày.",tip2:"✅ DCS thực hiện lý tưởng mỗi ca làm việc.",tips:["soli"]},
-{id:73,ch:"Chương II",q:"Khi nào cần thực hiện DCS?",o:["Khi mức độ nhiễm bẩn vượt quá tiêu chuẩn","Theo lịch trình định kỳ","Khi có yêu cầu từ quản lý","Khi thiết bị gặp sự cố"],a:1,tip:"DCS = Standard → theo lịch trình định kỳ, không đợi bẩn mới làm.",tip2:"✅ DCS thực hiện theo lịch trình định kỳ.",tips:["topic"]},
-{id:74,ch:"Chương II",q:"Mục đích của kiểm soát nhiễm bẩn trong DCS là gì?",o:["Đảm bảo thiết bị hoạt động ổn định","Ngăn chặn các lỗi chất lượng","Duy trì tiêu chuẩn GMP và 5S","Tăng hiệu suất sản xuất"],a:0,tip:"Kiểm soát nhiễm bẩn → thiết bị sạch → hoạt động ổn định.",tip2:"✅ Kiểm soát nhiễm bẩn đảm bảo thiết bị hoạt động ổn định.",tips:["topic"]},
-{id:75,ch:"Chương II",q:"Mục tiêu của việc thiết lập Centerline là gì?",o:["Đảm bảo các thiết lập thiết bị nhất quán","Giảm sự khác biệt giữa các nhóm vận hành","Tối ưu hóa hiệu suất thiết bị","Tăng tốc độ sản xuất"],a:0,tip:"Centerline = chuẩn hóa thiết lập → nhất quán giữa các ca/nhóm.",tip2:"✅ Centerline đảm bảo thiết lập nhất quán.",tips:["topic"]},
-{id:76,ch:"Chương II",q:"Các loại Centerline bao gồm những loại nào?",o:["Static Centerlines","Dynamic Centerlines","Program Centerlines","Tất cả các đáp án"],a:3,tip:"Mẹo Tất cả: Có 3 loại Centerline: Static, Dynamic, Program.",tip2:"✅ Có 3 loại: Static, Dynamic, Program Centerlines.",tips:["tatca"]},
-{id:77,ch:"Chương II",q:"Ai là người chịu trách nhiệm kiểm tra Centerline?",o:["Người vận hành","Kỹ thuật viên bảo trì","Chủ sở hữu thiết bị","Quản lý sản xuất"],a:2,tip:"Centerline → chủ sở hữu thiết bị (Equipment Owner) kiểm tra.",tip2:"✅ Chủ sở hữu thiết bị kiểm tra Centerline.",tips:["topic"]},
-{id:78,ch:"Chương II",q:"Mục đích của Visual Control trong Centerline là gì?",o:["Dễ dàng nhận biết tình trạng thiết bị","Giảm thời gian kiểm tra","Đơn giản hóa quy trình vận hành","Tăng hiệu suất sản xuất"],a:0,tip:"Visual Control = nhìn là biết ngay → dễ nhận biết tình trạng.",tip2:"✅ Visual Control giúp dễ nhận biết tình trạng thiết bị.",tips:["topic"]},
-{id:79,ch:"Chương II",q:"Khi nào cần điều chỉnh Centerline?",o:["Khi có sự thay đổi trong quy trình sản xuất","Khi có sự cố xảy ra","Khi có yêu cầu từ quản lý","Khi thiết bị hoạt động chậm"],a:0,tip:"Centerline thay đổi khi QUY TRÌNH thay đổi (nguyên liệu, sản phẩm mới...).",tip2:"✅ Điều chỉnh Centerline khi quy trình sản xuất thay đổi.",tips:["topic"]},
-{id:80,ch:"Chương II",q:"Mục tiêu chính của BEC Step 3 là gì? (câu 2)",o:["Thiết lập tiêu chuẩn bôi trơn","Phát triển OPL","Tích hợp tiêu chuẩn vào BEC và Centerline DMS","Tăng hiệu suất sản xuất"],a:0,tip:"Step 3 = Lubrication Standard. Đây là bước thiết lập tiêu chuẩn bôi trơn.",tip2:"✅ BEC Step 3 = Thiết lập tiêu chuẩn bôi trơn.",tips:["soli"]},
+{id:2,ch:"Chương I",q:"ISCE kết hợp những chương trình nào?",o:["TPM và Lean Manufacturing","Agile và Scrum","Six Sigma và Kaizen","Chỉ TPM"],a:0,rule:"qt5",
+tip:"TPM (bảo trì toàn diện) + Lean (loại bỏ lãng phí) = 2 chương trình nền tảng của ISCE",
+why:["✅ ISCE kết hợp TPM (bảo trì toàn diện) và Lean (loại bỏ lãng phí)","❌ Agile/Scrum là phương pháp quản lý dự án, không phải ISCE","❌ Six Sigma/Kaizen là công cụ riêng lẻ","❌ ISCE không chỉ TPM, còn có Lean"],tips:["topic"]},
 
-// CHƯƠNG III: PM (câu 81-105)
-{id:81,ch:"Chương III",q:"PM - Planned Maintenance trong TPM có nghĩa là gì?",o:["Bảo trì có kế hoạch","Bảo trì không kế hoạch","Bảo trì tự quản","Tất cả các ý trên"],a:0,tip:"PM = Planned = có kế hoạch. Planned Maintenance = Bảo trì có kế hoạch.",tip2:"✅ PM = Bảo trì có kế hoạch.",tips:["topic"]},
-{id:82,ch:"Chương III",q:"Trong PM, phân loại máy móc thiết bị chia làm mấy nhóm?",o:["01 Nhóm","02 Nhóm","03 Nhóm","04 Nhóm"],a:2,tip:"Mẹo số liệu: PM phân loại = 3 nhóm.",tip2:"✅ PM phân loại thiết bị thành 3 nhóm.",tips:["soli"]},
-{id:83,ch:"Chương III",q:"Trong PM có mấy bước làm Planned Maintenance?",o:["03 Bước","04 Bước","05 Bước","06 Bước"],a:3,tip:"Mẹo số lớn nhất: PM = 6 bước.",tip2:"✅ PM có 6 bước thực hiện.",tips:["soli"]},
-{id:84,ch:"Chương III",q:"Có bao nhiêu loại bất thường khi bên sản xuất ra thẻ đỏ cho bảo trì?",o:["4 Loại","5 Loại","6 Loại","7 Loại"],a:3,tip:"Mẹo số lớn nhất: 7 loại bất thường khi ra thẻ đỏ.",tip2:"✅ Có 7 loại bất thường khi ra thẻ đỏ.",tips:["soli"]},
-{id:85,ch:"Chương III",q:"Mục đích của PM - Planned Maintenance là gì?",o:["Hạn chế gián đoạn sản xuất, đảm bảo chất lượng, nâng cao độ tin cậy","Tạo thói quen ý thức, ngăn ngừa tai nạn, duy trì máy móc","Tránh máy hư hỏng, đáp ứng nhu cầu khách hàng","Cả 3 đáp án trên"],a:3,tip:"Mẹo Tất cả: PM có nhiều mục đích bao gồm cả 3 nhóm trên.",tip2:"✅ PM có cả 3 nhóm mục đích.",tips:["tatca"]},
-{id:86,ch:"Chương III",q:"Có mấy bước quản lý bôi trơn?",o:["03 Bước","04 Bước","05 Bước","08 Bước"],a:3,tip:"Mẹo số lớn nhất: Quản lý bôi trơn = 8 bước.",tip2:"✅ Quản lý bôi trơn có 8 bước.",tips:["soli"]},
-{id:87,ch:"Chương III",q:"Thẻ đỏ loại A, B, C thì thời gian xử lý tối đa là bao nhiêu ngày?",o:["(2,45,60) Ngày","(5,45,60) Ngày","(2,20,60) Ngày","Muốn xử lý lúc nào cũng được"],a:2,tip:"Mẹo 'Anh Bắt Cóc': A=2 | B=20 | C=60. Bẫy: 45 thay vì 20 → SAI!",tip2:"✅ A=2 ngày, B=20 ngày, C=60 ngày.",tips:["soli"]},
-{id:88,ch:"Chương III",q:"Quy trình quản lý rủi ro có mấy bước?",o:["4 Bước (Nhận diện, Đánh giá, Kiểm soát, Giám sát & chuẩn hóa)","3 Bước","2 Bước","1 Bước"],a:0,tip:"Risk Management Process = 4 bước: Nhận diện → Đánh giá → Kiểm soát → Giám sát.",tip2:"✅ Quản lý rủi ro = 4 bước.",tips:["soli"]},
-{id:89,ch:"Chương III",q:"Quy trình phân tích BDA (Break Down Analysis) gồm mấy bước?",o:["4 Bước","5 Bước","6 Bước","7 Bước"],a:3,tip:"Mẹo số lớn nhất: BDA = 7 bước phân tích.",tip2:"✅ BDA gồm 7 bước.",tips:["soli"]},
-{id:90,ch:"Chương III",q:"Để việc bôi trơn đúng và hiệu quả thì phải làm gì?",o:["Đúng loại dầu mỡ, Đúng ứng dụng","Đúng số lượng, Đúng thời gian","Đúng cách, Đúng điều kiện","Cả 3 đáp án trên"],a:3,tip:"Mẹo Tất cả: 6 chữ 'đúng': Loại + Ứng dụng + Số lượng + Thời gian + Cách + Điều kiện.",tip2:"✅ Bôi trơn đúng cần cả 3 nhóm yếu tố.",tips:["tatca"]},
-{id:91,ch:"Chương III",q:"Cách tính MTBF - Mean Time Between Failure là như thế nào?",o:["Tổng thời gian máy chạy chia cho số lần dừng máy","Tổng thời gian máy chạy chia cho số lần dừng máy cộng thêm 1","Tổng thời gian máy chạy chia cho số lần dừng máy cộng thêm 2","Tổng thời gian máy chạy chia cho số lần dừng máy cộng thêm 3"],a:1,tip:"Nhớ: MTBF = chạy ÷ (dừng +1). 'Chạy thì cộng thêm 1'. MTTR thì không cộng.",tip2:"✅ MTBF = Tổng thời gian chạy ÷ (số lần dừng + 1).",tips:["soli"]},
-{id:92,ch:"Chương III",q:"Cách tính MTTR - Mean Time to Repair là như thế nào?",o:["Tổng thời gian dừng máy chia cho số lần dừng máy","Tổng thời gian dừng máy chia cho số lần dừng máy cộng thêm 1","Tổng thời gian dừng máy chia cho số lần dừng máy cộng thêm 2","Tổng thời gian dừng máy chia cho số lần dừng máy cộng thêm 3"],a:0,tip:"Nhớ: MTTR = dừng ÷ số lần dừng. Chia thẳng, KHÔNG cộng thêm gì.",tip2:"✅ MTTR = Tổng thời gian dừng ÷ số lần dừng.",tips:["soli"]},
-{id:93,ch:"Chương III",q:"Chỉ số MTTR so với Target như thế nào là tốt nhất?",o:["Trên target càng nhiều càng tốt","Trên hoặc bằng target","Thấp hoặc bằng target","Thấp hơn Target càng nhiều càng tốt"],a:3,tip:"MTTR = thời gian sửa chữa → càng THẤP càng tốt (sửa nhanh).",tip2:"✅ MTTR thấp hơn Target càng nhiều càng tốt.",tips:["topic"]},
-{id:94,ch:"Chương III",q:"Có bao nhiêu giai đoạn tiến tới không sự cố của PM trong ISCE?",o:["01 giai đoạn","02 giai đoạn","03 giai đoạn","04 giai đoạn"],a:3,tip:"Mẹo số lớn nhất: PM giai đoạn = 4 giai đoạn.",tip2:"✅ PM có 4 giai đoạn tiến tới không sự cố.",tips:["soli"]},
-{id:95,ch:"Chương III",q:"Bảo trì theo thời gian (Time Base Maintenance) là:",o:["Không có kế hoạch, Không có lịch trình","Không có kế hoạch, Có lịch trình","Có kế hoạch, Không có lịch trình","Có kế hoạch, Có lịch trình"],a:3,tip:"Time Base Maintenance = theo thời gian → có kế hoạch + có lịch trình.",tip2:"✅ Time Base Maintenance có kế hoạch và có lịch trình.",tips:["topic"]},
-{id:96,ch:"Chương III",q:"Định nghĩa chi phí bảo trì của PM là:",o:["Phụ kiện, Vật liệu theo hợp đồng","Lao động hợp đồng","Lao động của URC","Tất cả các ý trên"],a:3,tip:"Mẹo Tất cả: Chi phí bảo trì = vật liệu + lao động HĐ + lao động URC.",tip2:"✅ Chi phí bảo trì gồm cả 3 loại.",tips:["tatca"]},
-{id:97,ch:"Chương III",q:"Có bao nhiêu phương pháp giảm tồn kho của PM trong ISCE?",o:["2 Phương pháp","3 Phương pháp","4 Phương pháp","5 Phương pháp"],a:3,tip:"Mẹo số lớn nhất: PM tồn kho = 5 phương pháp.",tip2:"✅ PM có 5 phương pháp giảm tồn kho.",tips:["soli"]},
-{id:98,ch:"Chương III",q:"Giá trị vật tư tồn kho của PM trong ISCE là bao nhiêu?",o:["<1% Tổng giá trị tài sản nhà máy","1%-1.5% Tổng giá trị tài sản nhà máy","1.6%-1.9% Tổng giá trị tài sản nhà máy","2% Tổng giá trị tài sản của nhà máy"],a:0,tip:"Mẹo số liệu: Tồn kho PM < 1% tổng tài sản nhà máy.",tip2:"✅ Tồn kho PM phải < 1% tổng giá trị tài sản nhà máy.",tips:["soli"]},
-{id:99,ch:"Chương III",q:"Hệ thống quan trọng của PM trong ISCE là:",o:["Kế hoạch & lịch trình, Quản lý sự cố","Quản lý kho dự trữ, Quản lý bôi trơn","Quản lý thông tin bảo trì, Quản lý chi phí","Tất cả các ý trên"],a:3,tip:"Mẹo Tất cả: PM có nhiều hệ thống quan trọng, bao gồm cả 3 nhóm.",tip2:"✅ PM gồm tất cả các hệ thống trên.",tips:["tatca"]},
-{id:100,ch:"Chương III",q:"Hành trình của PM của URC ISCE gồm bao nhiêu bước?",o:["6 Bước","5 Bước","4 Bước","3 Bước"],a:0,tip:"Mẹo số lớn nhất: Hành trình PM = 6 bước.",tip2:"✅ Hành trình PM gồm 6 bước.",tips:["soli"]},
-{id:101,ch:"Chương III",q:"Vai trò của PM đối với máy móc là gì?",o:["Điều kiện sử dụng của máy móc","Điều kiện cơ bản và Điều kiện sử dụng của máy móc","Không có điều kiện nào","Chỉ điều kiện cơ bản"],a:1,tip:"PM quản lý cả 2: điều kiện cơ bản (basic condition) + điều kiện sử dụng (use condition).",tip2:"✅ PM quản lý cả điều kiện cơ bản và điều kiện sử dụng.",tips:["topic"]},
-{id:102,ch:"Chương III",q:"Điều kiện sử dụng của PM có bao nhiêu hạng mục cần kiểm soát?",o:["9 Hạng mục","8 Hạng mục","7 Hạng mục","6 Hạng mục"],a:0,tip:"Mẹo số lớn nhất: Điều kiện sử dụng PM = 9 hạng mục.",tip2:"✅ Điều kiện sử dụng PM có 9 hạng mục.",tips:["soli"]},
-{id:103,ch:"Chương III",q:"Mục tiêu sau PM Step 1 là gì?",o:["Giảm 25% dừng máy nhỏ, Phục hồi 60%, MTBF tăng 15%","Giảm 15% dừng máy nhỏ, Phục hồi 70%, MTBF tăng 15%","Giảm 25% dừng máy nhỏ, Phục hồi 70%, MTBF tăng 15%","Giảm 25% dừng máy nhỏ, Phục hồi 75%, MTBF tăng 15%"],a:2,tip:"Nhớ: 25-70-15. Bẫy là 60% hoặc 75% thay vì 70%!",tip2:"✅ Step 1: 25% dừng máy | 70% phục hồi | 15% MTBF.",tips:["soli"]},
-{id:104,ch:"Chương III",q:"Mục tiêu sau PM Step 2 là gì?",o:["Giảm 50% dừng máy nhỏ, Phục hồi 90%, MTBF tăng 30%","Giảm 30% dừng máy nhỏ, Phục hồi 80%, MTBF tăng 30%","Giảm 50% dừng máy nhỏ, Phục hồi 80%, MTBF tăng 30%","Giảm 60% dừng máy nhỏ, Phục hồi 80%, MTBF tăng 30%"],a:2,tip:"Step 2: 50-80-30. Tăng dần so với Step 1 (25-70-15).",tip2:"✅ Step 2: 50% dừng máy | 80% phục hồi | 30% MTBF.",tips:["soli"]},
-{id:105,ch:"Chương III",q:"Các bước trụ cột của PM là gì?",o:["Đánh giá thiết bị, Khôi phục điều kiện cơ bản, Hệ thống quản lý thông tin, Bảo trì định kỳ, Bảo trì dự đoán, Đánh giá kế hoạch","Dự đoán tuổi thọ, Khôi phục, Hệ thống thông tin, Bảo trì định kỳ, Dự đoán, Đánh giá","Định kỳ khôi phục giảm giá trị, Khôi phục, Thông tin, Định kỳ, Dự đoán, Đánh giá","Kéo dài tuổi thọ, Khôi phục, Thông tin, Định kỳ, Dự đoán, Đánh giá"],a:0,tip:"6 bước PM: 1-Đánh giá | 2-Khôi phục | 3-Thông tin | 4-Định kỳ | 5-Dự đoán | 6-Đánh giá kế hoạch.",tip2:"✅ Đúng! 6 bước PM theo thứ tự.",tips:["soli"]},
+{id:3,ch:"Chương I",q:"Yếu tố nào KHÔNG phải là nền tảng của ISCE?",o:["Môi trường làm việc an toàn","Phát triển sản phẩm mới","Ổn định quy trình","Chi phí cạnh tranh"],a:1,rule:"qt2",
+tip:"Câu có 'KHÔNG' → tìm đáp án lạc chủ đề. 'Phát triển sản phẩm mới' là việc của bộ phận nghiên cứu, không phải vận hành nhà máy",
+why:["❌ Môi trường an toàn LÀ nền tảng ISCE","✅ Phát triển sản phẩm mới = bộ phận nghiên cứu, lạc chủ đề ISCE","❌ Ổn định quy trình LÀ nền tảng ISCE","❌ Chi phí cạnh tranh LÀ mục tiêu ISCE"],tips:["khong"]},
 
-// CHƯƠNG IV: FI (câu 106-150)
-{id:106,ch:"Chương IV",q:"OEE (Overall Equipment Effectiveness) là gì?",o:["Hiệu suất tổng thể của máy móc","Tổng chi phí bảo trì của máy móc","Tổng thời gian hoạt động của nhà máy","Tỷ lệ sản phẩm bị lỗi trong sản xuất"],a:0,tip:"OEE = Overall Equipment Effectiveness = Hiệu suất tổng thể máy móc.",tip2:"✅ OEE = Hiệu suất tổng thể máy móc.",tips:["topic"]},
-{id:107,ch:"Chương IV",q:"Ba yếu tố chính để tính OEE là gì?",o:["Tỷ lệ sử dụng, thời gian chạy, sản phẩm lỗi","Tỷ lệ sẵn có, hiệu suất, chất lượng","Tỷ lệ sản xuất, chi phí, hiệu suất","Thời gian bảo trì, sản phẩm lỗi, hiệu suất"],a:1,tip:"OEE = Availability × Performance × Quality. Tỷ lệ sẵn có × Hiệu suất × Chất lượng.",tip2:"✅ OEE = Sẵn có × Hiệu suất × Chất lượng.",tips:["topic"]},
-{id:108,ch:"Chương IV",q:"Yếu tố nào ảnh hưởng lớn nhất đến tổn thất OEE trong sản xuất?",o:["Sản phẩm lỗi","Chậm tiến độ","Thời gian dừng máy","Thời gian chuyển đổi sản phẩm"],a:2,tip:"Thời gian dừng máy (Downtime) = tổn thất lớn nhất OEE.",tip2:"✅ Thời gian dừng máy ảnh hưởng lớn nhất OEE.",tips:["topic"]},
-{id:109,ch:"Chương IV",q:"Nguyên tắc Pareto thường được sử dụng để giải quyết vấn đề nào trong quản lý sản xuất?",o:["Giảm chi phí","Tăng sản lượng","Ưu tiên giải quyết các vấn đề quan trọng nhất","Cải thiện chất lượng sản phẩm"],a:2,tip:"Pareto = 80/20 → ưu tiên 20% vấn đề quan trọng gây ra 80% tổn thất.",tip2:"✅ Pareto dùng để ưu tiên giải quyết vấn đề quan trọng nhất.",tips:["topic"]},
-{id:110,ch:"Chương IV",q:"Nguyên tắc Pareto trong quản lý OEE giúp gì?",o:["Giúp phân tích toàn bộ quy trình","Giúp xác định các yếu tố gây tổn thất OEE lớn nhất","Giúp tăng sản xuất nhanh chóng","Giúp giảm chi phí bảo trì"],a:1,tip:"Pareto trong OEE → tìm ra yếu tố gây tổn thất LỚN NHẤT để ưu tiên giải quyết.",tip2:"✅ Pareto xác định yếu tố gây tổn thất OEE lớn nhất.",tips:["topic"]},
-{id:111,ch:"Chương IV",q:"Khi áp dụng nguyên tắc Pareto, tỷ lệ vấn đề cần ưu tiên chiếm bao nhiêu %?",o:["50%","70%","80%","90%"],a:2,tip:"Quy tắc Pareto = 80%. 20% nguyên nhân → 80% vấn đề.",tip2:"✅ Pareto: 80% vấn đề từ 20% nguyên nhân.",tips:["soli"]},
-{id:112,ch:"Chương IV",q:"Thời gian dừng máy ảnh hưởng đến yếu tố nào trong OEE?",o:["Hiệu suất","Tỷ lệ sẵn có","Chất lượng","Thời gian sản xuất"],a:1,tip:"Dừng máy → máy không sẵn có → ảnh hưởng Availability (Tỷ lệ sẵn có).",tip2:"✅ Dừng máy ảnh hưởng Tỷ lệ sẵn có (Availability).",tips:["topic"]},
-{id:113,ch:"Chương IV",q:"Khi nào Pareto trong phân tích OEE hiệu quả nhất?",o:["Khi có rất nhiều vấn đề cần giải quyết","Khi chỉ có một vấn đề duy nhất","Khi không có vấn đề gì","Khi thời gian sản xuất dài"],a:0,tip:"Pareto hiệu quả khi có NHIỀU vấn đề → giúp ưu tiên cái quan trọng.",tip2:"✅ Pareto hiệu quả nhất khi có nhiều vấn đề cần giải quyết.",tips:["topic"]},
-{id:114,ch:"Chương IV",q:"Mục đích chính của việc lập bản đồ tổn thất OEE là gì?",o:["Tăng lợi nhuận sản xuất","Phân tích và xác định các tổn thất ảnh hưởng đến OEE","Giảm thiểu việc bảo trì","Cải thiện chất lượng sản phẩm"],a:1,tip:"Bản đồ tổn thất OEE = phân tích + xác định tổn thất ảnh hưởng OEE.",tip2:"✅ Bản đồ tổn thất OEE để phân tích và xác định tổn thất.",tips:["topic"]},
-{id:115,ch:"Chương IV",q:"Các tổn thất trong OEE có thể phân loại theo những loại chính nào?",o:["Tổn thất do nhân sự và tổn thất do thiết bị","Tổn thất do không đạt chất lượng và tổn thất do thời gian dừng máy","Tổn thất do nguyên liệu và tổn thất do công nhân","Tổn thất do năng suất và tổn thất do bảo trì"],a:1,tip:"OEE tổn thất = chất lượng (Quality loss) + dừng máy (Downtime loss).",tip2:"✅ OEE tổn thất: không đạt chất lượng và dừng máy.",tips:["topic"]},
-{id:116,ch:"Chương IV",q:"Biểu đồ Pareto trong phân tích OEE giúp gì cho nhà quản lý?",o:["Dễ dàng tìm ra nguyên nhân chính của các tổn thất","Đo lường chính xác thời gian sản xuất","Tăng năng suất làm việc","Cải thiện công nghệ sản xuất"],a:0,tip:"Biểu đồ Pareto = visualization → dễ thấy nguyên nhân chính.",tip2:"✅ Biểu đồ Pareto giúp tìm ra nguyên nhân chính của tổn thất.",tips:["topic"]},
-{id:117,ch:"Chương IV",q:"Tổn thất nào thường chiếm phần lớn trong tổn thất OEE?",o:["Tổn thất do thời gian bảo trì","Tổn thất do sản phẩm lỗi","Tổn thất do thời gian chuyển đổi","Tổn thất do dừng máy"],a:3,tip:"Downtime (dừng máy) là tổn thất lớn nhất trong OEE.",tip2:"✅ Dừng máy chiếm phần lớn tổn thất OEE.",tips:["topic"]},
-{id:118,ch:"Chương IV",q:"Khi thực hiện phân tích OEE, yếu tố nào cần xem xét đầu tiên?",o:["Chất lượng sản phẩm","Tỷ lệ sẵn có","Hiệu suất máy móc","Thời gian sản xuất"],a:1,tip:"OEE = A × P × Q. Xem xét Availability (Tỷ lệ sẵn có) trước tiên.",tip2:"✅ Xem Tỷ lệ sẵn có (Availability) đầu tiên.",tips:["topic"]},
-{id:119,ch:"Chương IV",q:"Công cụ nào giúp áp dụng Pareto vào phân tích OEE?",o:["Biểu đồ Pareto","Biểu đồ hình tròn","Biểu đồ dòng chảy","Biểu đồ Gantt"],a:0,tip:"Pareto → dùng biểu đồ Pareto (cột giảm dần + đường tích lũy).",tip2:"✅ Biểu đồ Pareto.",tips:["topic"]},
-{id:120,ch:"Chương IV",q:"Ưu tiên giải quyết vấn đề lớn nhất trong OEE giúp gì?",o:["Giảm chi phí sản xuất","Tăng hiệu suất và giảm tổn thất","Tăng sản lượng mà không cần bảo trì","Cải thiện điều kiện làm việc"],a:1,tip:"Giải quyết vấn đề lớn nhất → tăng hiệu suất + giảm tổn thất OEE.",tip2:"✅ Ưu tiên vấn đề lớn → tăng hiệu suất và giảm tổn thất.",tips:["topic"]},
-{id:121,ch:"Chương IV",q:"Mục tiêu chính của phân tích tổn thất chuỗi cung ứng là gì?",o:["Giảm giá thành sản phẩm","Nhận diện và loại bỏ tổn thất","Tăng trưởng doanh thu","Tối ưu hóa chiến lược marketing"],a:1,tip:"Phân tích tổn thất = nhận diện + loại bỏ tổn thất trong chuỗi.",tip2:"✅ Mục tiêu = nhận diện và loại bỏ tổn thất.",tips:["topic"]},
-{id:122,ch:"Chương IV",q:"Phân tích tổn thất chuỗi cung ứng giúp nâng cao hiệu quả bằng cách nào?",o:["Tăng thời gian giao hàng","Giảm chi phí và tối ưu hóa quy trình","Cải thiện sản phẩm cuối cùng","Đào tạo nhân viên"],a:1,tip:"Tổn thất ↓ → chi phí ↓ + quy trình được tối ưu.",tip2:"✅ Phân tích tổn thất giảm chi phí và tối ưu quy trình.",tips:["topic"]},
-{id:136,ch:"Chương IV",q:"Tiêu chuẩn 5M1E bao gồm các yếu tố nào?",o:["Người, Máy móc, Phương pháp, Môi trường, Đo lường, Sản phẩm","Người, Máy móc, Phương pháp, Môi trường, Yếu tố bên ngoài, Sản phẩm","Người, Máy móc, Nguyên liệu, Môi trường, Sản phẩm, Đo lường","Người, Máy móc, Phương pháp, Nguyên liệu, Môi trường, Sản phẩm"],a:3,tip:"5M1E = Man + Machine + Method + Material + Measurement + Environment. Không có 'Sản phẩm'.",tip2:"✅ 5M1E không có Sản phẩm.",tips:["soli"]},
-{id:137,ch:"Chương IV",q:"Sơ đồ Ishikawa chủ yếu được sử dụng để làm gì?",o:["Tìm kiếm nguyên nhân gốc rễ của vấn đề","Xác định các tiêu chuẩn sản xuất","Đo lường hiệu quả sản xuất","Phân tích quy trình sản xuất"],a:0,tip:"Ishikawa = fishbone diagram = sơ đồ xương cá → tìm nguyên nhân gốc rễ.",tip2:"✅ Ishikawa tìm nguyên nhân gốc rễ.",tips:["topic"]},
-{id:138,ch:"Chương IV",q:"Các yếu tố trong sơ đồ Ishikawa phân nhóm theo 6M, ngoại trừ?",o:["Người","Máy móc","Môi trường","Tiền"],a:3,tip:"Mẹo KHÔNG: 6M = Man+Machine+Method+Material+Measurement+Environment. Không có 'Tiền'!",tip2:"✅ 'Tiền' không thuộc 6M của Ishikawa.",tips:["khong"]},
-{id:139,ch:"Chương IV",q:"Công cụ nào xác định nguyên nhân gốc rễ qua hỏi 'Tại sao?' nhiều lần?",o:["Phân tích Pareto","Phân tích dòng thời gian","Phân tích 5W2H","Phân tích 5 Whys (5 tại sao)"],a:3,tip:"5 Whys = hỏi 'Tại sao?' 5 lần liên tiếp để tìm root cause.",tip2:"✅ 5 Whys = hỏi Tại sao 5 lần.",tips:["topic"]},
-{id:140,ch:"Chương IV",q:"Thuật ngữ nào trong 6W2H để xác định thời gian giải quyết vấn đề?",o:["Why","When","Where","Who"],a:1,tip:"6W2H: When = Khi nào → thời gian. Where = Ở đâu. Who = Ai.",tip2:"✅ When = xác định thời gian.",tips:["topic"]},
-{id:144,ch:"Chương IV",q:"Trong phân tích nguyên nhân gốc rễ, hỏi 'Tại sao?' bao nhiêu lần là đủ?",o:["3 lần","5 lần","7 lần","10 lần"],a:1,tip:"Nhớ: 5 Whys = hỏi 5 lần. Con số chuẩn là 5.",tip2:"✅ Hỏi 'Tại sao?' 5 lần.",tips:["soli"]},
-{id:147,ch:"Chương IV",q:"Thuật ngữ nào trong 6W2H dùng để xác định nơi xảy ra sự cố?",o:["Why","When","Where","Who"],a:2,tip:"Where = Ở đâu → vị trí/nơi xảy ra. When = Khi nào. Who = Ai.",tip2:"✅ Where = xác định nơi xảy ra.",tips:["topic"]},
-{id:150,ch:"Chương IV",q:"Khi phát hiện nguyên nhân gốc rễ trong sản xuất, bước tiếp theo là gì?",o:["Đưa ra biện pháp khắc phục ngay","Đo lường mức độ ảnh hưởng","Xây dựng và triển khai kế hoạch hành động","Đánh giá lại các yếu tố môi trường"],a:2,tip:"Sau khi tìm root cause → xây dựng + triển khai kế hoạch hành động (action plan).",tip2:"✅ Xây dựng và triển khai kế hoạch hành động.",tips:["topic"]},
+{id:6,ch:"Chương I",q:"5M/1E trong tiêu chuẩn ISCE bao gồm những yếu tố nào?",o:["Machine, Method, Money, Material, Market, Environment","Man, Machine, Method, Measurement, Material, Environment","Man, Machine, Money, Material, Method, Efficiency","Machine, Method, Material, Management, Measurement, Environment"],a:1,rule:"qt5",
+tip:"6 yếu tố chuẩn: Con người + Máy móc + Phương pháp + Đo lường + Nguyên vật liệu + Môi trường. Không có Tiền, Thị trường, Hiệu quả",
+why:["❌ Có 'Money' (tiền) và 'Market' (thị trường) → không thuộc 5M1E","✅ Con người + Máy + Phương pháp + Đo lường + Nguyên vật liệu + Môi trường","❌ Có 'Money' và 'Efficiency' (hiệu quả) → không thuộc 5M1E","❌ Thiếu 'Man' (con người) = thiếu M đầu tiên"],tips:["soli"]},
 
-// CHƯƠNG VI: EHS (câu 175-274)
-{id:175,ch:"Chương VI",q:"Nghĩa vụ nào là nghĩa vụ của người lao động trong công tác ATVSLĐ?",o:["Không buộc NLĐ làm việc khi có nguy cơ tai nạn","Lấy ý kiến công đoàn khi xây dựng nội quy","Chấp hành nội quy, sử dụng PPE, báo cáo mối nguy, tham gia ứng cứu khẩn cấp","Tất cả đều đúng"],a:2,tip:"NLĐ có NGHĨA VỤ: chấp hành + sử dụng PPE + báo cáo + ứng cứu. Đáp án A,B là của NSDLĐ.",tip2:"✅ NLĐ có nghĩa vụ chấp hành, dùng PPE, báo cáo, tham gia ứng cứu.",tips:["luat"]},
-{id:176,ch:"Chương VI",q:"Quyền của Người lao động trong công tác ATVSLĐ gồm những quyền nào?",o:["Câu 1,2,3,4 đúng","Câu 1,3,4,5,6 đúng","Câu 2,3,4,5,6,7 đúng","Câu 2,3,4,5,6,8 đúng"],a:2,tip:"Quyền NLĐ: đảm bảo điều kiện | thông tin nguy hiểm | đào tạo | bảo hộ | từ chối nguy hiểm | khiếu nại.",tip2:"✅ Câu 2,3,4,5,6,7 là quyền của NLĐ.",tips:["luat"]},
-{id:177,ch:"Chương VI",q:"LOTO (Lockout Tagout) là gì?",o:["Là trò chơi dân gian","Là quy trình an toàn ngăn khởi động thiết bị đang bảo trì","Là khóa cô lập nguồn năng lượng và gắn thẻ trước khi sửa chữa","Cả hai câu B và C đều đúng"],a:3,tip:"Mẹo Tất cả: LOTO vừa là quy trình (B) vừa là hành động khóa/gắn thẻ (C).",tip2:"✅ LOTO là cả quy trình và hành động khóa gắn thẻ.",tips:["tatca"]},
-{id:178,ch:"Chương VI",q:"Khi nào cần Khóa, gắn thẻ an toàn LOTO?",o:["Khi bảo trì hoặc sửa chữa máy","Vệ sinh, CIP thiết bị","Sửa chữa, CIP vệ sinh, bảo trì, hiệu chỉnh, dịch vụ...","Khi máy đang chạy"],a:2,tip:"LOTO áp dụng cho: sửa chữa + CIP vệ sinh + bảo trì + hiệu chỉnh + dịch vụ. Không khi máy đang chạy.",tip2:"✅ LOTO khi sửa chữa, CIP, bảo trì, hiệu chỉnh, dịch vụ.",tips:["topic"]},
-{id:179,ch:"Chương VI",q:"Dụng cụ phục vụ quy trình LOTO bao gồm gì?",o:["Thiết bị cô lập năng lượng","Thiết bị khóa","Thẻ cảnh báo","Tất cả các câu trên"],a:3,tip:"Mẹo Tất cả: LOTO cần cả 3: cô lập năng lượng + khóa + thẻ cảnh báo.",tip2:"✅ LOTO cần thiết bị cô lập, khóa và thẻ cảnh báo.",tips:["tatca"]},
-{id:180,ch:"Chương VI",q:"Các nguồn năng lượng nguy hiểm cần LOTO bao gồm?",o:["Chuyển động cơ khí, khí nén","Điện gây giật, bỏng, tử vong","Hóa chất, nhiệt, hơi nóng, phóng xạ","Tất cả các câu trên"],a:3,tip:"Mẹo Tất cả: Mọi nguồn năng lượng nguy hiểm đều cần LOTO.",tip2:"✅ Tất cả các nguồn năng lượng nguy hiểm cần LOTO.",tips:["tatca"]},
-{id:181,ch:"Chương VI",q:"Thứ tự đúng của quy trình LOTO là gì?",o:["Chuẩn bị & Thông báo → Tắt → Cô lập → Gắn khóa & thẻ → Xả năng lượng → Kiểm tra → Làm việc → Tháo khóa","Tắt → Xem xét → Thông báo → Khóa → Xả → Kiểm tra → Làm việc → Tháo","Xem xét → Khóa → Thông báo → Tắt → Cách ly → Xả → Kiểm tra → Làm việc","Không có thứ tự cụ thể"],a:0,tip:"LOTO: 1-Chuẩn bị | 2-Tắt | 3-Cô lập | 4-Khóa+thẻ | 5-Xả | 6-Kiểm tra | 7-Làm | 8-Tháo.",tip2:"✅ Đúng thứ tự LOTO.",tips:["topic"]},
-{id:182,ch:"Chương VI",q:"Những công việc nào cần đánh giá rủi ro nhanh (QRP)?",o:["Hoạt động thường xuyên đã được đánh giá trước","Sự cố bất thường chưa xảy ra trước đó","Thay đổi chưa được nhận diện trong HIRA","Cả hai câu B và C"],a:3,tip:"Mẹo Tất cả: QRP cho VIỆC MỚI: sự cố bất thường (B) và thay đổi chưa có trong HIRA (C).",tip2:"✅ QRP cho sự cố bất thường và thay đổi chưa có trong HIRA.",tips:["tatca"]},
-{id:183,ch:"Chương VI",q:"Ai là người thực hiện đánh giá rủi ro nhanh (QRP)?",o:["Người trực tiếp thực hiện công việc mới","Trưởng ca quản lý khu vực","Nhân viên an toàn","Tất cả các phương án trên"],a:3,tip:"Mẹo Tất cả: QRP do cả 3 thực hiện: người làm + trưởng ca + nhân viên an toàn.",tip2:"✅ Cả 3 người đều thực hiện QRP.",tips:["tatca"]},
-{id:184,ch:"Chương VI",q:"Các yếu tố nguy hiểm gây chấn thương trong quá trình làm việc?",o:["Bộ phận máy móc chuyển động","Mảnh vỡ văng bắn khi gia công","Làm việc trên cao, vật rơi, trơn trượt, cháy nổ","Cả A, B, C đều đúng"],a:3,tip:"Mẹo Tất cả: Mọi yếu tố nguy hiểm đều có thể gây chấn thương.",tip2:"✅ Tất cả đều là yếu tố nguy hiểm.",tips:["tatca"]},
-{id:185,ch:"Chương VI",q:"ISO 45001 là hệ thống quản lý gì?",o:["Quản lý chất lượng","Quản lý Năng Lượng","Quản lý An toàn và sức khỏe nghề nghiệp","Cả ba câu trên đều đúng"],a:2,tip:"Nhớ: ISO 9001=Chất lượng | ISO 14001=Môi trường | ISO 45001=ATVSLĐ.",tip2:"✅ ISO 45001 = An toàn và sức khỏe nghề nghiệp.",tips:["topic"]},
-{id:187,ch:"Chương VI",q:"Quy định năng lực nhân viên để được phép làm việc hóa chất là gì?",o:["Được huấn luyện và phân công nhiệm vụ","Phải đọc và hiểu MSDS","Sử dụng đúng loại PPE phù hợp","Cả A, B, C, D đều đúng"],a:3,tip:"Mẹo Tất cả: Làm hóa chất cần ĐỦ CẢ: huấn luyện + MSDS + PPE + tuân thủ quy trình.",tip2:"✅ Cần đủ cả 4 yêu cầu.",tips:["tatca"]},
-{id:188,ch:"Chương VI",q:"Quy định an toàn hóa chất tại nơi làm việc nào sau đây là đúng?",o:["Dụng cụ chứa phải dán nhãn, đậy kín","Nơi để hóa chất phải có khay chứa, thiết bị ứng phó khẩn cấp, bảng cảnh báo, PCCC","Hóa chất dễ cháy để xa nguồn nhiệt","Cả A, B, C đều đúng"],a:3,tip:"Mẹo Tất cả: Tất cả các quy định an toàn hóa chất đều phải tuân thủ.",tip2:"✅ Tất cả quy định hóa chất đều đúng.",tips:["tatca"]},
-{id:189,ch:"Chương VI",q:"Hóa chất xâm nhập vào cơ thể qua đường nào?",o:["Đường hô hấp","Đường tiêu hóa, qua da","Đường hô hấp, đường tiêu hóa và qua da","Mắt, mũi, miệng"],a:2,tip:"Hóa chất vào qua 3 đường: hô hấp + tiêu hóa + qua da. Đáp án đầy đủ nhất.",tip2:"✅ Hóa chất vào qua hô hấp, tiêu hóa và da.",tips:["topic"]},
-{id:190,ch:"Chương VI",q:"Tác hại của hóa chất đối với cơ thể người?",o:["Không gây hại nếu mang PPE","Gây kích ứng, bỏng, ngạt, bệnh nghề nghiệp, ung thư, tử vong","Gây ung thư và tử vong","Tất cả các câu trên đều đúng"],a:1,tip:"Tác hại hóa chất rất đa dạng: kích ứng → bỏng → ngạt → ung thư → tử vong.",tip2:"✅ Hóa chất gây nhiều tác hại: kích ứng, bỏng, ngạt, ung thư, tử vong.",tips:["topic"]},
-{id:191,ch:"Chương VI",q:"Khi uống nhầm hóa chất/chất độc cần làm gì?",o:["Cố gắng gây nôn để lấy hóa chất ra","Uống hóa chất tương khắc để giải độc","Cho uống nhiều nước sạch hoặc sữa tươi để pha loãng rồi đưa đến cơ sở y tế ngay","Cả A, B và C đúng"],a:2,tip:"KHÔNG được gây nôn, KHÔNG uống hóa chất khác. Chỉ pha loãng bằng nước/sữa rồi đưa đi cấp cứu.",tip2:"✅ Uống nước/sữa pha loãng và đến cơ sở y tế ngay.",tips:["topic"]},
-{id:192,ch:"Chương VI",q:"Khi nghe tín hiệu báo cháy, người lao động phải làm gì?",o:["Tiếp tục công việc đến khi có lệnh quản lý","Ngừng công việc, tắt máy, di chuyển đến điểm tập kết theo lối thoát hiểm gần nhất","Điểm danh và báo cáo nếu thiếu người","Đáp án B và C đúng"],a:3,tip:"Mẹo Tất cả: Báo cháy → B (thoát hiểm) VÀ C (điểm danh báo cáo). Cả 2.",tip2:"✅ Vừa thoát hiểm vừa điểm danh báo cáo.",tips:["tatca"]},
-{id:193,ch:"Chương VI",q:"Điểm tập kết sơ tán khi có sự cố cháy nằm ở đâu?",o:["Tại canteen nhà máy","Tại nơi có biển chỉ dẫn 'Nơi tập kết/Assembly point'","Ở bất kỳ nơi nào không bị ảnh hưởng bởi đám cháy","Cả A, B và C đều đúng"],a:1,tip:"Điểm tập kết = Assembly Point = chỗ có BIỂN CHỈ DẪN, không phải chỗ tùy ý.",tip2:"✅ Tập kết tại nơi có biển 'Assembly Point'.",tips:["topic"]},
-{id:194,ch:"Chương VI",q:"Các yếu tố tạo nên sự cháy là gì?",o:["Chất cháy, oxy","Nguồn nhiệt, chất oxy hóa, chất cháy","Tia lửa, chất cháy","Cả A và B đều đúng"],a:1,tip:"Tam giác cháy = Nguồn nhiệt + Chất oxy hóa + Chất cháy. 3 yếu tố đầy đủ nhất.",tip2:"✅ Cháy cần: Nguồn nhiệt + Chất oxy hóa + Chất cháy.",tips:["topic"]},
-{id:195,ch:"Chương VI",q:"Cách báo động khi phát hiện cháy tại nơi làm việc là gì?",o:["La lớn 'CÓ CHÁY'","Nhấn nút nhấn báo cháy","Gọi điện cho đội PCCC cơ sở","Cả A, B, C và D đều đúng"],a:3,tip:"Mẹo Tất cả: Báo cháy = la to + nhấn nút + gọi điện PCCC + gọi 114. Tất cả cách đều dùng.",tip2:"✅ Dùng tất cả cách báo động có thể.",tips:["tatca"]},
-{id:196,ch:"Chương VI",q:"Khi phát hiện rò rỉ khí ga, bạn sẽ làm gì?",o:["Khóa van bình ga → Bật quạt để thông thoáng","Khóa van → Ngắt điện → Mở cửa thông thoáng","Khóa van → Mở cửa thông thoáng, KHÔNG bật/tắt bất kỳ điện nào","Tất cả đều đúng"],a:2,tip:"Gas rò rỉ: Khóa van → Mở cửa. KHÔNG ĐƯỢC BẬT/TẮT ĐIỆN vì có thể gây nổ!",tip2:"✅ Khóa van → mở cửa, không chạm vào công tắc điện.",tips:["topic"]},
-{id:197,ch:"Chương VI",q:"Tiêu chuẩn thiết bị che chắn bảo vệ cơ cấu chuyển động quay phải gì?",o:["Kết cấu chắc chắn, không tạo nguy hiểm bổ sung","Bao che ngăn ngừa bộ phận cơ thể xâm nhập vào điểm nguy hiểm","Không có tiêu chuẩn che chắn an toàn","Cả A và B đều đúng"],a:3,tip:"Mẹo Tất cả: Che chắn phải cả: chắc chắn (A) + bao che đủ (B).",tip2:"✅ Che chắn phải chắc chắn và bao che đủ điểm nguy hiểm.",tips:["tatca"]},
-{id:198,ch:"Chương VI",q:"Tác hại khi bị điện giật?",o:["Gây bỏng/phỏng","Tê liệt hô hấp/tuần hoàn, ngừng tim","Tiếp xúc càng lâu càng nguy hiểm","Cả A, B và C đều đúng"],a:3,tip:"Mẹo Tất cả: Điện giật gây cả 3: bỏng + ngừng tim + lâu càng nguy hiểm.",tip2:"✅ Điện giật gây bỏng, ngừng tim, lâu càng nguy hiểm.",tips:["tatca"]},
-{id:199,ch:"Chương VI",q:"Yêu cầu đảm bảo an toàn điện cần phải thực hiện?",o:["Không dùng dây điện trần, hỏng cách điện","Không dùng ổ cắm/phích cắm vỡ, biến dạng, gỉ sét","Không để dây điện trên sàn, không treo hàng lên dây điện","Cả A, B và C đều đúng"],a:3,tip:"Mẹo Tất cả: Tất cả quy định an toàn điện đều phải tuân thủ.",tip2:"✅ Tất cả yêu cầu an toàn điện đều đúng.",tips:["tatca"]},
-{id:200,ch:"Chương VI",q:"Khi thấy công việc có nguy cơ mất an toàn, người lao động phải làm gì?",o:["Bỏ công việc đó đi làm việc khác","Tiếp tục công việc","Dừng công việc và báo cáo, không tiếp tục nếu nguy cơ chưa được khắc phục","Các câu trên đều đúng"],a:2,tip:"Ngoại lệ Tất cả: A và B rõ ràng SAI → không chọn 'tất cả'. Chỉ C mới đúng.",tip2:"✅ Phải dừng và báo cáo, không bỏ việc hay tiếp tục làm.",tips:["tatca"]},
-{id:204,ch:"Chương VI",q:"An toàn dựa trên hành vi (BBS) là gì?",o:["Tiếp cận an toàn tập trung vào hành vi NLĐ trước khi xảy ra sự cố","Phương pháp phân tích hành vi để cải thiện liên tục hiệu suất an toàn","Quy trình thúc đẩy hành vi an toàn tích cực tại nơi làm việc","Cả A, B và C đều đúng"],a:3,tip:"Mẹo Tất cả: BBS là cả 3: tiếp cận + phân tích + thúc đẩy hành vi an toàn.",tip2:"✅ BBS là tổng hợp cả 3 định nghĩa trên.",tips:["tatca"]},
-{id:205,ch:"Chương VI",q:"Báo cáo hành vi không an toàn giúp mục đích gì?",o:["Tuân thủ pháp luật","Cải thiện điều kiện ATVSLĐ","Ngăn ngừa tai nạn lao động","Cả A, B, C và D đều đúng"],a:3,tip:"Mẹo Tất cả: Báo cáo hành vi không an toàn giúp đủ 4 mục đích.",tip2:"✅ Báo cáo hành vi không an toàn có đủ 4 lợi ích.",tips:["tatca"]},
-{id:207,ch:"Chương VI",q:"Hình thức báo cáo khi phát hiện hành vi/điều kiện không an toàn là gì?",o:["Báo cáo trực tiếp cho quản lý/nhân viên an toàn","Báo cáo qua kênh nội bộ: Outlook, Teams, Zalo","Báo cáo qua App: BBSHE app, Call out app","Cả A, B và C đều đúng"],a:3,tip:"Mẹo Tất cả: Có thể báo cáo qua cả 3 kênh.",tip2:"✅ Tất cả kênh báo cáo đều được.",tips:["tatca"]},
-{id:208,ch:"Chương VI",q:"Để đảm bảo an toàn khi tham gia giao thông cần làm gì?",o:["Kiểm tra an toàn phương tiện trước khi đi","Thường xuyên kiểm tra, bảo dưỡng phương tiện","Tuân thủ pháp luật giao thông: đội mũ, đèn tín hiệu, không rượu bia","Cả A, B và C đều đúng"],a:3,tip:"Mẹo Tất cả: An toàn giao thông cần cả 3 nhóm hành động.",tip2:"✅ An toàn giao thông cần kiểm tra + bảo dưỡng + tuân thủ luật.",tips:["tatca"]},
-{id:212,ch:"Chương VI",q:"Trường hợp nào được xác định là tai nạn lao động?",o:["Các câu 1,2,3,5 đúng","Câu 1,3,5 đúng","Các câu 2,4,5 đúng","Các câu 1,3,5,6 đúng"],a:3,tip:"TNLĐ: 1-máy cuốn tay | 3-trượt ngã trong nhà máy | 5-tai nạn đường đi công tác | 6-xe nâng va trúng.",tip2:"✅ Câu 1,3,5,6 là tai nạn lao động.",tips:["luat"]},
-{id:213,ch:"Chương VI",q:"Phương tiện bảo vệ cá nhân (PPE) là gì?",o:["Dụng cụ bảo vệ cơ thể khỏi yếu tố nguy hiểm khi giải pháp kỹ thuật chưa loại trừ hết","Dụng cụ để NLĐ không gặp TNLĐ trong bất kỳ trường hợp nào","Cả A và B đều đúng","PPE không cần thiết nếu có biện pháp kỹ thuật"],a:0,tip:"PPE = bảo vệ khi GIẢI PHÁP KỸ THUẬT chưa loại trừ hết. Không đảm bảo 100% an toàn.",tip2:"✅ PPE dùng khi giải pháp kỹ thuật chưa loại trừ hết nguy hiểm.",tips:["topic"]},
-{id:215,ch:"Chương VI",q:"Các yếu tố có hại cho sức khỏe người lao động là gì?",o:["Yếu tố gây chấn thương, tử vong","Yếu tố làm suy giảm sức khỏe, gây bệnh tật","Yếu tố gây chấn thương, tử vong và bệnh tật","Cả A, B, C đều đúng"],a:1,tip:"Yếu tố CÓ HẠI = gây bệnh/suy giảm sức khỏe. Yếu tố NGUY HIỂM = gây chấn thương/tử vong.",tip2:"✅ Có hại = suy giảm sức khỏe, gây bệnh (không phải chấn thương tức thì).",tips:["topic"]},
-{id:219,ch:"Chương VI",q:"Nhân viên tại công ty sản xuất thực phẩm cần khám sức khỏe ít nhất là:",o:["6 tháng/lần","Hàng năm","2 năm/lần","3 năm/lần"],a:1,tip:"Nhớ: Khám SK định kỳ = 1 năm/lần. Người đặc biệt (khuyết tật, độc hại) = 6 tháng/lần.",tip2:"✅ Khám sức khỏe ít nhất hàng năm.",tips:["luat"]},
-{id:227,ch:"Chương VI",q:"Người lao động cần làm gì để tránh bệnh nghề nghiệp và tai nạn?",o:["Tuân thủ nội quy, quy trình, an toàn giao thông","Mang đủ PPE, vệ sinh 5S khu vực làm việc","Khi nhấc vật nặng dùng cơ đùi và cơ tay, tránh khom lưng","Các câu trên đều đúng"],a:3,tip:"Mẹo Tất cả: Tránh bệnh nghề nghiệp cần cả 3 nhóm hành động.",tip2:"✅ Cần cả 3: tuân thủ + PPE + kỹ thuật nhấc vác.",tips:["tatca"]},
-{id:229,ch:"Chương VI",q:"Triệu chứng nào có thể xuất hiện khi tiếp xúc lâu dài với tiếng ồn lớn (>85 dBA)?",o:["Mất ngủ","Đau đầu","Giảm thính lực","Tăng cân"],a:2,tip:"Tiếng ồn >85dBA lâu dài → điếc nghề nghiệp = GIẢM THÍNH LỰC.",tip2:"✅ Tiếng ồn lớn gây giảm thính lực.",tips:["topic"]},
-{id:230,ch:"Chương VI",q:"Triệu chứng nào liên quan đến Ngộ độc thực phẩm?",o:["Đau bụng","Tiêu chảy","Buồn nôn và nôn","Tất cả câu trên đều đúng"],a:3,tip:"Mẹo Tất cả: Ngộ độc TP = đau bụng + tiêu chảy + nôn + sốt. Tất cả đều đúng.",tip2:"✅ Ngộ độc thực phẩm gây tất cả các triệu chứng trên.",tips:["tatca"]},
-{id:231,ch:"Chương VI",q:"Điều kiện được hưởng bồi dưỡng độc hại bằng hiện vật là gì?",o:["Công việc nằm trong danh mục nặng nhọc độc hại","Môi trường đo kiểm có yếu tố có hại vượt tiêu chuẩn","Phải đáp ứng đủ cả A và B","Chỉ cần A hoặc B"],a:2,tip:"Bồi dưỡng độc hại = phải có CẢ 2 điều kiện: danh mục + đo kiểm vượt tiêu chuẩn.",tip2:"✅ Phải đáp ứng đủ cả 2 điều kiện.",tips:["luat"]},
-{id:232,ch:"Chương VI",q:"Kinh phí khám sức khoẻ định kỳ do ai chi trả?",o:["Người sử dụng lao động","Công đoàn cơ sở","Do bảo hiểm y tế chi trả","Người lao động và Doanh nghiệp đồng chi trả"],a:0,tip:"NSDLĐ chi trả chi phí khám SK định kỳ cho NLĐ.",tip2:"✅ Người sử dụng lao động chi trả.",tips:["luat"]},
-{id:233,ch:"Chương VI",q:"Bồi dưỡng độc hại bằng hiện vật được hưởng theo số ngày làm việc thực tế trong tháng?",o:["Đúng","Sai","Được hưởng cố định hàng tháng","Tùy theo quy định doanh nghiệp"],a:0,tip:"Đúng: Bồi dưỡng = số ngày THỰC TẾ làm việc, không cố định hàng tháng.",tip2:"✅ Đúng, bồi dưỡng theo số ngày làm thực tế.",tips:["luat"]},
-{id:234,ch:"Chương VI",q:"Công ty URC Diễn tập ngộ độc thực phẩm 1 năm mấy lần?",o:["1 lần/năm","2 lần/năm","3 lần/năm","Không tổ chức"],a:0,tip:"Nhớ: URC diễn tập ngộ độc TP = 1 lần/năm.",tip2:"✅ URC diễn tập ngộ độc thực phẩm 1 lần/năm.",tips:["soli"]},
-{id:235,ch:"Chương VI",q:"Môi trường lao động phải được đo kiểm tra ít nhất thời hạn nào?",o:["1 năm/lần","2 năm/lần","3 năm/lần","Tùy từng lĩnh vực"],a:0,tip:"Đo kiểm môi trường lao động = ít nhất 1 năm/lần.",tip2:"✅ Đo kiểm môi trường lao động ít nhất 1 năm/lần.",tips:["luat"]},
-{id:241,ch:"Chương VI",q:"Người khuyết tật, cao tuổi, làm công việc nặng nhọc phải khám sức khỏe mấy tháng/lần?",o:["03 tháng/lần","06 tháng/lần","01 năm/lần","02 năm/lần"],a:1,tip:"Nhớ: Người bình thường = 1 năm | Người đặc biệt (khuyết tật, độc hại) = 6 tháng.",tip2:"✅ Người đặc biệt khám sức khỏe 6 tháng/lần.",tips:["luat"]},
-{id:242,ch:"Chương VI",q:"Bệnh nghề nghiệp là gì?",o:["Bệnh dễ lây lan qua đường hô hấp","Bệnh lây nhiễm qua đường tiêu hóa","Bệnh phát sinh do điều kiện lao động có hại tác động đến sức khỏe NLĐ","Cả a, b, c đều sai"],a:2,tip:"Bệnh nghề nghiệp = do ĐIỀU KIỆN LAO ĐỘNG CÓ HẠI tác động lâu dài.",tip2:"✅ Bệnh nghề nghiệp do điều kiện lao động có hại.",tips:["luat"]},
-{id:245,ch:"Chương VI",q:"Môi trường là gì? (Theo Luật BVMT Việt Nam)",o:["Bao gồm các yếu tố tự nhiên xung quanh","Hệ thống các yếu tố tự nhiên và nhân tạo có tác động đến sự tồn tại và phát triển","Tất cả những gì có xung quanh ta","Cả 3 đều đúng"],a:1,tip:"Định nghĩa pháp lý: Môi trường = yếu tố TỰ NHIÊN + NHÂN TẠO tác động đến tồn tại/phát triển.",tip2:"✅ Môi trường = hệ thống yếu tố tự nhiên và nhân tạo.",tips:["topic"]},
-{id:246,ch:"Chương VI",q:"Sách Xanh (Green Book) tỉnh Bình Dương là gì?",o:["Danh sách DN đóng góp lớn cho ngân sách","Danh sách DN đạt tiêu chuẩn môi trường và phát triển bền vững","Danh sách công ty lớn nhất Bình Dương","Báo cáo kinh tế tỉnh"],a:1,tip:"Sách Xanh = doanh nghiệp đạt chuẩn MÔI TRƯỜNG + phát triển bền vững.",tip2:"✅ Sách Xanh = DN đạt tiêu chuẩn môi trường và phát triển bền vững.",tips:["topic"]},
-{id:247,ch:"Chương VI",q:"Công ty URC Việt Nam tham gia Sách Xanh tỉnh Bình Dương năm nào?",o:["2019","2020","2022","2024"],a:1,tip:"Nhớ mốc: URC tham gia Sách Xanh = 2020.",tip2:"✅ URC tham gia Sách Xanh Bình Dương năm 2020.",tips:["soli"]},
-{id:248,ch:"Chương VI",q:"Thông điệp của Live Sustainability. Live URC là gì?",o:["Live UP – Giải phóng tiềm năng","Live RIGHT – Thực phẩm bổ dưỡng, sinh kế cộng đồng","Live CLEAN – Bảo vệ khí hậu, chống chất thải","Tất cả các đáp án trên"],a:3,tip:"Mẹo Tất cả: Live UP + Live RIGHT + Live CLEAN = 3 thông điệp của URC Sustainability.",tip2:"✅ Gồm cả 3: Live UP, Live RIGHT, Live CLEAN.",tips:["tatca"]},
-{id:249,ch:"Chương VI",q:"PRO Việt Nam là gì?",o:["Liên minh tái chế bao bì Việt Nam","Liên minh tái chế phế liệu","Liên minh tái chế rác thải nhựa","Liên minh bảo vệ môi trường"],a:0,tip:"PRO Vietnam = Packaging Recycling Organization = Liên minh tái chế BAO BÌ.",tip2:"✅ PRO Vietnam = Liên minh tái chế bao bì.",tips:["topic"]},
-{id:250,ch:"Chương VI",q:"Mục tiêu của PRO Việt Nam là gì?",o:["Thúc đẩy tái chế bao bì và xây dựng kinh tế tuần hoàn","Giảm thiểu chất thải từ nơi sản xuất","Giảm chất thải từ siêu thị và trường học","Cả 3 đều đúng"],a:0,tip:"PRO Vietnam = tái chế bao bì + kinh tế tuần hoàn tại VN.",tip2:"✅ PRO Vietnam thúc đẩy tái chế bao bì và kinh tế tuần hoàn.",tips:["topic"]},
-{id:261,ch:"Chương VI",q:"Mục tiêu chương trình 'Chất thải không chôn lấp' (Zero Waste to Landfill) là gì?",o:["Giảm chất thải thương mại","Hơn 99% rác thải không chôn lấp qua tái sử dụng, tái chế, ủ phân hoặc chuyển đổi năng lượng","Giảm chất thải từ người tiêu dùng","Cả 3 đều đúng"],a:1,tip:"Zero Waste to Landfill = >99% không chôn lấp bằng tái sử dụng/tái chế/ủ phân/năng lượng.",tip2:"✅ >99% không chôn lấp qua tái sử dụng, tái chế, ủ phân, năng lượng.",tips:["topic"]},
-{id:273,ch:"Chương VI",q:"ISO 14001:2015 là hệ thống quản lý gì?",o:["Quản lý chất lượng","Quản lý Năng Lượng","Quản lý Môi Trường","Cả ba đều đúng"],a:2,tip:"Nhớ: ISO 9001=Chất lượng | ISO 14001=Môi Trường | ISO 45001=ATVSLĐ.",tip2:"✅ ISO 14001 = Hệ thống quản lý Môi Trường.",tips:["topic"]},
-{id:274,ch:"Chương VI",q:"Có bao nhiêu nhà máy URC Việt Nam đạt chứng nhận ISO 14001:2015?",o:["2","3","4","5"],a:2,tip:"Mẹo số liệu: URC VN có 4 nhà máy đạt ISO 14001:2015.",tip2:"✅ 4 nhà máy URC VN đạt ISO 14001:2015.",tips:["soli"]},
+{id:8,ch:"Chương I",q:"Trụ cột nào chịu trách nhiệm về 'Không có lỗi sản phẩm' trong sản xuất?",o:["Trụ cột Bảo trì có kế hoạch","Trụ cột Chất lượng","Trụ cột Chuỗi cung ứng","Trụ cột Quản lý dự án"],a:1,rule:"qt9",
+tip:"Ghép cặp cố định: Không lỗi sản phẩm → Trụ cột Chất lượng",
+why:["❌ Bảo trì có kế hoạch = giảm dừng máy đột xuất, không phải lỗi sản phẩm","✅ Không lỗi sản phẩm = Trụ cột Chất lượng","❌ Chuỗi cung ứng = quản lý dòng vật tư/hàng hóa","❌ Quản lý dự án = thiết bị/quy trình mới"],tips:["pillar"]},
 
-// CHƯƠNG VII: SUPPLY CHAIN (câu 275-327)
-{id:275,ch:"Chương VII",q:"Điều gì là quan trọng nhất trong bảo dưỡng xe nâng?",o:["Kiểm tra hệ thống phanh","Kiểm tra và thay thế bộ lọc không khí","Thay dầu động cơ","Kiểm tra và thay thế dây curoa"],a:0,tip:"Phanh = quan trọng nhất vì liên quan trực tiếp đến AN TOÀN.",tip2:"✅ Kiểm tra hệ thống phanh quan trọng nhất.",tips:["topic"]},
-{id:276,ch:"Chương VII",q:"Khi nào nên kiểm tra và thay thế dây an toàn của xe nâng?",o:["Mỗi năm 1 lần","Khi dây có dấu hiệu mòn hoặc hỏng hóc","Sau mỗi lần sử dụng","Mỗi 5 năm 1 lần"],a:1,tip:"Dây an toàn = thay khi CÓ DẤU HIỆU hỏng, không theo lịch cố định.",tip2:"✅ Thay khi dây có dấu hiệu mòn hoặc hỏng.",tips:["topic"]},
-{id:277,ch:"Chương VII",q:"Khi nào cần thực hiện bảo dưỡng định kỳ cho xe nâng?",o:["Sau mỗi ca làm việc","Mỗi tháng 1 lần","Dựa vào số giờ hoạt động của xe nâng","Khi có vấn đề kỹ thuật"],a:2,tip:"Bảo dưỡng xe nâng = theo SỐ GIỜ HOẠT ĐỘNG, không theo lịch cố định.",tip2:"✅ Bảo dưỡng xe nâng theo số giờ hoạt động.",tips:["topic"]},
-{id:278,ch:"Chương VII",q:"Loại Pin nào thường được sử dụng nhất trong xe nâng điện?",o:["Pin Axit Chì","Pin lithium-ion","Pin niken cadmium","Pin sắt-niken"],a:1,tip:"Xe nâng điện hiện đại = Pin lithium-ion (phổ biến nhất hiện nay).",tip2:"✅ Pin lithium-ion phổ biến nhất trong xe nâng điện.",tips:["topic"]},
-{id:279,ch:"Chương VII",q:"Khi sử dụng xe nâng điện, cần thực hiện biện pháp nào để tránh tai nạn?",o:["Kiểm tra kỹ thuật trước khi sử dụng","Sử dụng điều khiển từ xa","Tắt hệ thống điện trước khi bảo dưỡng","Tất cả phương án trên"],a:3,tip:"Mẹo Tất cả: An toàn xe nâng điện cần cả 3 biện pháp.",tip2:"✅ Cần cả 3 biện pháp: kiểm tra + tắt điện + quy trình.",tips:["tatca"]},
-{id:280,ch:"Chương VII",q:"Vận hành xe nâng quá tải có thể gây nguy hiểm như thế nào?",o:["Tăng nguy cơ lật xe và gây tai nạn","Tăng tuổi thọ xe nâng","Tăng tốc độ vận chuyển","Giúp giảm tiêu hao nhiên liệu"],a:0,tip:"Quá tải → mất cân bằng → lật xe → tai nạn. Logic đơn giản.",tip2:"✅ Quá tải tăng nguy cơ lật xe và tai nạn.",tips:["topic"]},
-{id:281,ch:"Chương VII",q:"Khi vận hành xe nâng, nếu chạy quá tốc độ có thể gây ra điều gì?",o:["Tăng nguy cơ tai nạn","Tiết kiệm thời gian","Tăng hiệu suất làm việc","Giảm tiếng ồn"],a:0,tip:"Quá tốc độ → không kiểm soát → tai nạn.",tip2:"✅ Chạy quá tốc độ tăng nguy cơ tai nạn.",tips:["topic"]},
-{id:282,ch:"Chương VII",q:"Hiệu xuất pin xe nâng điện bị ảnh hưởng bởi yếu tố nào?",o:["Nhiệt độ môi trường","Trọng lượng hàng nâng","Tần suất sử dụng","Tất cả phương án trên"],a:3,tip:"Mẹo Tất cả: Pin bị ảnh hưởng bởi cả 3 yếu tố: nhiệt độ + tải + tần suất.",tip2:"✅ Pin bị ảnh hưởng bởi nhiệt độ, tải trọng và tần suất.",tips:["tatca"]},
-{id:283,ch:"Chương VII",q:"Đối tác quan trọng trong chuỗi cung ứng là ai?",o:["Người tiêu dùng","Nhà sản xuất","Nhà phân phối","Cả 3 đều đúng"],a:3,tip:"Mẹo Tất cả: Chuỗi cung ứng = nhà sản xuất + nhà phân phối + người tiêu dùng.",tip2:"✅ Tất cả đều là đối tác quan trọng.",tips:["tatca"]},
-{id:284,ch:"Chương VII",q:"Điều gì làm nên tính quan trọng của 'Inventory management'?",o:["Tăng cường lợi nhuận","Giảm thiểu chi phí tồn Kho","Tăng cường số lượng hàng tồn kho","Tăng cường quy trình vận chuyển"],a:1,tip:"Inventory management = quản lý hàng tồn kho → GIẢM CHI PHÍ tồn kho.",tip2:"✅ Quản lý tồn kho quan trọng vì giảm chi phí.",tips:["topic"]},
-{id:285,ch:"Chương VII",q:"Third-party logistic (3PL) là gì?",o:["Quá trình sản xuất hàng hóa","Dịch vụ logistic được cung cấp bởi bên thứ 3","Quá trình tiếp thị và quảng cáo","Quá trình bán hàng"],a:1,tip:"3PL = Third-Party Logistics = dịch vụ logistics bên thứ 3.",tip2:"✅ 3PL = dịch vụ logistics bởi bên thứ 3.",tips:["topic"]},
-{id:286,ch:"Chương VII",q:"Phân phối logistics nhấn mạnh vào việc gì?",o:["Vận chuyển hàng hóa","Tiếp thị sản phẩm","Xây dựng quan hệ với khách hàng","Tất cả đều đúng"],a:3,tip:"Mẹo Tất cả: Logistics = vận chuyển + tiếp thị + quan hệ khách hàng.",tip2:"✅ Logistics nhấn mạnh cả 3 yếu tố.",tips:["tatca"]},
-{id:287,ch:"Chương VII",q:"Điều gì là cốt lõi trong quản lý chuỗi cung ứng hiệu quả?",o:["Giao tiếp tốt giữa các bộ phận","Sự tập trung vào lợi ích cá nhân","Cải thiện quy trình làm việc","Sự tăng cường về kỹ thuật"],a:0,tip:"Chuỗi cung ứng hiệu quả = GIAO TIẾP TỐT giữa tất cả các bộ phận.",tip2:"✅ Giao tiếp tốt là cốt lõi quản lý chuỗi cung ứng.",tips:["topic"]},
-{id:288,ch:"Chương VII",q:"Khi sử dụng phương pháp FIFO, sản phẩm nào được xuất kho đầu tiên?",o:["Sản phẩm mới nhập kho","Sản phẩm đã tồn kho lâu nhất","Sản phẩm có giá trị cao","Sản phẩm có số lượng nhiều nhất"],a:1,tip:"FIFO = First In First Out = vào trước ra trước = tồn kho LÂU NHẤT xuất trước.",tip2:"✅ FIFO: hàng tồn kho lâu nhất xuất trước.",tips:["topic"]},
-{id:289,ch:"Chương VII",q:"Khi áp dụng MRP, mục đích chính là gì?",o:["Tối ưu hóa tồn kho","Dự đoán nhu cầu vật liệu","Tối ưu hóa quy trình sản xuất","Đảm bảo sẵn có vật liệu đúng lúc, đúng số lượng"],a:3,tip:"MRP = Material Requirements Planning = đúng lúc + đúng số lượng.",tip2:"✅ MRP đảm bảo vật liệu đúng lúc, đúng số lượng.",tips:["topic"]},
-{id:290,ch:"Chương VII",q:"Trong quản lý Kho, phương pháp JIT tập trung vào điều gì?",o:["Tối ưu hóa lượng tồn kho","Giảm thiểu thời gian chờ đợi","Tăng cường kiểm soát hàng tồn kho","Mở rộng không gian lưu trữ"],a:1,tip:"JIT = Just-In-Time = đúng lúc → GIẢM THỜI GIAN CHỜ ĐỢI.",tip2:"✅ JIT giảm thiểu thời gian chờ đợi.",tips:["topic"]},
-{id:291,ch:"Chương VII",q:"Chính sách ABC trong quản lý kho áp dụng phân loại như thế nào?",o:["Số lượng","Giá trị","Tần suất sử dụng","Cả 3 đều đúng"],a:3,tip:"Mẹo Tất cả: ABC phân loại theo cả 3: số lượng + giá trị + tần suất.",tip2:"✅ ABC phân loại theo số lượng, giá trị và tần suất.",tips:["tatca"]},
-{id:292,ch:"Chương VII",q:"FEFO là viết tắt của cụm từ gì?",o:["First Expired, First Out","First In, First Out","First Expiry, First Out","First End, First Out"],a:0,tip:"FEFO = First EXPIRED First Out. Bẫy: 'Expiry' và 'End' đều SAI!",tip2:"✅ FEFO = First Expired, First Out.",tips:["soli"]},
-{id:293,ch:"Chương VII",q:"FEFO trong hoạt động Kho giúp đảm bảo điều gì?",o:["Hàng được xuất theo thứ tự đầu tiên","Hàng được xuất theo thứ tự hết hạn trước","Hàng được sắp xếp theo tên sản phẩm","Hàng được kiểm tra trước khi xuất"],a:1,tip:"FEFO = Expired first = hàng HẾT HẠN TRƯỚC xuất trước.",tip2:"✅ FEFO: hàng hết hạn trước xuất trước.",tips:["topic"]},
-{id:294,ch:"Chương VII",q:"FEFO giúp giảm thiểu rủi ro nào trong quản lý hàng tồn kho?",o:["Rủi ro mất cắp","Rủi ro hỏng hóc sản phẩm","Rủi ro thất thoát","Rủi ro trục trặc kỹ thuật"],a:1,tip:"FEFO → xuất hàng sắp hết hạn trước → giảm hàng hỏng/hết hạn.",tip2:"✅ FEFO giảm rủi ro hỏng hóc sản phẩm.",tips:["topic"]},
-{id:295,ch:"Chương VII",q:"WMS là viết tắt của gì?",o:["Warehouse Manufacturing System","Warehouse Management System","Warehouse Maintenance System","Warehouse Marketing System"],a:1,tip:"WMS = Warehouse MANAGEMENT System. Bẫy: Manufacturing/Maintenance/Marketing đều SAI.",tip2:"✅ WMS = Warehouse Management System.",tips:["soli"]},
-{id:296,ch:"Chương VII",q:"WMS được sử dụng quản lý gì?",o:["Quản lý nhân sự","Quản lý hóa đơn","Quản lý hàng tồn kho","Quản lý tiền lương"],a:2,tip:"WMS = Warehouse = kho → quản lý HÀNG TỒN KHO.",tip2:"✅ WMS quản lý hàng tồn kho.",tips:["topic"]},
-{id:297,ch:"Chương VII",q:"Mục đích chính của WMS là gì?",o:["Tối ưu hóa việc sản xuất","Tăng hiệu suất lao động trong kho","Quản lý các quy trình giao nhận hàng","Tất cả phương án trên"],a:1,tip:"Mục đích CHÍNH của WMS = tăng hiệu suất lao động trong kho.",tip2:"✅ WMS mục đích chính = tăng hiệu suất lao động kho.",tips:["topic"]},
-{id:300,ch:"Chương VII",q:"Cấu tạo của 1 pallet gỗ Loscam gồm những phần nào?",o:["Ván mặt (9), ván gánh (5), ván đáy (3), cục gù (11)","Ván mặt (11), ván đáy (3), ván gánh (9), cục gù (5)","Ván mặt (11), ván gánh (5), ván đáy (3), cục gù (9)","Ván mặt (11), ván đáy (5), ván gánh (3), cục gù (9)"],a:3,tip:"Nhớ: Loscam = 11 mặt + 5 đáy + 3 gánh + 9 cục gù.",tip2:"✅ Loscam: ván mặt 11, ván đáy 5, ván gánh 3, cục gù 9.",tips:["soli"]},
-{id:301,ch:"Chương VII",q:"Những pallet Loscam nào được phép sử dụng: TBR, RFI, BER",o:["TBR, RFI","RFI, BER","RFI","TBR"],a:2,tip:"RFI = Ready For Issue = sẵn sàng sử dụng. TBR và BER = hư hỏng, không dùng.",tip2:"✅ Chỉ RFI được phép sử dụng.",tips:["soli"]},
-{id:305,ch:"Chương VII",q:"Loại rack nào an toàn và sử dụng không gian tối ưu nhất?",o:["Rack sâu 2 pallet (Double deep rack)","Rack chui 6 pallet (Drive in rack)","Rack bán tự động (Shuttle rack)","Rack chạy 5 pallets (Flow rack)"],a:2,tip:"Shuttle rack = bán tự động → an toàn nhất + tối ưu không gian nhất.",tip2:"✅ Shuttle rack an toàn và tối ưu không gian nhất.",tips:["topic"]},
-{id:306,ch:"Chương VII",q:"Theo tiêu chuẩn ISO/TS 22002-1:2009, loại xe nào được sử dụng trong kho thành phẩm?",o:["Xe nâng dùng dầu Diesel","Xe nâng dùng xăng","Xe nâng điện dùng bình Axit chì","Xe nâng điện dùng bình Lithium-ion"],a:2,tip:"Kho thực phẩm cần xe điện (không khí thải). ISO 22002 = thực phẩm → dùng Axit chì (tiêu chuẩn cũ hơn).",tip2:"✅ Kho thành phẩm dùng xe nâng điện bình Axit chì.",tips:["topic"]},
-{id:312,ch:"Chương VII",q:"Mục đích của bảo dưỡng xe nâng hàng?",o:["Đảm bảo an toàn và hiệu quả","Đảm bảo hiệu quả và tăng tuổi thọ","Đảm bảo an toàn, hiệu quả, tăng tuổi thọ và giảm chi phí sửa chữa","Đảm bảo an toàn, hiệu quả, tuổi thọ, chi phí và kết nối dịch vụ"],a:2,tip:"Bảo dưỡng xe nâng = an toàn + hiệu quả + tuổi thọ + giảm chi phí. 4 mục đích.",tip2:"✅ Bảo dưỡng = an toàn + hiệu quả + tuổi thọ + giảm chi phí.",tips:["topic"]},
-{id:313,ch:"Chương VII",q:"Tại sao dây an toàn (Seat belt) xe nâng lại quan trọng?",o:["Ngăn ngừa văng ra ngoài xe","Giảm nguy cơ thương tích và giúp lên xuống nhanh","Ngăn ngừa văng ra ngoài xe và giảm nguy cơ thương tích","Giảm thương tích, lên xuống nhanh và giảm nguy cơ"],a:2,tip:"Seat belt = ngăn văng + giảm thương tích. Không liên quan 'lên xuống nhanh'.",tip2:"✅ Seat belt ngăn văng ra và giảm nguy cơ thương tích.",tips:["topic"]},
-{id:315,ch:"Chương VII",q:"Khi nào cần phải sạc bình xe nâng?",o:["Sạc bất cứ khi nào","Xuống dưới 15% dung lượng","Xuống dưới 40% dung lượng","Sạc khi dung lượng xuống đến 20-30%"],a:3,tip:"Mẹo số liệu: Sạc pin xe nâng khi còn 20-30% dung lượng.",tip2:"✅ Sạc khi pin xuống 20-30%.",tips:["soli"]},
-{id:317,ch:"Chương VII",q:"Cần làm gì trước khi vận hành xe nâng?",o:["Kiểm tra phanh, lốp, nhớt máy, phuộc, dây an toàn","Đội mũ bảo hiểm, đi giày bảo hộ, mặc áo phản quang","Đeo dây đai an toàn và kiểm tra khu vực xung quanh","Tất cả đều đúng"],a:3,tip:"Mẹo Tất cả: Trước khi vận hành xe nâng cần cả 3 nhóm hành động.",tip2:"✅ Cần kiểm tra kỹ thuật + PPE + dây an toàn + quan sát.",tips:["tatca"]},
-{id:318,ch:"Chương VII",q:"Khi vào kho để xếp dỡ hàng hóa, tài xế phải làm gì?",o:["Tắt động cơ và cài thắng tay","Xuống xe và chèn bánh xe","Chèn bánh xe và đưa chứng từ cho nhân viên kho","Tắt động cơ, cài thắng tay, chèn bánh xe"],a:3,tip:"3 bước an toàn khi vào kho: Tắt máy + Cài thắng tay + Chèn bánh.",tip2:"✅ Tắt động cơ, cài thắng tay, chèn bánh xe.",tips:["topic"]},
-{id:319,ch:"Chương VII",q:"Khi vào kho, nhân viên phải thực hiện việc gì?",o:["Đi giày hoặc đi dép","Đội mũ bảo hiểm (nếu yêu cầu)","Mang đầy đủ PPE","Tùy điều kiện thực tế"],a:2,tip:"Vào kho = phải mang ĐẦY ĐỦ PPE theo quy định.",tip2:"✅ Nhân viên phải mang đầy đủ PPE khi vào kho.",tips:["topic"]},
-{id:320,ch:"Chương VII",q:"Hành động nào sau đây là KHÔNG an toàn?",o:["Đi đúng lối đi bộ","Sử dụng điện thoại khi đang vận hành xe nâng","Báo cáo nguy cơ","Mang giày bảo hộ"],a:1,tip:"Mẹo KHÔNG: Sử dụng điện thoại khi lái xe nâng = KHÔNG AN TOÀN.",tip2:"✅ Dùng điện thoại khi lái xe nâng là không an toàn.",tips:["khong"]},
-{id:321,ch:"Chương VII",q:"Khi phát hiện nguy cơ mất an toàn, bạn phải:",o:["Bỏ qua","Chờ quản lý","Báo ngay lập tức","Tự xử lý nếu thích"],a:2,tip:"Nguy cơ an toàn → BÁO NGAY. Không chờ, không bỏ qua, không tự xử lý.",tip2:"✅ Phải báo cáo ngay lập tức.",tips:["topic"]},
-{id:322,ch:"Chương VII",q:"Tốc độ xe nâng trong kho phải:",o:["Càng nhanh càng tốt","Theo kinh nghiệm tài xế","Theo quy định","Không giới hạn"],a:2,tip:"Tốc độ xe nâng = theo QUY ĐỊNH của nhà máy/kho. Không tùy ý.",tip2:"✅ Tốc độ xe nâng phải theo quy định.",tips:["topic"]},
-{id:323,ch:"Chương VII",q:"Khi nâng hàng cao, cần:",o:["Chạy nhanh","Nghiêng càng về trước","Giữ cân bằng và đi chậm","Nghiêng càng trước và đi chậm"],a:2,tip:"Hàng cao → mất cân bằng dễ → phải giữ cân bằng + đi chậm.",tip2:"✅ Nâng hàng cao: giữ cân bằng và đi chậm.",tips:["topic"]},
-{id:324,ch:"Chương VII",q:"Khi tầm nhìn bị che khuất, tài xế phải:",o:["Vẫn chạy nhanh","Dừng lại","Di chuyển chậm và quan sát","Bấm còi liên tục và chạy"],a:2,tip:"Tầm nhìn bị che → di chuyển CHẬM và quan sát cẩn thận.",tip2:"✅ Di chuyển chậm và quan sát khi tầm nhìn bị che.",tips:["topic"]},
-{id:325,ch:"Chương VII",q:"Lối đi trong kho phải:",o:["Để hàng tạm","Luôn thông thoáng","Chỉ cần đủ lối đi","Tất cả đều đúng"],a:1,tip:"Lối đi trong kho = LUÔN THÔNG THOÁNG, không để hàng tạm.",tip2:"✅ Lối đi trong kho luôn phải thông thoáng.",tips:["topic"]},
-{id:326,ch:"Chương VII",q:"Khi thấy pallet bị hư, bạn phải:",o:["Vẫn sử dụng rồi báo cáo","Dùng tạm và để ngoài kệ","Loại bỏ và báo cáo","Tất cả đều đúng"],a:2,tip:"Pallet hư = LOẠI BỎ + BÁO CÁO ngay. Không dùng tạm.",tip2:"✅ Pallet hư phải loại bỏ và báo cáo.",tips:["topic"]},
-{id:327,ch:"Chương VII",q:"On-time delivery là gì?",o:["Giao đúng số lượng","Giao đúng thời gian","Giao nhanh","Giao đủ"],a:1,tip:"On-time = đúng thời gian. 'Time' trong tiếng Anh = thời gian.",tip2:"✅ On-time delivery = giao đúng thời gian.",tips:["topic"]},
+{id:10,ch:"Chương I",q:"Phương pháp nào KHÔNG thuộc Trụ cột Cải tiến tập trung?",o:["Phân tích Tại sao - Tại sao","Phân tích Pareto","6W2H","Phân tích SWOT"],a:3,rule:"qt2",
+tip:"Câu có 'KHÔNG' → tìm lạc chủ đề. SWOT là công cụ phân tích chiến lược kinh doanh, không phải công cụ cải tiến sản xuất",
+why:["❌ Phân tích Tại sao - Tại sao THUỘC Trụ cột Cải tiến","❌ Phân tích Pareto THUỘC Trụ cột Cải tiến (80/20)","❌ 6W2H THUỘC Trụ cột Cải tiến","✅ SWOT = phân tích chiến lược kinh doanh, không thuộc Trụ cột Cải tiến"],tips:["khong"]},
 
-// CHƯƠNG IX: PVA (câu 331-355)
-{id:331,ch:"Chương IX",q:"PVA của URC là viết tắt của những từ tiếng Anh gì?",o:["Plan - Values - Ambition","Purpose - Values - Ability","Purpose - Values - Ambition","Process - Values - Ambition"],a:2,tip:"PVA = Purpose(Mục đích) + Values(Giá trị) + Ambition(Tham vọng). Không phải Plan/Process/Ability!",tip2:"✅ PVA = Purpose - Values - Ambition.",tips:["luat"]},
-{id:332,ch:"Chương IX",q:"Cốt lõi Mục đích của URC là gì?",o:["Làm cho mọi người thích thú, hài lòng với nhiều chọn lựa thực phẩm tốt","Làm cho mọi người hài lòng với nhiều sản phẩm tốt","Làm cho mọi người hài lòng với giá cả phải chăng","Làm cho mọi người hài lòng với sản phẩm tốt, giá rẻ"],a:0,tip:"URC Purpose = làm mọi người THÍCH THÚ + HÀI LÒNG với NHIỀU CHỌN LỰA thực phẩm TỐT.",tip2:"✅ Mục đích: làm mọi người thích thú, hài lòng với nhiều chọn lựa thực phẩm tốt.",tips:["topic"]},
-{id:333,ch:"Chương IX",q:"Nội dung nào sau đây KHÔNG phải là Mục đích của URC?",o:["Chúng ta giải quyết căng thẳng thực phẩm lành mạnh có thể ngon","Chúng ta mở rộng cung cấp sản phẩm phân khúc cao cấp","Không tập trung thị trường riêng, cung cấp cả cao cấp lẫn phải chăng","Cung cấp nhiều lựa chọn cho nhiều phong cách sống"],a:1,tip:"Mẹo KHÔNG: 'Mở rộng phân khúc cao cấp' = chiến lược kinh doanh, không phải MỤC ĐÍCH.",tip2:"✅ 'Mở rộng phân khúc cao cấp' không phải Mục đích URC.",tips:["khong"]},
-{id:334,ch:"Chương IX",q:"Chuỗi giá trị của URC gồm những nội dung nào?",o:["Đặt con người làm trọng tâm, Dám làm, Dám chịu trách nhiệm, Tiến nhanh","Đặt con người làm trung tâm, Dám làm, Dám chịu trách nhiệm, Tiến nhanh về phía trước","Đặt con người làm trọng tâm, Dám làm, Chịu trách nhiệm, Tiến nhanh về phía trước","Đặt con người làm mục tiêu, Dám làm, Chịu trách nhiệm, Tiến nhanh về phía trước"],a:2,tip:"Nhớ 4 từ: TRỌNG TÂM - DÁM LÀM - CHỊU (không có 'Dám') - TIẾN NHANH VỀ PHÍA TRƯỚC.",tip2:"✅ Trọng tâm + Dám làm + Chịu trách nhiệm + Tiến nhanh về phía trước.",tips:["topic"]},
-{id:335,ch:"Chương IX",q:"Nội dung nào KHÔNG phải là Tham vọng của URC?",o:["Công ty toàn cầu bền vững với tài năng đẳng cấp thế giới","Cung cấp sản phẩm chất lượng cao, thân thiện với hành tinh","Nâng cao cuộc sống nhân viên, khách hàng, cộng đồng","Giải quyết căng thẳng thực phẩm lành mạnh có thể ngon"],a:3,tip:"Mẹo KHÔNG: 'Thực phẩm lành mạnh có thể ngon' = MỤC ĐÍCH, không phải tham vọng.",tip2:"✅ 'Thực phẩm lành mạnh có thể ngon' là Mục đích, không phải Tham vọng.",tips:["khong"]},
-{id:336,ch:"Chương IX",q:"Công ty Universal Corn Products được ông John Gokongwei thành lập vào năm nào?",o:["Những năm 1930s","Năm 1954","Những năm 1960","Năm 1990"],a:1,tip:"Nhớ mốc: URC thành lập = 1954.",tip2:"✅ URC thành lập năm 1954.",tips:["soli"]},
-{id:337,ch:"Chương IX",q:"URC Việt Nam được cấp phép đầu tư vào Việt Nam ngày tháng năm nào?",o:["Ngày 08/12/2002","Ngày 08/12/2003","Ngày 08/12/2004","Ngày 08/12/2005"],a:1,tip:"Nhớ: URC vào VN = 08/12/2003.",tip2:"✅ URC VN cấp phép 08/12/2003.",tips:["soli"]},
-{id:338,ch:"Chương IX",q:"Nhãn hàng C2 được ra mắt tại thị trường Việt Nam khi nào?",o:["Năm 2004","Năm 2005","Năm 2006","Năm 2007"],a:2,tip:"Nhớ: C2 ra mắt VN = 2006. VN 2003 → 3 năm sau = 2006.",tip2:"✅ C2 ra mắt tại VN năm 2006.",tips:["soli"]},
-{id:339,ch:"Chương IX",q:"Nhà máy Cà phê được khởi công xây dựng và đi vào hoạt động thời gian nào?",o:["Khởi công 2010 - Hoạt động 2011","Khởi công 2011 - Hoạt động 2012","Khởi công 2012 - Hoạt động 2013","Khởi công 2013 - Hoạt động 2014"],a:3,tip:"Nhớ: Cà phê khởi công 2013 → hoạt động 2014. 'Cà phê buổi sáng 13, xong thì 14'.",tip2:"✅ Cà phê khởi công 2013, hoạt động 2014.",tips:["soli"]},
-{id:340,ch:"Chương IX",q:"Đâu là chủ đề hành động năm 2026 của URCVN?",o:["Bứt phá mọi giới hạn/ Beyond the Limit","Vươn tầm cao mới/ Level Up","Khai phá tiềm năng/ Unlock Your Potential","Nâng tầm – vươn lên cùng nhau / Elevate – Rise Together!"],a:3,tip:"2026 = Elevate – Rise Together! = Nâng tầm – vươn lên cùng nhau.",tip2:"✅ Chủ đề 2026: Nâng tầm – vươn lên cùng nhau.",tips:["soli"]},
-{id:341,ch:"Chương IX",q:"Có bao nhiêu hình thức xử lý kỷ luật lao động?",o:["3 (Khiển trách, Kéo dài nâng lương/cách chức, Sa thải)","2 (Khiển trách, Sa thải)","4 (Khiển trách, Kéo dài, Buộc thôi việc, Sa thải)","Không có số lượng cụ thể"],a:0,tip:"Nhớ 'Khiển - Kéo - Sa': 3 hình thức. Không có 'Buộc thôi việc' riêng biệt!",tip2:"✅ 3 hình thức: Khiển trách → Kéo dài nâng lương/cách chức → Sa thải.",tips:["luat"]},
-{id:343,ch:"Chương IX",q:"Hành vi vi phạm nào bị xử lý kỷ luật với hình thức sa thải?",o:["Tiết lộ bí mật kinh doanh, công nghệ","Tiết lộ thông tin cá nhân nhân viên","Tiết lộ thông tin lương, thưởng","Cả 3 đáp án trên"],a:0,tip:"Sa thải = tiết lộ BÍ MẬT KINH DOANH/CÔNG NGHỆ. Không phải lương hay thông tin cá nhân.",tip2:"✅ Sa thải khi tiết lộ bí mật kinh doanh và công nghệ.",tips:["luat"]},
-{id:346,ch:"Chương IX",q:"Các trường hợp nào bị coi là đơn phương chấm dứt HĐLĐ trái pháp luật?",o:["NLĐ chấm dứt HĐ trước thời hạn không có lý do","NLĐ vi phạm thời hạn báo trước","NSDLĐ sa thải NLĐ hợp lệ","NSDLĐ chấm dứt HĐ khi doanh nghiệp đóng cửa do dịch bệnh"],a:1,tip:"Vi phạm thời hạn báo trước = trái pháp luật. Sa thải hợp lệ và đóng cửa do dịch = không trái luật.",tip2:"✅ Vi phạm thời hạn báo trước = trái pháp luật.",tips:["luat"]},
-{id:347,ch:"Chương IX",q:"Anh A làm 12 tháng, HĐ 36 tháng, không BHTN, nghỉ báo 30 ngày. Anh A được gì?",o:["Trợ cấp mất việc","Trợ cấp thôi việc","Trợ cấp thất nghiệp","Không được trợ cấp nào"],a:1,tip:"Tự ý nghỉ + báo đủ 30 ngày = trợ cấp THÔI VIỆC (không phải mất việc hay thất nghiệp).",tip2:"✅ Tự nghỉ báo đúng hạn = trợ cấp thôi việc.",tips:["luat"]},
-{id:348,ch:"Chương IX",q:"HĐ 12-36 tháng, NLĐ đơn phương nghỉ phải báo trước bao nhiêu ngày?",o:["Không cần báo","Ít nhất 45 ngày","Ít nhất 30 ngày","Ít nhất 03 ngày"],a:2,tip:"Nhớ: Có hạn (12-36 tháng) = báo 30 ngày. Không hạn = 45 ngày.",tip2:"✅ HĐ 12-36 tháng phải báo trước ít nhất 30 ngày.",tips:["luat"]},
-{id:349,ch:"Chương IX",q:"Nhận định nào sau đây là ĐÚNG?",o:["NSDLĐ được đặt bất kỳ hình thức kỷ luật nào","NSDLĐ có thể phạt tiền thay kỷ luật","Không kỷ luật NLĐ đang trong thời gian bị tạm giữ, tạm giam","Không kỷ luật lao động nữ nuôi con <36 tháng"],a:2,tip:"Không kỷ luật người đang bị tạm giữ/tạm giam là đúng. A,B sai. D: vẫn kỷ luật được khi hết thời gian.",tip2:"✅ Không xử lý kỷ luật NLĐ đang bị tạm giữ, tạm giam.",tips:["luat"]},
-{id:350,ch:"Chương IX",q:"Hình thức kỷ luật sa thải được áp dụng khi nào?",o:["Trộm cắp, tham ô, tiết lộ bí mật","Tái phạm khi chưa xóa kỷ luật","Tự ý bỏ 05 ngày/tháng hoặc 20 ngày/năm","Cả 3 trường hợp trên"],a:3,tip:"Mẹo Tất cả: Sa thải áp dụng cho cả 3 trường hợp.",tip2:"✅ Sa thải áp dụng cho cả 3 trường hợp.",tips:["tatca","luat"]},
-{id:351,ch:"Chương IX",q:"Trường hợp có lý do chính đáng khi bỏ việc là gì?",o:["Do thiên tai, hỏa hoạn","Bản thân/thân nhân ốm có giấy xác nhận y tế","Các trường hợp khác quy định trong nội quy","Cả 3 đáp án A, B, C"],a:3,tip:"Mẹo Tất cả: Lý do chính đáng gồm cả 3: thiên tai + ốm bệnh + nội quy quy định.",tip2:"✅ Lý do chính đáng gồm cả 3 trường hợp.",tips:["tatca","luat"]},
-{id:352,ch:"Chương IX",q:"HĐ lao động không xác định thời hạn, NLĐ phải báo trước bao nhiêu ngày?",o:["Ít nhất 30 ngày","Ít nhất 45 ngày","Ít nhất 60 ngày","Ít nhất 03 ngày"],a:1,tip:"Nhớ: Không hạn = 45 ngày. Có hạn = 30 ngày.",tip2:"✅ HĐ không xác định thời hạn = báo trước 45 ngày.",tips:["luat"]},
-{id:353,ch:"Chương IX",q:"Người lao động kết hôn thì được nghỉ hưởng nguyên lương mấy ngày?",o:["01 ngày","02 ngày","03 ngày","04 ngày"],a:2,tip:"Nhớ: Cưới=3 ngày | Con cưới=1 ngày | Bố/mẹ/vợ/chồng/con mất=3 ngày.",tip2:"✅ Kết hôn được nghỉ 3 ngày.",tips:["luat"]},
-{id:354,ch:"Chương IX",q:"NLĐ đánh bạc tại nơi làm việc bị hình thức kỷ luật nào?",o:["Khiển trách","Kéo dài thời hạn nâng lương không quá 06 tháng","Sa thải","Cả 3 hình thức trên"],a:1,tip:"Đánh bạc = nghiêm trọng → Kéo dài nâng lương (không đủ mức sa thải).",tip2:"✅ Đánh bạc = kỷ luật kéo dài thời hạn nâng lương.",tips:["luat"]},
-{id:355,ch:"Chương IX",q:"Quấy rối tình dục tại nơi làm việc là gì?",o:["Hành vi tình dục của NSDLĐ với người khác","Hành vi tình dục với người khác giới tại nơi làm việc","Hành vi tình dục của bất kỳ ai với người khác tại nơi làm việc mà không được chấp nhận","Cả 3 đáp án trên"],a:2,tip:"QRTD = BẤT KỲ AI + với BẤT KỲ AI (không phân biệt giới) + KHÔNG ĐƯỢC CHẤP NHẬN.",tip2:"✅ QRTD = bất kỳ ai, với bất kỳ ai, không được chấp nhận.",tips:["luat"]},
+{id:12,ch:"Chương I",q:"Trụ cột nào tập trung vào 'Không tai nạn' và 'Không sự cố'?",o:["Trụ cột An toàn - Sức khỏe - Môi trường","Trụ cột Chất lượng","Trụ cột Tổ chức","Trụ cột Lãnh đạo"],a:0,rule:"qt9",
+tip:"Ghép cặp cố định: Không tai nạn → Trụ cột An toàn - Sức khỏe - Môi trường (EHS)",
+why:["✅ An toàn - Sức khỏe - Môi trường = Zero accidents & incidents","❌ Chất lượng = Không lỗi sản phẩm, không phải tai nạn","❌ Tổ chức = cơ cấu nhóm làm việc","❌ Lãnh đạo = kết quả kinh doanh + văn hóa"],tips:["pillar"]},
 
-// CHƯƠNG X: AGILE (câu 356-360)
-{id:356,ch:"Chương X",q:"Agile Overlay được triển khai ở Nhà máy 2 từ khi nào?",o:["Năm 2020","Năm 2021","Năm 2024","Năm 2023"],a:2,tip:"Nhớ: Agile Plant 2 = 2024. Mới nhất.",tip2:"✅ Agile Overlay Plant 2 từ năm 2024.",tips:["soli"]},
-{id:357,ch:"Chương X",q:"Từ 'Agile' có nghĩa là gì?",o:["Bền vững, lâu dài","Linh hoạt, nhanh nhẹn","Nhạy bén, sáng tạo","Hiệu quả, tiết kiệm"],a:1,tip:"Agile = linh hoạt + nhanh nhẹn. Nghĩa gốc tiếng Anh.",tip2:"✅ Agile = Linh hoạt, nhanh nhẹn.",tips:["topic"]},
-{id:358,ch:"Chương X",q:"Mục đích của việc thực hiện Agile là gì?",o:["Đổi mới, Vận hành xuất sắc, Tối ưu hóa nguồn lực","Đổi mới, Tiết kiệm chi phí, Bảo vệ môi trường","Vận hành xuất sắc, Tối ưu nguồn lực, Tiết kiệm chi phí","Cải thiện chất lượng, Giảm tai nạn, Giảm dừng máy"],a:0,tip:"Agile 3 mục đích: Innovation + Operational Excellence + Resource Optimization.",tip2:"✅ Agile = Đổi mới + Vận hành xuất sắc + Tối ưu nguồn lực.",tips:["topic"]},
-{id:359,ch:"Chương X",q:"Trong Overlay squad, sự kiện nào KHÔNG phải là sự kiện của Squad?",o:["Line DSU (Daily Standup)","Plant Mancom DSU","Plant PDCA","ISC MOR (Monthly Operation Review)"],a:3,tip:"Mẹo KHÔNG: ISC MOR = cấp công ty/tháng, không phải sự kiện cấp Squad.",tip2:"✅ ISC MOR không phải sự kiện của Squad.",tips:["khong"]},
-{id:360,ch:"Chương X",q:"Điều nào KHÔNG phải là quy tắc cho Agile Coach khi dẫn dắt Retro?",o:["Vai trò người lắng nghe, không phán xét","Đảm bảo mọi ý kiến được lắng nghe","Làm mẫu cho việc cởi mở và chấp nhận tổn thương","Giúp thành viên giải quyết vấn đề kỹ thuật"],a:3,tip:"Mẹo KHÔNG: Coach trong Retro = LẮNG NGHE, không giải quyết kỹ thuật. Đó là việc của team.",tip2:"✅ Agile Coach không giải quyết vấn đề kỹ thuật cho team.",tips:["khong"]},
+{id:16,ch:"Chương I",q:"PDCA trong ISCE là viết tắt của gì?",o:["Plan, Do, Check, Act","Prepare, Develop, Check, Achieve","Produce, Deliver, Control, Adjust","Plan, Develop, Control, Achieve"],a:0,rule:"qt5",
+tip:"PDCA = 4 động từ hành động: Lập kế hoạch - Làm - Kiểm tra - Hành động. Đây là viết tắt chuẩn quốc tế không thay đổi",
+why:["✅ Plan(Kế hoạch)-Do(Làm)-Check(Kiểm tra)-Act(Hành động) = chuẩn quốc tế","❌ Prepare/Develop/Achieve không phải từ gốc PDCA","❌ Produce/Deliver/Adjust không phải PDCA","❌ Develop/Control không phải PDCA"],tips:["soli"]},
+
+{id:20,ch:"Chương I",q:"Trụ cột nào đảm bảo nhân viên được đào tạo đúng kỹ năng?",o:["Trụ cột Giáo dục & Đào tạo","Trụ cột Chất lượng","Trụ cột Bảo trì có kế hoạch","Trụ cột Chuỗi cung ứng"],a:0,rule:"qt9",
+tip:"Ghép cặp cố định: Đào tạo kỹ năng → Trụ cột Giáo dục & Đào tạo",
+why:["✅ Giáo dục & Đào tạo = đúng người, đúng kỹ năng, đúng lúc","❌ Chất lượng = không lỗi sản phẩm","❌ Bảo trì = thiết bị máy móc","❌ Chuỗi cung ứng = dòng hàng hóa"],tips:["pillar"]},
+
+{id:22,ch:"Chương I",q:"ISCE yêu cầu lãnh đạo dành bao nhiêu % thời gian ban đầu để học hỏi?",o:["5-10%","15-25%","30-40%","50% trở lên"],a:1,rule:"qt4",
+tip:"Con số chuẩn = 15-25%. Không quá ít (5-10%) cũng không quá nhiều (30%+)",
+why:["❌ 5-10% = quá ít, thiếu cam kết học hỏi","✅ 15-25% = mức phù hợp để vừa học vừa làm việc","❌ 30-40% = quá nhiều với lãnh đạo cấp cao","❌ 50%+ = không thực tế"],tips:["soli"]},
+
+{id:24,ch:"Chương I",q:"Công cụ nào KHÔNG thuộc Trụ cột Chuỗi cung ứng?",o:["Lập bản đồ dòng giá trị","Lập bản đồ thời gian","5S","Công cụ sản xuất theo nhu cầu"],a:2,rule:"qt2",
+tip:"Câu có 'KHÔNG' → tìm lạc chủ đề. 5S (Sắp xếp-Sạch sẽ-Sẵn sàng-Săn sóc-Sẵn lòng) thuộc Trụ cột Chăm sóc thiết bị, không phải Chuỗi cung ứng",
+why:["❌ Lập bản đồ dòng giá trị THUỘC Chuỗi cung ứng","❌ Lập bản đồ thời gian THUỘC Chuỗi cung ứng","✅ 5S thuộc Trụ cột Chăm sóc thiết bị cơ bản, không phải Chuỗi cung ứng","❌ Công cụ sản xuất theo nhu cầu THUỘC Chuỗi cung ứng"],tips:["khong"]},
+
+{id:25,ch:"Chương I",q:"'Không dung thứ lỗi' áp dụng cho trụ cột nào?",o:["Chỉ Trụ cột Chất lượng","Tất cả các Trụ cột","Chỉ Trụ cột Lãnh đạo","Chỉ Trụ cột An toàn"],a:1,rule:"qt1",
+tip:"QT1 — Đây là triết lý của TOÀN CÔNG TY, không giới hạn 1 trụ cột → chọn Tất cả",
+why:["❌ Chỉ Chất lượng = hiểu quá hẹp","✅ Không dung thứ lỗi = triết lý toàn công ty, áp dụng cho TẤT CẢ Trụ cột","❌ Chỉ Lãnh đạo = không đủ","❌ Chỉ An toàn = không đủ"],tips:["tatca"]},
+
+{id:30,ch:"Chương I",q:"'Phân tích nguyên nhân gốc rễ' là trọng tâm của Trụ cột nào?",o:["Trụ cột Cải tiến tập trung","Trụ cột Lãnh đạo","Trụ cột Giáo dục & Đào tạo","Trụ cột An toàn"],a:0,rule:"qt9",
+tip:"Ghép cặp: Tìm nguyên nhân gốc rễ → Trụ cột Cải tiến tập trung (dùng Pareto, 5 Tại sao, Ishikawa)",
+why:["✅ Cải tiến tập trung dùng RCA để tìm và loại bỏ tổn thất","❌ Lãnh đạo = kết quả kinh doanh + văn hóa","❌ Giáo dục & Đào tạo = kỹ năng nhân viên","❌ An toàn = không tai nạn, không sự cố"],tips:["pillar"]},
+
+{id:31,ch:"Chương I",q:"Tiêu chuẩn 'Làm sạch, Kiểm tra, Siết chặt, Bôi trơn' thuộc Trụ cột nào?",o:["Trụ cột Chăm sóc thiết bị cơ bản","Trụ cột Bảo trì có kế hoạch","Trụ cột Chất lượng","Trụ cột Chuỗi cung ứng"],a:0,rule:"qt9",
+tip:"4 hoạt động Làm sạch-Kiểm tra-Siết chặt-Bôi trơn = hoạt động CƠ BẢN hàng ngày → Trụ cột Chăm sóc thiết bị cơ bản",
+why:["✅ Làm sạch-Kiểm tra-Siết chặt-Bôi trơn = 4 hoạt động cơ bản của Chăm sóc thiết bị","❌ Bảo trì có kế hoạch = bảo trì phức tạp hơn (định kỳ, dự đoán)","❌ Chất lượng = không lỗi sản phẩm","❌ Chuỗi cung ứng = dòng hàng hóa"],tips:["pillar"]},
+
+{id:37,ch:"Chương I",q:"'Kiểm soát bằng hình ảnh' trong ISCE bao gồm những gì?",o:["Bảng hiệu, biển báo an toàn","Chỉ báo hiệu suất, các yếu tố chất lượng","Cả A và B","Chỉ báo cáo tài chính"],a:2,rule:"qt1",
+tip:"QT1 — A (an toàn) và B (hiệu suất) đều hợp lý, không mâu thuẫn → chọn Cả A và B",
+why:["❌ Chỉ an toàn = bỏ sót chỉ báo hiệu suất","❌ Chỉ hiệu suất = bỏ sót bảng an toàn","✅ Kiểm soát bằng hình ảnh gồm cả bảng an toàn VÀ chỉ báo hiệu suất","❌ Báo cáo tài chính không phải kiểm soát bằng hình ảnh"],tips:["tatca"]},
+
+{id:39,ch:"Chương I",q:"'Không lỗi' và 'Toàn bộ nhân viên cùng tham gia' là nguyên tắc của hệ thống nào?",o:["Chỉ bảo trì toàn diện (TPM)","Chỉ sản xuất tinh gọn (Lean)","Cả ISCE và bảo trì toàn diện (TPM)","Chỉ Six Sigma"],a:2,rule:"qt1",
+tip:"QT1 — Cả ISCE lẫn bảo trì toàn diện (TPM) đều dùng 2 nguyên tắc này → chọn Cả hai",
+why:["❌ Chỉ TPM = ISCE cũng có","❌ Lean không đặc trưng 2 nguyên tắc này","✅ Cả ISCE và TPM đều dùng Không lỗi + Toàn bộ nhân viên cùng tham gia","❌ Six Sigma có phương pháp DMAIC, không đặc trưng 2 nguyên tắc này"],tips:["tatca"]},
+
+{id:40,ch:"Chương I",q:"Tài liệu nào KHÔNG thuộc ISCE?",o:["Tài liệu tổng quan ISCE","Sổ tay Trụ cột Lãnh đạo ISCE","Hướng dẫn kiểm toán tài chính","Tài liệu đào tạo ISCE cho vận hành & kỹ thuật"],a:2,rule:"qt2",
+tip:"Câu có 'KHÔNG' → tìm lạc chủ đề. 'Kiểm toán tài chính' thuộc bộ phận kế toán, không liên quan ISCE vận hành",
+why:["❌ Tổng quan ISCE = tài liệu ISCE","❌ Sổ tay Lãnh đạo ISCE = tài liệu ISCE","✅ Kiểm toán tài chính = bộ phận kế toán, lạc chủ đề ISCE","❌ Đào tạo vận hành & kỹ thuật = tài liệu ISCE"],tips:["khong"]},
+
+// CHƯƠNG II: BEC
+{id:41,ch:"Chương II",q:"Mục tiêu chính của Bước 1 - Chăm sóc thiết bị cơ bản là gì?",o:["Thực hiện làm sạch ban đầu","Xác định các thông số chuẩn quan trọng","Loại bỏ các nguồn gây ô nhiễm","Tăng hiệu suất sản xuất"],a:0,rule:"qt3",
+tip:"Nhớ thứ tự 3 bước: Bước 1=Làm sạch ban đầu | Bước 2=Loại bỏ nguồn ô nhiễm | Bước 3=Tiêu chuẩn bôi trơn",
+why:["✅ Bước 1 = Làm sạch ban đầu (Initial Cleaning)","❌ Thông số chuẩn thiết lập ở Bước 2","❌ Loại bỏ nguồn ô nhiễm = Bước 2","❌ Hiệu suất là kết quả, không phải mục tiêu bước"],tips:["soli"]},
+
+{id:44,ch:"Chương II",q:"Có bao nhiêu loại bất thường được xác định trong Bước 1?",o:["5","6","7","8"],a:2,rule:"qt3",
+tip:"QT3 — Câu hỏi số lượng → chọn số lớn nhất. Bước 1 = 7 loại bất thường",
+why:["❌ 5 loại = không đủ","❌ 6 loại = không đủ","✅ Bước 1 có 7 loại bất thường","❌ 8 loại = quá nhiều"],tips:["soli"]},
+
+{id:45,ch:"Chương II",q:"Một trong những loại bất thường trong Bước 1 là gì?",o:["Các khu vực khó tiếp cận","Nguồn gây ô nhiễm","Các bộ phận không cần thiết","Cả 3 đáp án"],a:3,rule:"qt1",
+tip:"QT1 — Cả 3 đều là ví dụ hợp lệ của bất thường → chọn Tất cả",
+why:["❌ Chỉ A = chưa đủ","❌ Chỉ B = chưa đủ","❌ Chỉ C = chưa đủ","✅ Cả 3 đều là loại bất thường trong Bước 1"],tips:["tatca"]},
+
+{id:46,ch:"Chương II",q:"Mục đích của thẻ Xanh và thẻ Đỏ trong Bước 1 là gì?",o:["Đánh dấu các lỗi cần sửa chữa","Phân loại lỗi do vận hành hoặc bảo trì xử lý","Theo dõi tiến độ sửa chữa","Đánh giá hiệu suất thiết bị"],a:1,rule:"qt6",
+tip:"Xanh = nhân viên vận hành tự sửa. Đỏ = bộ phận bảo trì sửa. 2 màu = phân loại AI chịu trách nhiệm",
+why:["❌ Đánh dấu đúng nhưng chưa đủ — quan trọng hơn là phân loại AI sửa","✅ Xanh=vận hành tự sửa, Đỏ=bảo trì sửa → phân loại trách nhiệm","❌ Theo dõi tiến độ chỉ là chức năng phụ","❌ Hiệu suất không liên quan thẻ màu"],tips:["topic"]},
+
+{id:50,ch:"Chương II",q:"Kết quả mong đợi của Bước 1 là gì?",o:["Giảm 25% thời gian dừng máy nhỏ","Khôi phục 70% điều kiện cơ bản","Đạt 50% tuân thủ tiêu chuẩn","Tăng hiệu suất sản xuất"],a:0,rule:"qt4",
+tip:"Bộ 3 số của Bước 1: 25%-70%-15%. BẪY: 70% là phục hồi điều kiện (chỉ số khác), không phải giảm dừng máy",
+why:["✅ Bước 1 giảm 25% thời gian dừng máy nhỏ","❌ 70% là mục tiêu phục hồi điều kiện (chỉ số riêng)","❌ 50% không phải con số của Bước 1","❌ Hiệu suất là kết quả dài hạn"],tips:["soli"]},
+
+{id:51,ch:"Chương II",q:"Mục tiêu chính của Bước 2 là gì?",o:["Loại bỏ các nguồn gây ô nhiễm","Thiết lập hệ thống thông số chuẩn","Tiếp tục tìm và sửa lỗi","Tăng hiệu suất sản xuất"],a:0,rule:"qt3",
+tip:"Nhớ thứ tự: Bước 1=Làm sạch | Bước 2=Loại bỏ nguồn gây ô nhiễm | Bước 3=Bôi trơn",
+why:["✅ Bước 2 = loại bỏ nguồn gây ô nhiễm","❌ Thông số chuẩn thiết lập ở Bước 2 nhưng không phải mục tiêu chính","❌ Tìm sửa lỗi = hoạt động liên tục, không đặc trưng Bước 2","❌ Hiệu suất = kết quả"],tips:["soli"]},
+
+{id:60,ch:"Chương II",q:"Kết quả mong đợi của Bước 2 là gì?",o:["Giảm 50-80% thời gian dừng máy nhỏ","Duy trì điều kiện cơ bản","Đạt sự nhất quán trong vận hành","Tăng hiệu suất sản xuất"],a:0,rule:"qt4",
+tip:"Bước 1=25%, Bước 2=50-80%. Càng về sau càng giảm nhiều hơn. Bước 2 tăng gấp đôi so với Bước 1",
+why:["✅ Bước 2 giảm 50-80% dừng máy nhỏ (tăng mạnh so với Bước 1 là 25%)","❌ Duy trì điều kiện cơ bản = mục tiêu tổng thể","❌ Nhất quán = kết quả của thông số chuẩn","❌ Hiệu suất = kết quả dài hạn"],tips:["soli"]},
+
+{id:61,ch:"Chương II",q:"Mục tiêu chính của Bước 3 là gì?",o:["Thiết lập tiêu chuẩn bôi trơn","Phát triển bài học một điểm","Tích hợp tiêu chuẩn vào hệ thống","Tăng hiệu suất sản xuất"],a:0,rule:"qt3",
+tip:"Nhớ thứ tự: Bước 1=Làm sạch | Bước 2=Loại bỏ ô nhiễm | Bước 3=Tiêu chuẩn bôi trơn",
+why:["✅ Bước 3 = thiết lập tiêu chuẩn bôi trơn","❌ Bài học một điểm phát triển ở nhiều bước, không đặc trưng Bước 3","❌ Tích hợp là hoạt động, không phải mục tiêu chính","❌ Hiệu suất = kết quả"],tips:["soli"]},
+
+{id:69,ch:"Chương II",q:"Kỳ vọng của hệ thống Sở hữu thiết bị là gì?",o:["Thiết bị hoạt động 100% thời gian tại thông số chuẩn mục tiêu","Không tạo ra lỗi sản phẩm","Thực hiện các hoạt động theo kế hoạch","Tăng hiệu suất sản xuất"],a:0,rule:"qt4",
+tip:"Sở hữu thiết bị kỳ vọng: 100% thời gian TẠI THÔNG SỐ CHUẨN. 2 yếu tố: 100% thời gian VÀ đúng thông số",
+why:["✅ 100% thời gian tại thông số chuẩn = không lệch, không dừng","❌ Không lỗi sản phẩm là KẾT QUẢ của chạy đúng thông số","❌ Theo kế hoạch = điều kiện cần, không phải kỳ vọng","❌ Hiệu suất = kết quả tổng hợp"],tips:["soli"]},
+
+{id:72,ch:"Chương II",q:"Thời gian lý tưởng giữa các lần thực hiện Tiêu chuẩn vệ sinh hàng ngày là bao lâu?",o:["Một ca làm việc","Một ngày","Một tuần","Một tháng"],a:0,rule:"qt12",
+tip:"Vệ sinh hàng ngày = lý tưởng mỗi CA (không phải mỗi ngày) vì nhà máy có nhiều ca làm việc",
+why:["✅ Lý tưởng mỗi CA để kiểm soát ô nhiễm liên tục","❌ Mỗi ngày = ít hơn lý tưởng nếu có nhiều ca/ngày","❌ Mỗi tuần = ô nhiễm tích tụ nhiều","❌ Mỗi tháng = quá ít"],tips:["soli"]},
+
+{id:76,ch:"Chương II",q:"Các loại thông số chuẩn bao gồm những loại nào?",o:["Thông số tĩnh","Thông số động","Thông số theo chương trình","Tất cả các đáp án"],a:3,rule:"qt1",
+tip:"QT1 — 3 loại thông số chuẩn: Tĩnh + Động + Theo chương trình. Cả 3 đều tồn tại → chọn Tất cả",
+why:["❌ Chỉ Tĩnh = thiếu 2 loại còn lại","❌ Chỉ Động = thiếu 2 loại còn lại","❌ Chỉ Theo chương trình = thiếu 2 loại còn lại","✅ Có đủ 3 loại thông số chuẩn"],tips:["tatca"]},
+
+// CHƯƠNG III: PM
+{id:83,ch:"Chương III",q:"Có mấy bước làm Bảo trì có kế hoạch?",o:["03 Bước","04 Bước","05 Bước","06 Bước"],a:3,rule:"qt3",
+tip:"QT3 — Câu hỏi số bước → chọn số lớn nhất. Bảo trì có kế hoạch = 6 bước",
+why:["❌ 3 bước = quá ít","❌ 4 bước = không đủ","❌ 5 bước = gần đúng nhưng sai","✅ Bảo trì có kế hoạch có đúng 6 bước"],tips:["soli"]},
+
+{id:84,ch:"Chương III",q:"Có bao nhiêu loại bất thường khi bên sản xuất ra thẻ đỏ cho bảo trì?",o:["4 Loại","5 Loại","6 Loại","7 Loại"],a:3,rule:"qt3",
+tip:"QT3 — Chọn số lớn nhất. 7 loại bất thường khi ra thẻ đỏ (giống với Bước 1 chăm sóc thiết bị)",
+why:["❌ 4 loại = quá ít","❌ 5 loại = không đủ","❌ 6 loại = gần đúng nhưng sai","✅ Có 7 loại bất thường khi ra thẻ đỏ"],tips:["soli"]},
+
+{id:85,ch:"Chương III",q:"Mục đích của Bảo trì có kế hoạch là gì?",o:["Hạn chế gián đoạn, đảm bảo chất lượng, nâng cao độ tin cậy","Tạo thói quen, ngăn tai nạn, duy trì máy","Tránh máy hư, đáp ứng khách hàng","Cả 3 đáp án trên"],a:3,rule:"qt1",
+tip:"QT1 — A, B, C đều là mục đích hợp lệ, không mâu thuẫn → chọn Tất cả",
+why:["❌ A đúng nhưng chưa đủ","❌ B đúng nhưng chưa đủ","❌ C đúng nhưng chưa đủ","✅ Bảo trì có kế hoạch có đủ cả 3 nhóm mục đích"],tips:["tatca"]},
+
+{id:86,ch:"Chương III",q:"Có mấy bước quản lý bôi trơn?",o:["03 Bước","04 Bước","05 Bước","08 Bước"],a:3,rule:"qt3",
+tip:"QT3 — Chọn số lớn nhất. Chú ý: danh sách nhảy từ 5 lên 8 (không phải 6,7). Quản lý bôi trơn = 8 bước",
+why:["❌ 3 bước = quá ít","❌ 4 bước = không đủ","❌ 5 bước = gần đúng nhưng sai","✅ Quản lý bôi trơn có 8 bước (nhảy từ 5 lên 8!)"],tips:["soli"]},
+
+{id:87,ch:"Chương III",q:"Thẻ đỏ loại A, B, C thì thời gian xử lý tối đa là bao nhiêu ngày?",o:["(2, 45, 60) Ngày","(5, 45, 60) Ngày","(2, 20, 60) Ngày","Muốn xử lý lúc nào cũng được"],a:2,rule:"qt4",
+tip:"QT4 — Nhớ A=2, B=20, C=60. BẪY: thấy số 45 trong đáp án → loại ngay (đáp án A và B đều dùng 45 thay vì 20)",
+why:["❌ B=45 là BẪY, đúng phải là B=20","❌ A=5 và B=45 đều SAI","✅ A=2 ngày, B=20 ngày, C=60 ngày","❌ Thẻ đỏ có thời hạn xử lý cụ thể, không tùy ý"],tips:["soli"]},
+
+{id:89,ch:"Chương III",q:"Quy trình phân tích sự cố gồm mấy bước?",o:["4 Bước","5 Bước","6 Bước","7 Bước"],a:3,rule:"qt3",
+tip:"QT3 — Chọn số lớn nhất. Phân tích sự cố = 7 bước",
+why:["❌ 4 bước = quá ít","❌ 5 bước = không đủ","❌ 6 bước = gần đúng nhưng sai","✅ Phân tích sự cố có 7 bước"],tips:["soli"]},
+
+{id:90,ch:"Chương III",q:"Để việc bôi trơn đúng và hiệu quả thì phải làm gì?",o:["Đúng loại dầu mỡ, Đúng ứng dụng","Đúng số lượng, Đúng thời gian","Đúng cách, Đúng điều kiện","Cả 3 đáp án trên"],a:3,rule:"qt1",
+tip:"QT1 — Bôi trơn đúng cần 6 chữ 'đúng'. A, B, C mỗi nhóm có 2 chữ đúng → chọn Tất cả",
+why:["❌ A đúng nhưng thiếu B và C","❌ B đúng nhưng thiếu A và C","❌ C đúng nhưng thiếu A và B","✅ Cần đủ cả 6 yếu tố 'đúng'"],tips:["tatca"]},
+
+{id:91,ch:"Chương III",q:"Cách tính thời gian trung bình giữa 2 lần hỏng máy (MTBF) là gì?",o:["Tổng thời gian chạy ÷ số lần dừng","Tổng thời gian chạy ÷ (số lần dừng + 1)","Tổng thời gian chạy ÷ (số lần dừng + 2)","Tổng thời gian chạy ÷ (số lần dừng + 3)"],a:1,rule:"qt4",
+tip:"QT4 — 2 công thức dễ nhầm: Thời gian chạy ÷ (dừng+1) | Thời gian dừng ÷ dừng. Nhớ: chạy thì cộng thêm 1, dừng thì chia thẳng",
+why:["❌ Chia thẳng = công thức tính thời gian sửa (MTTR), không phải MTBF","✅ MTBF = Tổng thời gian chạy ÷ (số lần dừng + 1)","❌ Cộng thêm 2 = SAI","❌ Cộng thêm 3 = SAI"],tips:["soli"]},
+
+{id:92,ch:"Chương III",q:"Cách tính thời gian trung bình để sửa xong (MTTR) là gì?",o:["Tổng thời gian dừng ÷ số lần dừng","Tổng thời gian dừng ÷ (số lần dừng + 1)","Tổng thời gian dừng ÷ (số lần dừng + 2)","Tổng thời gian dừng ÷ (số lần dừng + 3)"],a:0,rule:"qt4",
+tip:"QT4 — Nhớ: thời gian dừng ÷ dừng (chia thẳng, không cộng gì). Đây là điểm khác với MTBF (cộng thêm 1)",
+why:["✅ MTTR = Tổng thời gian dừng ÷ số lần dừng (chia thẳng)","❌ Cộng thêm 1 = công thức MTBF, không phải MTTR","❌ Cộng thêm 2 = SAI","❌ Cộng thêm 3 = SAI"],tips:["soli"]},
+
+{id:93,ch:"Chương III",q:"Chỉ số thời gian trung bình sửa xong so với mục tiêu như thế nào là tốt?",o:["Trên mục tiêu càng nhiều càng tốt","Trên hoặc bằng mục tiêu","Thấp hoặc bằng mục tiêu","Thấp hơn mục tiêu càng nhiều càng tốt"],a:3,rule:"qt12",
+tip:"QT12 — Thời gian sửa xong (MTTR) = chỉ số thời gian → càng thấp càng tốt (sửa càng nhanh càng tốt)",
+why:["❌ Trên mục tiêu nhiều = sửa chậm = rất tệ","❌ Trên hoặc bằng = sửa chậm","❌ Thấp hoặc bằng = tốt nhưng chưa đủ mạnh","✅ MTTR thấp hơn mục tiêu càng nhiều = sửa càng nhanh càng tốt"],tips:["topic"]},
+
+{id:94,ch:"Chương III",q:"Có bao nhiêu giai đoạn tiến tới không sự cố của Bảo trì có kế hoạch?",o:["01 giai đoạn","02 giai đoạn","03 giai đoạn","04 giai đoạn"],a:3,rule:"qt3",
+tip:"QT3 — Chọn số lớn nhất. Chú ý phân biệt: Số BƯỚC = 6, Số GIAI ĐOẠN = 4. Hai con số khác nhau!",
+why:["❌ 1 giai đoạn = quá ít","❌ 2 giai đoạn = không đủ","❌ 3 giai đoạn = gần đúng nhưng sai","✅ Bảo trì có kế hoạch có 4 giai đoạn tiến tới không sự cố"],tips:["soli"]},
+
+{id:97,ch:"Chương III",q:"Có bao nhiêu phương pháp giảm tồn kho của Bảo trì có kế hoạch?",o:["2 Phương pháp","3 Phương pháp","4 Phương pháp","5 Phương pháp"],a:3,rule:"qt3",
+tip:"QT3 — Chọn số lớn nhất. Giảm tồn kho bảo trì = 5 phương pháp",
+why:["❌ 2 phương pháp = quá ít","❌ 3 phương pháp = không đủ","❌ 4 phương pháp = gần đúng nhưng sai","✅ Bảo trì có kế hoạch có 5 phương pháp giảm tồn kho"],tips:["soli"]},
+
+{id:98,ch:"Chương III",q:"Giá trị vật tư tồn kho của Bảo trì có kế hoạch là bao nhiêu?",o:["Dưới 1% tổng giá trị tài sản nhà máy","1%-1.5% tổng giá trị tài sản","1.6%-1.9% tổng giá trị tài sản","2% tổng giá trị tài sản"],a:0,rule:"qt12",
+tip:"QT12 — Tồn kho bảo trì = chỉ số chi phí → chọn số NHỎ nhất. Mục tiêu phải dưới 1%",
+why:["✅ Tồn kho bảo trì mục tiêu dưới 1% tổng giá trị tài sản nhà máy","❌ 1%-1.5% = vượt mục tiêu","❌ 1.6%-1.9% = vượt mục tiêu nhiều hơn","❌ 2% = vượt mục tiêu rất nhiều"],tips:["soli"]},
+
+{id:100,ch:"Chương III",q:"Hành trình Bảo trì có kế hoạch của URC gồm bao nhiêu bước?",o:["6 Bước","5 Bước","4 Bước","3 Bước"],a:0,rule:"qt3",
+tip:"QT3 — Chọn số lớn nhất. Chú ý: đáp án xếp từ lớn→nhỏ, chọn A. Hành trình = 6 bước",
+why:["✅ Hành trình Bảo trì có kế hoạch gồm 6 bước","❌ 5 bước = không đủ","❌ 4 bước = không đủ","❌ 3 bước = quá ít"],tips:["soli"]},
+
+{id:103,ch:"Chương III",q:"Mục tiêu sau Bảo trì có kế hoạch Bước 1 là gì?",o:["Giảm 25% dừng máy, Phục hồi 60%, Thời gian chạy tăng 15%","Giảm 15% dừng máy, Phục hồi 70%, Thời gian chạy tăng 15%","Giảm 25% dừng máy, Phục hồi 70%, Thời gian chạy tăng 15%","Giảm 25% dừng máy, Phục hồi 75%, Thời gian chạy tăng 15%"],a:2,rule:"qt4",
+tip:"QT4 — Bộ 3 số chuẩn Bước 1 = 25-70-15. BẪY: đáp án A thay 70→60, D thay 70→75. Chỉ C giữ đúng 70%",
+why:["❌ 60% = BẪY, đúng phải là 70%","❌ 15% dừng máy = BẪY, đúng phải là 25%","✅ 25% dừng máy + 70% phục hồi + 15% thời gian chạy tăng","❌ 75% = BẪY, đúng phải là 70%"],tips:["soli"]},
+
+{id:104,ch:"Chương III",q:"Mục tiêu sau Bảo trì có kế hoạch Bước 2 là gì?",o:["Giảm 50%, Phục hồi 90%, Thời gian chạy tăng 30%","Giảm 30%, Phục hồi 80%, Thời gian chạy tăng 30%","Giảm 50%, Phục hồi 80%, Thời gian chạy tăng 30%","Giảm 60%, Phục hồi 80%, Thời gian chạy tăng 30%"],a:2,rule:"qt4",
+tip:"QT4 — Bước 2 = 50-80-30. Tăng dần so với Bước 1 (25-70-15). BẪY: A có 90% thay vì 80%, D có 60% thay vì 50%",
+why:["❌ 90% = BẪY, đúng phải là 80%","❌ 30% dừng máy = BẪY, đúng phải là 50%","✅ 50% dừng máy + 80% phục hồi + 30% thời gian chạy tăng","❌ 60% dừng máy = BẪY, đúng phải là 50%"],tips:["soli"]},
+
+// CHƯƠNG IV: FI
+{id:107,ch:"Chương IV",q:"Ba yếu tố chính để tính hiệu suất tổng thể thiết bị (OEE) là gì?",o:["Tỷ lệ sử dụng, thời gian chạy, sản phẩm lỗi","Tỷ lệ sẵn có, hiệu suất, chất lượng","Tỷ lệ sản xuất, chi phí, hiệu suất","Thời gian bảo trì, sản phẩm lỗi, hiệu suất"],a:1,rule:"qt5",
+tip:"OEE (hiệu suất tổng thể thiết bị) = 3 yếu tố: Sẵn có × Hiệu suất × Chất lượng. Nhớ tên chuẩn 3 yếu tố này",
+why:["❌ 'Thời gian chạy' sai tên — đúng là 'Tỷ lệ sẵn có'","✅ Tỷ lệ sẵn có × Hiệu suất × Chất lượng = OEE","❌ Chi phí không thuộc OEE","❌ Thời gian bảo trì không thuộc OEE"],tips:["soli"]},
+
+{id:111,ch:"Chương IV",q:"Khi áp dụng nguyên tắc Pareto, tỷ lệ vấn đề cần ưu tiên chiếm bao nhiêu %?",o:["50%","70%","80%","90%"],a:2,rule:"qt4",
+tip:"Quy tắc Pareto = 80/20. 20% nguyên nhân gây ra 80% vấn đề. Luôn nhớ số 80%",
+why:["❌ 50% = không phải Pareto","❌ 70% = không phải Pareto","✅ Pareto: 80% vấn đề từ 20% nguyên nhân","❌ 90% = không phải Pareto"],tips:["soli"]},
+
+{id:112,ch:"Chương IV",q:"Dừng máy ảnh hưởng đến yếu tố nào trong hiệu suất tổng thể?",o:["Hiệu suất","Tỷ lệ sẵn có","Chất lượng","Thời gian sản xuất"],a:1,rule:"qt5",
+tip:"Dừng máy → máy không sẵn sàng để chạy → ảnh hưởng Tỷ lệ sẵn có. Hiệu suất = chạy nhưng chậm. Chất lượng = sản phẩm lỗi",
+why:["❌ Hiệu suất = máy chạy nhưng chậm hơn tốc độ chuẩn","✅ Dừng máy → Tỷ lệ sẵn có giảm (máy không sẵn sàng)","❌ Chất lượng = sản phẩm bị lỗi","❌ Thời gian sản xuất không phải yếu tố độc lập của OEE"],tips:["topic"]},
+
+{id:137,ch:"Chương IV",q:"Sơ đồ xương cá chủ yếu được sử dụng để làm gì?",o:["Tìm kiếm nguyên nhân gốc rễ","Xác định tiêu chuẩn sản xuất","Đo lường hiệu quả sản xuất","Phân tích quy trình sản xuất"],a:0,rule:"qt9",
+tip:"Sơ đồ xương cá (Ishikawa) = hình dạng như xương cá với nhiều nhánh = nhiều nguyên nhân → tìm nguyên nhân gốc rễ",
+why:["✅ Sơ đồ xương cá tìm nguyên nhân gốc rễ qua 6 nhóm yếu tố","❌ Tiêu chuẩn sản xuất = Quy trình làm việc chuẩn","❌ Đo lường = các chỉ số hiệu suất","❌ Quy trình sản xuất = sơ đồ dòng chảy"],tips:["topic"]},
+
+{id:138,ch:"Chương IV",q:"Các yếu tố trong sơ đồ xương cá phân nhóm theo 6 nhóm, ngoại trừ?",o:["Người","Máy móc","Môi trường","Tiền"],a:3,rule:"qt2",
+tip:"Câu có 'ngoại trừ' → tìm lạc chủ đề. 6 nhóm chuẩn: Người+Máy+Phương pháp+Vật liệu+Đo lường+Môi trường. KHÔNG có Tiền",
+why:["❌ Người THUỘC 6 nhóm","❌ Máy móc THUỘC 6 nhóm","❌ Môi trường THUỘC 6 nhóm","✅ Tiền KHÔNG thuộc 6 nhóm của sơ đồ xương cá"],tips:["khong"]},
+
+{id:139,ch:"Chương IV",q:"Công cụ nào xác định nguyên nhân gốc rễ qua hỏi 'Tại sao?' nhiều lần?",o:["Phân tích Pareto","Phân tích dòng thời gian","Phân tích 6W2H","Phương pháp 5 Tại sao"],a:3,rule:"qt5",
+tip:"5 Tại sao = hỏi 'Tại sao?' 5 lần liên tiếp. Mỗi câu trả lời là nguyên nhân mới → hỏi tiếp → tìm đến nguyên nhân gốc rễ",
+why:["❌ Pareto = biểu đồ sắp xếp ưu tiên, không hỏi Tại sao","❌ Dòng thời gian = phân tích sự kiện theo trình tự","❌ 6W2H = phân tích toàn diện vấn đề, khác 5 Tại sao","✅ 5 Tại sao = hỏi Tại sao 5 lần liên tiếp để tìm nguyên nhân gốc rễ"],tips:["topic"]},
+
+{id:144,ch:"Chương IV",q:"Trong phân tích nguyên nhân gốc rễ, hỏi 'Tại sao?' bao nhiêu lần là đủ?",o:["3 lần","5 lần","7 lần","10 lần"],a:1,rule:"qt4",
+tip:"5 Tại sao = hỏi đúng 5 lần. Con số chuẩn. Không phải 3 (ít quá) hay 7, 10 (nhiều hơn cần thiết)",
+why:["❌ 3 lần = thường chưa đủ sâu","✅ 5 lần = chuẩn của phương pháp 5 Tại sao","❌ 7 lần = quá nhiều, thường tìm thấy trước đó","❌ 10 lần = quá nhiều"],tips:["soli"]},
+
+// CHƯƠNG VI: EHS
+{id:177,ch:"Chương VI",q:"Khóa an toàn thiết bị (LOTO) là gì?",o:["Là trò chơi dân gian","Là quy trình an toàn ngăn khởi động thiết bị đang bảo trì","Là khóa cô lập nguồn năng lượng và gắn thẻ trước khi sửa","Cả hai câu B và C đều đúng"],a:3,rule:"qt1",
+tip:"QT1 — LOTO vừa là quy trình (B) vừa là hành động khóa+gắn thẻ (C). Hai cách diễn đạt bổ sung nhau → chọn Cả hai",
+why:["❌ Trò chơi = hoàn toàn sai","❌ B đúng nhưng chưa mô tả đủ hành động","❌ C đúng nhưng chưa nói đến tính chất quy trình","✅ LOTO là cả quy trình (B) lẫn hành động khóa/gắn thẻ (C)"],tips:["tatca"]},
+
+{id:178,ch:"Chương VI",q:"Khi nào cần thực hiện khóa an toàn thiết bị?",o:["Khi bảo trì hoặc sửa chữa máy","Vệ sinh, làm sạch thiết bị","Sửa chữa, vệ sinh, bảo trì, hiệu chỉnh, dịch vụ...","Khi máy đang chạy bình thường"],a:2,rule:"qt6",
+tip:"QT6 — Đáp án dài, liệt kê đầy đủ nhất thường đúng. LOTO áp dụng cho MỌI công việc trên thiết bị",
+why:["❌ A đúng nhưng bỏ sót vệ sinh, hiệu chỉnh, dịch vụ","❌ B đúng nhưng bỏ sót nhiều trường hợp khác","✅ LOTO cho tất cả: sửa chữa + vệ sinh + bảo trì + hiệu chỉnh + dịch vụ","❌ Khi máy đang chạy = không cần LOTO"],tips:["topic"]},
+
+{id:179,ch:"Chương VI",q:"Dụng cụ phục vụ quy trình khóa an toàn thiết bị gồm những gì?",o:["Thiết bị cô lập năng lượng","Thiết bị khóa","Thẻ cảnh báo","Tất cả các câu trên"],a:3,rule:"qt1",
+tip:"QT1 — LOTO cần đủ 3 loại: cô lập (A) + khóa (B) + thẻ cảnh báo (C). Thiếu 1 = không đủ → chọn Tất cả",
+why:["❌ Chỉ cô lập = chưa đủ","❌ Chỉ khóa = chưa đủ","❌ Chỉ thẻ = chưa đủ","✅ Cần cả 3: cô lập năng lượng + khóa + thẻ cảnh báo"],tips:["tatca"]},
+
+{id:180,ch:"Chương VI",q:"Các nguồn năng lượng nguy hiểm cần khóa an toàn gồm những gì?",o:["Chuyển động cơ khí, khí nén","Điện gây giật, bỏng, tử vong","Hóa chất, nhiệt, hơi nóng, phóng xạ","Tất cả các câu trên"],a:3,rule:"qt1",
+tip:"QT1 — Mọi nguồn năng lượng nguy hiểm đều cần khóa an toàn. A, B, C đều hợp lệ → chọn Tất cả",
+why:["❌ Chỉ cơ khí = bỏ sót điện và hóa chất","❌ Chỉ điện = bỏ sót cơ khí và hóa chất","❌ Chỉ hóa chất = bỏ sót cơ khí và điện","✅ Tất cả nguồn năng lượng nguy hiểm đều cần khóa an toàn"],tips:["tatca"]},
+
+{id:185,ch:"Chương VI",q:"Hệ thống ISO 45001 là hệ thống quản lý gì?",o:["Quản lý chất lượng","Quản lý Năng Lượng","Quản lý An toàn và sức khỏe nghề nghiệp","Cả ba câu trên đều đúng"],a:2,rule:"qt5",
+tip:"QT5 — Nhớ bảng ISO: 9001=Chất lượng | 14001=Môi trường | 45001=An toàn sức khỏe | 50001=Năng lượng",
+why:["❌ Chất lượng = ISO 9001","❌ Năng lượng = ISO 50001","✅ ISO 45001 = Quản lý An toàn và sức khỏe nghề nghiệp","❌ Không chọn tất cả vì A và B đều sai"],tips:["topic"]},
+
+{id:189,ch:"Chương VI",q:"Hóa chất xâm nhập vào cơ thể qua đường nào?",o:["Đường hô hấp","Đường tiêu hóa, qua da","Đường hô hấp, đường tiêu hóa và qua da","Mắt, mũi, miệng"],a:2,rule:"qt6",
+tip:"QT6 — Chọn đáp án đầy đủ nhất. Hóa chất vào qua 3 đường: hô hấp (hít) + tiêu hóa (nuốt) + da (thấm)",
+why:["❌ Chỉ hô hấp = bỏ sót tiêu hóa và da","❌ Tiêu hóa + da = bỏ sót hô hấp","✅ Hóa chất vào qua cả 3 đường: hô hấp + tiêu hóa + qua da","❌ Mắt/mũi/miệng là bộ phận cơ thể, không phải đường xâm nhập"],tips:["topic"]},
+
+{id:192,ch:"Chương VI",q:"Khi nghe tín hiệu báo cháy, người lao động phải làm gì?",o:["Tiếp tục làm đến khi có lệnh quản lý","Ngừng, tắt máy, di chuyển đến điểm tập kết theo lối thoát gần nhất","Điểm danh và báo cáo nếu thiếu người","Đáp án B và C đúng"],a:3,rule:"qt1",
+tip:"QT1 — B (thoát hiểm) VÀ C (điểm danh) đều cần làm, không loại trừ nhau → chọn Cả B và C",
+why:["❌ Tiếp tục làm = nguy hiểm tính mạng","❌ B đúng nhưng chưa đủ, còn cần điểm danh","❌ C đúng nhưng chưa đủ, còn cần thoát hiểm trước","✅ Phải vừa thoát hiểm (B) vừa điểm danh báo cáo (C)"],tips:["tatca"]},
+
+{id:193,ch:"Chương VI",q:"Điểm tập kết sơ tán khi có cháy nằm ở đâu?",o:["Tại nhà ăn của nhà máy","Tại nơi có biển chỉ dẫn 'Điểm tập kết'","Ở bất kỳ nơi nào không bị ảnh hưởng","Cả A, B và C đều đúng"],a:1,rule:"qt7",
+tip:"QT7 — Điểm tập kết phải có BIỂN CHỈ DẪN cụ thể, không phải chỗ tự chọn. Nhà ăn không nhất thiết là điểm tập kết",
+why:["❌ Nhà ăn = một địa điểm cụ thể, có thể không phải điểm tập kết","✅ Điểm tập kết = nơi có biển chỉ dẫn 'Điểm tập kết / Assembly Point'","❌ Tự chọn chỗ = không kiểm soát được, nguy hiểm","❌ Không chọn tất cả vì A và C không đúng quy định"],tips:["topic"]},
+
+{id:194,ch:"Chương VI",q:"Các yếu tố tạo nên sự cháy là gì?",o:["Chất cháy, oxy","Nguồn nhiệt, chất oxy hóa, chất cháy","Tia lửa, chất cháy","Cả A và B đều đúng"],a:1,rule:"qt6",
+tip:"QT6 — Tam giác cháy = 3 yếu tố: Nguồn nhiệt + Chất oxy hóa + Chất cháy. Đáp án B đầy đủ nhất",
+why:["❌ A chỉ có 2 yếu tố, bỏ sót nguồn nhiệt","✅ Nguồn nhiệt + Chất oxy hóa + Chất cháy = tam giác cháy đầy đủ","❌ C chỉ có 2 yếu tố, bỏ sót chất oxy hóa","❌ Không chọn A và B vì A thiếu yếu tố"],tips:["topic"]},
+
+{id:200,ch:"Chương VI",q:"Khi thấy công việc có nguy cơ mất an toàn, người lao động phải làm gì?",o:["Bỏ công việc đó đi làm việc khác","Tiếp tục công việc","Dừng công việc và báo cáo, không tiếp tục nếu nguy cơ chưa được khắc phục","Tất cả các câu đều đúng"],a:2,rule:"qt7",
+tip:"QT7 — Loại ngay 'tiếp tục làm việc' (B rõ ràng sai). Loại 'bỏ đi' (A thiếu trách nhiệm). Chỉ C đúng → không chọn Tất cả",
+why:["❌ Bỏ đi làm khác = vô trách nhiệm, không báo cáo","❌ Tiếp tục = nguy hiểm tính mạng","✅ Dừng + báo cáo + không tiếp tục khi chưa khắc phục","❌ Không chọn tất cả vì A và B rõ ràng sai"],tips:["tatca"]},
+
+{id:212,ch:"Chương VI",q:"Trường hợp nào được xác định là tai nạn lao động?",o:["Các câu 1,2,3,5 đúng","Câu 1,3,5 đúng","Các câu 2,4,5 đúng","Các câu 1,3,5,6 đúng"],a:3,rule:"qt11",
+tip:"Tai nạn lao động = xảy ra DO CÔNG VIỆC hoặc ĐI CÔNG TÁC. Câu 2 (đánh nhau) và câu 4 (gọt trái cây giờ nghỉ) = hành vi cá nhân, không phải tai nạn lao động",
+why:["❌ Câu 2 (đánh nhau) không phải tai nạn lao động","❌ Bỏ sót câu 6 (xe nâng va trúng)","❌ Câu 2 và câu 4 không phải tai nạn lao động","✅ Câu 1(máy cuốn)+3(trượt ngã)+5(đi công tác)+6(xe nâng) = tai nạn lao động"],tips:["luat"]},
+
+{id:219,ch:"Chương VI",q:"Nhân viên tại công ty sản xuất thực phẩm cần khám sức khỏe ít nhất là:",o:["6 tháng/lần","Hàng năm","2 năm/lần","3 năm/lần"],a:1,rule:"qt8",
+tip:"QT8 — Nhớ: Người bình thường = 1 năm/lần. Người đặc biệt (khuyết tật, công việc độc hại) = 6 tháng/lần",
+why:["❌ 6 tháng = dành cho người khuyết tật, cao tuổi, công việc độc hại","✅ Nhân viên bình thường khám sức khỏe ít nhất 1 lần/năm","❌ 2 năm = quá lâu, không đảm bảo an toàn","❌ 3 năm = quá lâu"],tips:["luat"]},
+
+{id:231,ch:"Chương VI",q:"Điều kiện được hưởng bồi dưỡng độc hại bằng hiện vật là gì?",o:["Công việc trong danh mục nặng nhọc độc hại","Môi trường đo kiểm có yếu tố vượt tiêu chuẩn","Phải đáp ứng đủ cả A và B","Chỉ cần A hoặc B"],a:2,rule:"qt8",
+tip:"QT8 — Bồi dưỡng độc hại cần ĐỦ CẢ 2 điều kiện: trong danh mục (A) VÀ đo kiểm vượt chuẩn (B). Thiếu 1 = không được hưởng",
+why:["❌ Chỉ A = chưa đủ, cần thêm đo kiểm","❌ Chỉ B = chưa đủ, cần thêm danh mục","✅ Phải đủ CẢ 2: trong danh mục VÀ đo kiểm vượt tiêu chuẩn","❌ Chỉ cần 1 trong 2 = SAI theo luật"],tips:["luat"]},
+
+{id:232,ch:"Chương VI",q:"Kinh phí khám sức khỏe định kỳ do ai chi trả?",o:["Người sử dụng lao động","Công đoàn cơ sở","Do bảo hiểm y tế chi trả","Người lao động và Doanh nghiệp đồng chi trả"],a:0,rule:"qt8",
+tip:"QT8 — Theo luật: Người sử dụng lao động chi trả 100% chi phí khám sức khỏe định kỳ cho người lao động",
+why:["✅ Người sử dụng lao động chi trả 100% chi phí khám định kỳ","❌ Công đoàn không chi trả khoản này","❌ Bảo hiểm y tế không chi trả khám theo yêu cầu công ty","❌ Người lao động không phải đóng góp"],tips:["luat"]},
+
+{id:233,ch:"Chương VI",q:"Bồi dưỡng độc hại bằng hiện vật được hưởng theo số ngày làm việc thực tế trong tháng?",o:["Đúng","Sai","Được hưởng cố định hàng tháng","Tùy quy định doanh nghiệp"],a:0,rule:"qt11",
+tip:"QT11 — Nội dung hợp lý: làm bao nhiêu ngày hưởng bấy nhiêu (công bằng hơn hưởng cố định) → chọn Đúng",
+why:["✅ Đúng — bồi dưỡng tính theo số ngày làm thực tế (công bằng)","❌ Sai — nội dung hoàn toàn hợp lý","❌ Cố định hàng tháng = không công bằng khi nghỉ nhiều ngày","❌ Luật quy định cụ thể, không tùy doanh nghiệp"],tips:["luat"]},
+
+{id:234,ch:"Chương VI",q:"Công ty URC tổ chức diễn tập ngộ độc thực phẩm 1 năm mấy lần?",o:["1 lần/năm","2 lần/năm","3 lần/năm","Không tổ chức"],a:0,rule:"qt4",
+tip:"Con số chuẩn = 1 lần/năm. Nhớ: diễn tập ngộ độc TP tại URC = 1 lần",
+why:["✅ URC tổ chức diễn tập ngộ độc thực phẩm 1 lần/năm","❌ 2 lần/năm không phải quy định URC","❌ 3 lần/năm không phải","❌ Không tổ chức = SAI, URC có tổ chức"],tips:["soli"]},
+
+{id:235,ch:"Chương VI",q:"Môi trường lao động phải được đo kiểm tra ít nhất với thời hạn nào?",o:["1 năm/lần","2 năm/lần","3 năm/lần","Tùy từng lĩnh vực"],a:0,rule:"qt8",
+tip:"QT8 — Đo kiểm môi trường lao động = ít nhất 1 năm/lần theo luật",
+why:["✅ Đo kiểm môi trường lao động ít nhất 1 năm/lần","❌ 2 năm = quá lâu","❌ 3 năm = quá lâu","❌ Luật quy định cụ thể, không tùy lĩnh vực"],tips:["luat"]},
+
+{id:241,ch:"Chương VI",q:"Người khuyết tật, cao tuổi, làm công việc nặng nhọc phải khám sức khỏe mấy tháng/lần?",o:["03 tháng/lần","06 tháng/lần","01 năm/lần","02 năm/lần"],a:1,rule:"qt8",
+tip:"QT8 — Người đặc biệt = 6 tháng/lần. Người bình thường = 1 năm/lần. Đặc biệt = tần suất CAO HƠN gấp đôi",
+why:["❌ 3 tháng = quá nhiều, không phải quy định","✅ Người khuyết tật/cao tuổi/độc hại khám 6 tháng/lần","❌ 1 năm = người bình thường","❌ 2 năm = quá lâu"],tips:["luat"]},
+
+{id:247,ch:"Chương VI",q:"Công ty URC Việt Nam tham gia Sách Xanh tỉnh Bình Dương năm nào?",o:["2019","2020","2022","2024"],a:1,rule:"qt10",
+tip:"QT10 — Mốc năm URC: 1954|2003|2006|2014|2020|2024. Sách Xanh = 2020",
+why:["❌ 2019 = trước khi tham gia","✅ URC tham gia Sách Xanh Bình Dương năm 2020","❌ 2022 = sau khi tham gia","❌ 2024 = mốc Agile Plant 2"],tips:["soli"]},
+
+{id:273,ch:"Chương VI",q:"ISO 14001:2015 là hệ thống quản lý gì?",o:["Quản lý chất lượng","Quản lý Năng Lượng","Quản lý Môi Trường","Cả ba đều đúng"],a:2,rule:"qt5",
+tip:"QT5 — Bảng ISO: 9001=Chất lượng | 14001=Môi Trường | 45001=An toàn | 50001=Năng lượng",
+why:["❌ Chất lượng = ISO 9001","❌ Năng lượng = ISO 50001","✅ ISO 14001 = Hệ thống quản lý Môi Trường","❌ Không chọn tất cả vì A và B đều sai"],tips:["topic"]},
+
+{id:274,ch:"Chương VI",q:"Có bao nhiêu nhà máy URC Việt Nam đạt chứng nhận ISO 14001:2015?",o:["2","3","4","5"],a:2,rule:"qt4",
+tip:"Con số chuẩn = 4 nhà máy URC VN đạt ISO 14001:2015",
+why:["❌ 2 nhà máy = quá ít","❌ 3 nhà máy = chưa đủ","✅ 4 nhà máy URC VN đạt ISO 14001:2015","❌ 5 nhà máy = quá nhiều"],tips:["soli"]},
+
+// CHƯƠNG VII: SUPPLY CHAIN
+{id:280,ch:"Chương VII",q:"Vận hành xe nâng quá tải có thể gây nguy hiểm như thế nào?",o:["Tăng nguy cơ lật xe và gây tai nạn","Tăng tuổi thọ xe nâng","Tăng tốc độ vận chuyển","Giúp giảm tiêu hao nhiên liệu"],a:0,rule:"qt7",
+tip:"QT7 — Câu an toàn → tìm đáp án nguy hiểm nhất. Quá tải → mất cân bằng → lật xe → tai nạn",
+why:["✅ Quá tải → mất cân bằng → lật xe → tai nạn","❌ Quá tải làm hư xe, không tăng tuổi thọ","❌ Quá tải làm xe chậm hơn, không nhanh hơn","❌ Quá tải tốn nhiên liệu hơn"],tips:["topic"]},
+
+{id:283,ch:"Chương VII",q:"Đối tác quan trọng trong chuỗi cung ứng là ai?",o:["Người tiêu dùng","Nhà sản xuất","Nhà phân phối","Cả 3 đều đúng"],a:3,rule:"qt1",
+tip:"QT1 — Chuỗi cung ứng = tất cả mắt xích: sản xuất + phân phối + tiêu dùng. Cả 3 đều quan trọng → chọn Tất cả",
+why:["❌ Chỉ người tiêu dùng = thiếu 2 mắt xích","❌ Chỉ nhà sản xuất = thiếu 2 mắt xích","❌ Chỉ nhà phân phối = thiếu 2 mắt xích","✅ Tất cả 3 đều là đối tác quan trọng trong chuỗi cung ứng"],tips:["tatca"]},
+
+{id:288,ch:"Chương VII",q:"Khi sử dụng phương pháp 'Vào trước ra trước' (FIFO), sản phẩm nào được xuất kho đầu tiên?",o:["Sản phẩm mới nhập kho","Sản phẩm đã tồn kho lâu nhất","Sản phẩm có giá trị cao","Sản phẩm có số lượng nhiều nhất"],a:1,rule:"qt5",
+tip:"Vào trước ra trước = hàng vào kho đầu tiên xuất trước = hàng tồn kho LÂU NHẤT xuất trước",
+why:["❌ Mới nhập = vào sau, theo FIFO phải chờ","✅ FIFO: hàng tồn kho lâu nhất (vào trước) xuất trước","❌ Giá trị cao không liên quan FIFO","❌ Số lượng nhiều không liên quan FIFO"],tips:["topic"]},
+
+{id:291,ch:"Chương VII",q:"Phân loại ABC trong quản lý kho áp dụng phân loại theo tiêu chí nào?",o:["Số lượng","Giá trị","Tần suất sử dụng","Cả 3 đều đúng"],a:3,rule:"qt1",
+tip:"QT1 — Phân loại ABC dựa trên cả 3 tiêu chí: số lượng + giá trị + tần suất. Cả 3 không mâu thuẫn → chọn Tất cả",
+why:["❌ Chỉ số lượng = chưa đủ","❌ Chỉ giá trị = chưa đủ","❌ Chỉ tần suất = chưa đủ","✅ ABC phân loại theo cả 3: số lượng + giá trị + tần suất"],tips:["tatca"]},
+
+{id:292,ch:"Chương VII",q:"Xuất hàng gần hết hạn trước (FEFO) là viết tắt của cụm từ gì?",o:["First Expired, First Out","First In, First Out","First Expiry, First Out","First End, First Out"],a:0,rule:"qt5",
+tip:"QT5 — FEFO → tìm chữ 'Expired' (có đuôi -ed). BẪY: 'Expiry' và 'End' trông gần giống nhưng SAI. Chỉ 'Expired' mới đúng",
+why:["✅ First Expired (hết hạn) First Out = xuất hàng gần hết hạn trước","❌ First In First Out = Vào trước Ra trước (FIFO, không phải FEFO)","❌ 'Expiry' = BẪY TỪ, đúng phải là 'Expired'","❌ 'End' = BẪY TỪ, không có nghĩa trong logistics"],tips:["soli"]},
+
+{id:295,ch:"Chương VII",q:"Hệ thống quản lý kho (WMS) là viết tắt của gì?",o:["Warehouse Manufacturing System","Warehouse Management System","Warehouse Maintenance System","Warehouse Marketing System"],a:1,rule:"qt5",
+tip:"QT5 — WMS → chữ M giữa luôn là 'Management' (Quản lý). BẪY: Manufacturing/Maintenance/Marketing đều bắt đầu M nhưng SAI",
+why:["❌ Manufacturing = Sản xuất, không phải kho","✅ WMS = Hệ thống Quản lý Kho (Warehouse Management System)","❌ Maintenance = Bảo trì, không phải kho","❌ Marketing = Tiếp thị, không phải kho"],tips:["soli"]},
+
+{id:300,ch:"Chương VII",q:"Cấu tạo của 1 pallet gỗ Loscam gồm những phần nào và số lượng ra sao?",o:["Ván mặt(9), ván gánh(5), ván đáy(3), cục gù(11)","Ván mặt(11), ván đáy(3), ván gánh(9), cục gù(5)","Ván mặt(11), ván gánh(5), ván đáy(3), cục gù(9)","Ván mặt(11), ván đáy(5), ván gánh(3), cục gù(9)"],a:3,rule:"qt4",
+tip:"QT4 — BẪY SỐ: Chuẩn = Mặt:11 + Đáy:5 + Gánh:3 + Gù:9. Các đáp án đổi chỗ số 3 và 5 cho nhau để gây nhầm",
+why:["❌ Ván mặt=9 là BẪY, đúng phải là 11","❌ Ván gánh=9 là BẪY, đúng phải là 3","❌ Ván đáy=3 là BẪY, đúng phải là 5","✅ Mặt:11 + Đáy:5 + Gánh:3 + Gù:9"],tips:["soli"]},
+
+{id:301,ch:"Chương VII",q:"Những pallet Loscam nào sau đây được phép sử dụng?",o:["TBR, RFI","RFI, BER","RFI","TBR"],a:2,rule:"qt5",
+tip:"QT5 — Nhớ nghĩa: RFI = Sẵn sàng sử dụng. TBR = Cần sửa chữa. BER = Hỏng hoàn toàn không sửa được → chỉ RFI được dùng",
+why:["❌ TBR = Cần sửa chữa, không được dùng","❌ BER = Hỏng hoàn toàn, không được dùng","✅ Chỉ RFI (Sẵn sàng sử dụng) mới được phép dùng","❌ TBR = Cần sửa chữa, không được dùng"],tips:["soli"]},
+
+{id:315,ch:"Chương VII",q:"Khi nào cần phải sạc bình xe nâng?",o:["Sạc bất cứ khi nào","Xuống dưới 15% dung lượng","Xuống dưới 40% dung lượng","Sạc khi dung lượng xuống đến 20-30%"],a:3,rule:"qt4",
+tip:"Con số chuẩn = sạc khi còn 20-30% dung lượng. Không để xuống quá thấp (dưới 15%) cũng không sạc quá sớm",
+why:["❌ Bất cứ lúc nào = không có quy định","❌ Dưới 15% = quá muộn, hại pin","❌ Dưới 40% = quá sớm, lãng phí","✅ Sạc khi còn 20-30% dung lượng = đúng quy định"],tips:["soli"]},
+
+{id:317,ch:"Chương VII",q:"Cần làm gì trước khi vận hành xe nâng?",o:["Kiểm tra phanh, lốp, nhớt, phuộc, dây an toàn","Đội mũ bảo hiểm, đi giày bảo hộ, áo phản quang","Đeo dây an toàn và kiểm tra khu vực xung quanh","Tất cả đều đúng"],a:3,rule:"qt1",
+tip:"QT1 — Trước khi vận hành cần cả 3 nhóm: kiểm tra xe (A) + đồ bảo hộ (B) + quan sát xung quanh (C) → chọn Tất cả",
+why:["❌ A đúng nhưng chưa đủ","❌ B đúng nhưng chưa đủ","❌ C đúng nhưng chưa đủ","✅ Cần cả 3 nhóm hành động trước khi vận hành"],tips:["tatca"]},
+
+{id:320,ch:"Chương VII",q:"Hành động nào sau đây là KHÔNG an toàn?",o:["Đi đúng lối đi bộ","Sử dụng điện thoại khi đang vận hành xe nâng","Báo cáo nguy cơ","Mang giày bảo hộ"],a:1,rule:"qt2",
+tip:"Câu có 'KHÔNG' → tìm hành động nguy hiểm. A, C, D đều là hành động AN TOÀN. Chỉ B là nguy hiểm",
+why:["❌ Đi đúng lối = AN TOÀN","✅ Dùng điện thoại khi lái = mất tập trung = KHÔNG AN TOÀN","❌ Báo cáo nguy cơ = AN TOÀN","❌ Mang giày bảo hộ = AN TOÀN"],tips:["khong"]},
+
+{id:327,ch:"Chương VII",q:"Giao hàng đúng hạn (On-time delivery) là gì?",o:["Giao đúng số lượng","Giao đúng thời gian","Giao nhanh","Giao đủ"],a:1,rule:"qt5",
+tip:"QT5 — On-time = đúng thời gian. 'Time' trong tiếng Anh = thời gian. Không phải số lượng hay tốc độ",
+why:["❌ Đúng số lượng = On-quantity, không phải On-time","✅ On-time delivery = giao đúng thời gian đã hẹn","❌ Giao nhanh ≠ giao đúng hạn (có thể sớm hoặc muộn)","❌ Giao đủ = On-quantity"],tips:["topic"]},
+
+// CHƯƠNG IX: PVA
+{id:331,ch:"Chương IX",q:"PVA của URC là viết tắt của những từ tiếng Anh gì?",o:["Plan - Values - Ambition","Purpose - Values - Ability","Purpose - Values - Ambition","Process - Values - Ambition"],a:2,rule:"qt5",
+tip:"QT5 — P='Purpose' (Mục đích), A='Ambition' (Tham vọng). BẪY: Plan/Process thay Purpose, Ability thay Ambition → loại ngay",
+why:["❌ Plan = Kế hoạch, không phải Mục đích","❌ Ability = Năng lực, không phải Tham vọng","✅ Purpose(Mục đích)+Values(Giá trị)+Ambition(Tham vọng)","❌ Process = Quy trình, không phải Mục đích"],tips:["soli"]},
+
+{id:334,ch:"Chương IX",q:"Chuỗi giá trị của URC gồm những nội dung nào?",o:["Đặt con người làm TRỌNG TÂM, Dám làm, DÁM chịu trách nhiệm, Tiến nhanh","Đặt con người làm TRUNG TÂM, Dám làm, DÁM chịu trách nhiệm, Tiến nhanh VỀ PHÍA TRƯỚC","Đặt con người làm TRỌNG TÂM, Dám làm, Chịu trách nhiệm, Tiến nhanh VỀ PHÍA TRƯỚC","Đặt con người làm MỤC TIÊU, Dám làm, Chịu trách nhiệm, Tiến nhanh VỀ PHÍA TRƯỚC"],a:2,rule:"qt4",
+tip:"QT4 — BẪY TỪ: Nhớ 3 điểm: TRỌNG TÂM (không phải trung tâm/mục tiêu) + Chịu (không có chữ 'Dám' đứng trước) + VỀ PHÍA TRƯỚC",
+why:["❌ 'DÁM chịu' = SAI BẪY, đúng chỉ là 'Chịu'","❌ 'TRUNG TÂM' = SAI BẪY, đúng là 'TRỌNG TÂM'","✅ TRỌNG TÂM + Dám làm + Chịu trách nhiệm + Tiến nhanh VỀ PHÍA TRƯỚC","❌ 'MỤC TIÊU' = SAI BẪY, đúng là 'TRỌNG TÂM'"],tips:["soli"]},
+
+{id:336,ch:"Chương IX",q:"Công ty được ông John Gokongwei thành lập vào năm nào?",o:["Những năm 1930s","Năm 1954","Những năm 1960","Năm 1990"],a:1,rule:"qt10",
+tip:"QT10 — Mốc năm URC: thành lập=1954. Dễ nhớ: 1954 = năm chiến thắng Điện Biên Phủ",
+why:["❌ 1930s = quá sớm, trước khi thành lập","✅ URC thành lập năm 1954","❌ 1960s = sau khi đã thành lập","❌ 1990 = quá muộn"],tips:["soli"]},
+
+{id:337,ch:"Chương IX",q:"URC Việt Nam được cấp phép đầu tư ngày tháng năm nào?",o:["Ngày 08/12/2002","Ngày 08/12/2003","Ngày 08/12/2004","Ngày 08/12/2005"],a:1,rule:"qt10",
+tip:"QT10 — Mốc năm: URC vào VN=2003. Ngày và tháng đều là 08/12 giống nhau, chỉ khác năm. Nhớ năm 2003",
+why:["❌ 2002 = một năm trước","✅ URC VN cấp phép 08/12/2003","❌ 2004 = một năm sau","❌ 2005 = hai năm sau"],tips:["soli"]},
+
+{id:338,ch:"Chương IX",q:"Nhãn hàng C2 được ra mắt tại Việt Nam khi nào?",o:["Năm 2004","Năm 2005","Năm 2006","Năm 2007"],a:2,rule:"qt10",
+tip:"QT10 — Mốc năm: C2=2006. URC vào 2003 → 3 năm sau ra C2 = 2006",
+why:["❌ 2004 = chỉ 1 năm sau vào VN","❌ 2005 = chỉ 2 năm sau","✅ C2 ra mắt tại VN năm 2006 (3 năm sau URC vào VN)","❌ 2007 = một năm sau thực tế"],tips:["soli"]},
+
+{id:339,ch:"Chương IX",q:"Nhà máy Cà phê khởi công và đi vào hoạt động thời gian nào?",o:["Khởi công 2010 - Hoạt động 2011","Khởi công 2011 - Hoạt động 2012","Khởi công 2012 - Hoạt động 2013","Khởi công 2013 - Hoạt động 2014"],a:3,rule:"qt10",
+tip:"QT10 — Mốc năm: Cà phê = 2013 khởi công → 2014 hoạt động. Nhớ: Cà phê uống buổi sáng năm 13, xong thì 14",
+why:["❌ 2010-2011 = quá sớm","❌ 2011-2012 = quá sớm","❌ 2012-2013 = sai 1 năm","✅ Cà phê: khởi công 2013, hoạt động 2014"],tips:["soli"]},
+
+{id:340,ch:"Chương IX",q:"Đâu là chủ đề hành động năm 2026 của URC Việt Nam?",o:["Bứt phá mọi giới hạn / Beyond the Limit","Vươn tầm cao mới / Level Up","Khai phá tiềm năng / Unlock Your Potential","Nâng tầm – vươn lên cùng nhau / Elevate – Rise Together!"],a:3,rule:"qt10",
+tip:"QT10 — Mốc 2026 = 'Nâng tầm – vươn lên cùng nhau'. Chủ đề nhấn mạnh CÙNG NHAU (Together)",
+why:["❌ 'Bứt phá mọi giới hạn' = chủ đề năm khác","❌ 'Vươn tầm cao mới' = chủ đề năm khác","❌ 'Khai phá tiềm năng' = chủ đề năm khác","✅ 2026 = Nâng tầm – vươn lên cùng nhau (Elevate – Rise Together!)"],tips:["soli"]},
+
+{id:341,ch:"Chương IX",q:"Có bao nhiêu hình thức xử lý kỷ luật lao động?",o:["3 (Khiển trách, Kéo dài nâng lương/cách chức, Sa thải)","2 (Khiển trách, Sa thải)","4 (Khiển trách, Kéo dài, Buộc thôi việc, Sa thải)","Không có số lượng cụ thể"],a:0,rule:"qt8",
+tip:"QT8 — Luật quy định đúng 3 hình thức: Khiển trách → Kéo dài nâng lương hoặc cách chức → Sa thải. Không có 'Buộc thôi việc' riêng",
+why:["✅ 3 hình thức: Khiển trách + Kéo dài nâng lương/cách chức + Sa thải","❌ 2 hình thức = bỏ sót 'Kéo dài nâng lương'","❌ 'Buộc thôi việc' không phải hình thức kỷ luật riêng trong luật VN","❌ Luật quy định cụ thể 3 hình thức"],tips:["luat"]},
+
+{id:343,ch:"Chương IX",q:"Hành vi vi phạm nào bị xử lý kỷ luật với hình thức sa thải?",o:["Tiết lộ bí mật kinh doanh, bí mật công nghệ","Tiết lộ thông tin cá nhân nhân viên","Tiết lộ thông tin lương, thưởng","Cả 3 đáp án trên"],a:0,rule:"qt8",
+tip:"QT8 — Sa thải = tiết lộ BÍ MẬT KINH DOANH/CÔNG NGHỆ (thiệt hại nặng cho doanh nghiệp). Lương và thông tin cá nhân = vi phạm nhưng không nhất thiết sa thải",
+why:["✅ Tiết lộ bí mật kinh doanh/công nghệ = sa thải theo luật","❌ Thông tin cá nhân = vi phạm nhưng không nhất thiết sa thải","❌ Lương thưởng = tùy mức độ, không nhất thiết sa thải","❌ Không chọn tất cả vì B và C không chắc sa thải"],tips:["luat"]},
+
+{id:348,ch:"Chương IX",q:"Hợp đồng 12-36 tháng, người lao động đơn phương nghỉ phải báo trước bao nhiêu ngày?",o:["Không cần báo","Ít nhất 45 ngày","Ít nhất 30 ngày","Ít nhất 03 ngày"],a:2,rule:"qt8",
+tip:"QT8 — Bảng báo trước: Có hạn (12-36 tháng)=30 ngày | Không hạn=45 ngày | Dưới 12 tháng=3 ngày",
+why:["❌ Không báo = trái luật","❌ 45 ngày = hợp đồng không xác định thời hạn","✅ Hợp đồng 12-36 tháng phải báo trước ít nhất 30 ngày","❌ 3 ngày = hợp đồng dưới 12 tháng"],tips:["luat"]},
+
+{id:350,ch:"Chương IX",q:"Sa thải được áp dụng trong những trường hợp nào?",o:["Trộm cắp, tham ô, tiết lộ bí mật","Tái phạm khi chưa xóa kỷ luật","Tự ý bỏ việc 05 ngày/tháng hoặc 20 ngày/năm","Cả 3 trường hợp trên"],a:3,rule:"qt1",
+tip:"QT1 — A, B, C đều là căn cứ sa thải theo luật, không mâu thuẫn nhau → chọn Tất cả",
+why:["❌ A đúng nhưng chưa đủ","❌ B đúng nhưng chưa đủ","❌ C đúng nhưng chưa đủ","✅ Sa thải áp dụng cho cả 3 trường hợp"],tips:["tatca","luat"]},
+
+{id:352,ch:"Chương IX",q:"Hợp đồng không xác định thời hạn, người lao động phải báo trước bao nhiêu ngày?",o:["Ít nhất 30 ngày","Ít nhất 45 ngày","Ít nhất 60 ngày","Ít nhất 03 ngày"],a:1,rule:"qt8",
+tip:"QT8 — Nhớ: Không hạn=45 ngày. Hợp đồng càng 'tự do' thì phải báo càng lâu. 45 > 30 > 3",
+why:["❌ 30 ngày = hợp đồng 12-36 tháng","✅ Không xác định thời hạn = báo trước ít nhất 45 ngày","❌ 60 ngày = không có trong luật VN","❌ 3 ngày = hợp đồng dưới 12 tháng"],tips:["luat"]},
+
+{id:353,ch:"Chương IX",q:"Người lao động kết hôn thì được nghỉ hưởng nguyên lương mấy ngày?",o:["01 ngày","02 ngày","03 ngày","04 ngày"],a:2,rule:"qt8",
+tip:"QT8 — Nhớ bảng nghỉ có lương: Bản thân cưới=3 ngày | Con của mình cưới=1 ngày | Bố/mẹ/vợ/chồng/con mất=3 ngày",
+why:["❌ 1 ngày = con của người lao động kết hôn","❌ 2 ngày = không có quy định","✅ Bản thân người lao động kết hôn được nghỉ 3 ngày","❌ 4 ngày = không có quy định"],tips:["luat"]},
+
+{id:354,ch:"Chương IX",q:"Người lao động đánh bạc tại nơi làm việc bị hình thức kỷ luật nào?",o:["Khiển trách","Kéo dài thời hạn nâng lương không quá 06 tháng","Sa thải","Cả 3 hình thức trên"],a:1,rule:"qt8",
+tip:"QT8 — Đánh bạc = vi phạm nghiêm trọng nhưng chưa đến mức sa thải → Kéo dài nâng lương 6 tháng",
+why:["❌ Khiển trách = vi phạm nhẹ hơn","✅ Đánh bạc = kéo dài nâng lương không quá 6 tháng","❌ Sa thải = dành cho trộm cắp, tham ô, tiết lộ bí mật...","❌ Không chọn tất cả vì chỉ áp dụng 1 hình thức"],tips:["luat"]},
+
+{id:355,ch:"Chương IX",q:"Quấy rối tình dục tại nơi làm việc là gì?",o:["Hành vi của người sử dụng lao động với người khác","Hành vi tình dục với người khác giới","Hành vi tình dục của bất kỳ ai với người khác, không được chấp nhận","Cả 3 đáp án trên"],a:2,rule:"qt8",
+tip:"QT8 — Quấy rối tình dục: BẤT KỲ AI + với BẤT KỲ AI (không phân biệt giới) + KHÔNG ĐƯỢC CHẤP NHẬN. Không giới hạn người sử dụng lao động hay khác giới",
+why:["❌ Chỉ người sử dụng lao động = quá hẹp, ai cũng có thể quấy rối","❌ 'Người khác giới' = SAI, quấy rối không phân biệt giới tính","✅ Bất kỳ ai + với bất kỳ ai + không được chấp nhận","❌ Không chọn tất cả vì A và B đều SAI"],tips:["luat"]},
+
+// CHƯƠNG X: AGILE
+{id:356,ch:"Chương X",q:"Cách làm việc linh hoạt (Agile Overlay) được triển khai ở Nhà máy 2 từ khi nào?",o:["Năm 2020","Năm 2021","Năm 2024","Năm 2023"],a:2,rule:"qt10",
+tip:"QT10 — Mốc năm: Cách làm việc linh hoạt Plant 2 = 2024. Mới nhất trong các mốc lịch sử URC",
+why:["❌ 2020 = năm URC tham gia Sách Xanh Bình Dương","❌ 2021 = không phải mốc liên quan","✅ Cách làm việc linh hoạt triển khai Plant 2 từ năm 2024","❌ 2023 = một năm trước thực tế"],tips:["soli"]},
+
+{id:357,ch:"Chương X",q:"Từ 'Agile' có nghĩa là gì?",o:["Bền vững, lâu dài","Linh hoạt, nhanh nhẹn","Nhạy bén, sáng tạo","Hiệu quả, tiết kiệm"],a:1,rule:"qt5",
+tip:"Agile = nghĩa tiếng Anh là linh hoạt, nhanh nhẹn. Không phải bền vững hay sáng tạo",
+why:["❌ Bền vững = Sustainable, không phải Agile","✅ Agile = Linh hoạt, nhanh nhẹn (nghĩa gốc tiếng Anh)","❌ Nhạy bén, sáng tạo = Creative/Innovative","❌ Hiệu quả = Efficient"],tips:["topic"]},
+
+{id:358,ch:"Chương X",q:"Mục đích của việc thực hiện cách làm việc linh hoạt là gì?",o:["Đổi mới, Vận hành xuất sắc, Tối ưu hóa nguồn lực","Đổi mới, Tiết kiệm chi phí, Bảo vệ môi trường","Vận hành xuất sắc, Tối ưu nguồn lực, Tiết kiệm chi phí","Cải thiện chất lượng, Giảm tai nạn, Giảm dừng máy"],a:0,rule:"qt5",
+tip:"QT5 — 3 mục đích chuẩn: Đổi mới (Innovation) + Vận hành xuất sắc (Operational Excellence) + Tối ưu nguồn lực (Resource Optimization)",
+why:["✅ 3 mục đích: Đổi mới + Vận hành xuất sắc + Tối ưu nguồn lực","❌ Bảo vệ môi trường = thuộc an toàn/môi trường, không phải Agile","❌ Tiết kiệm chi phí = kết quả, không phải mục đích Agile","❌ Chất lượng/Tai nạn/Dừng máy = không phải mục đích Agile"],tips:["topic"]},
+
+{id:359,ch:"Chương X",q:"Trong nhóm làm việc linh hoạt, sự kiện nào KHÔNG phải là sự kiện của nhóm?",o:["Họp đứng hàng ngày cấp dây chuyền","Họp đứng hàng ngày cấp nhà máy","Vòng kiểm soát hàng ngày cấp nhà máy","Họp tổng kết hàng tháng toàn chuỗi cung ứng"],a:3,rule:"qt2",
+tip:"Câu có 'KHÔNG' → tìm lạc chủ đề. Họp tháng toàn chuỗi cung ứng = cấp CÔNG TY/THÁNG, vượt tầm của 1 nhóm nhỏ",
+why:["❌ Họp đứng cấp dây chuyền = sự kiện của nhóm","❌ Họp đứng cấp nhà máy = sự kiện của nhóm","❌ Kiểm soát hàng ngày = sự kiện của nhóm","✅ Họp tổng kết tháng toàn chuỗi cung ứng = cấp công ty, KHÔNG phải sự kiện nhóm"],tips:["khong"]},
+
+{id:360,ch:"Chương X",q:"Điều nào KHÔNG phải là quy tắc cho người hướng dẫn khi dẫn dắt buổi nhìn lại?",o:["Vai trò lắng nghe, không phán xét","Đảm bảo mọi ý kiến được lắng nghe","Làm mẫu cởi mở và chấp nhận","Giúp thành viên giải quyết vấn đề kỹ thuật"],a:3,rule:"qt2",
+tip:"Câu có 'KHÔNG' → tìm lạc chủ đề. Người hướng dẫn = lắng nghe và tạo an toàn tâm lý. Giải quyết kỹ thuật = việc của nhóm, không phải người hướng dẫn",
+why:["❌ Lắng nghe không phán xét = QUY TẮC ĐÚNG","❌ Mọi người được nói = QUY TẮC ĐÚNG","❌ Làm mẫu cởi mở = QUY TẮC ĐÚNG","✅ Giải quyết vấn đề kỹ thuật = KHÔNG phải vai trò người hướng dẫn"],tips:["khong"]},
 ];
 
-// =============================================
-// NHÓM MẸO VÀ CHỦ ĐỀ
-// =============================================
-const TIP_GROUPS = [
-  {id:"tatca", name:"Nhóm 'Tất cả đều đúng'", desc:"~70% câu có đáp án này → CHỌN LUÔN", filter:q=>q.tips.includes("tatca")},
-  {id:"khong", name:"Nhóm 'KHÔNG / ngoại trừ'", desc:"Tìm đáp án lạc chủ đề nhất", filter:q=>q.tips.includes("khong")},
-  {id:"soli", name:"Nhóm Số liệu cụ thể", desc:"Nhớ các con số đặc trưng, tránh bẫy gần giống", filter:q=>q.tips.includes("soli")},
-  {id:"pillar", name:"Nhóm Pillar & Nhiệm vụ", desc:"Zero Defect=Quality, Zero Accident=EHS...", filter:q=>q.tips.includes("pillar")},
-  {id:"luat", name:"Nhóm Luật lao động & PVA", desc:"Ngày báo trước, kỷ luật, lịch sử URC", filter:q=>q.tips.includes("luat")},
+// ===== NHÓM =====
+const TIP_GROUPS=[
+{id:"qt1",name:"QT1 — Tất cả đều đúng",desc:"Thấy 'Tất cả / Cả A,B,C' → chọn luôn (trừ khi có đáp án rõ ràng sai)",filter:q=>q.rule==="qt1"},
+{id:"qt2",name:"QT2 — KHÔNG / ngoại trừ",desc:"Tìm đáp án lạc chủ đề nhất so với câu hỏi",filter:q=>q.rule==="qt2"},
+{id:"qt3",name:"QT3 — Số bước / Số lượng",desc:"Câu hỏi về số bước, số lượng → chọn số LỚN nhất",filter:q=>q.rule==="qt3"},
+{id:"qt4",name:"QT4 — Bẫy số / Bẫy từ",desc:"Nhiều số hoặc từ giống nhau → tìm cái khác biệt để loại",filter:q=>q.rule==="qt4"},
+{id:"qt5",name:"QT5 — Đáp án tiếng Anh",desc:"Nhìn chữ cái đặc trưng: FEFO=Expired, WMS=Management, ISO: 14001=môi trường, 45001=an toàn",filter:q=>q.rule==="qt5"},
+{id:"qt6",name:"QT6 — Đáp án dài nhất",desc:"Câu về quy định, nghĩa vụ → đáp án liệt kê đầy đủ nhất thường đúng",filter:q=>q.rule==="qt6"},
+{id:"qt7",name:"QT7 — An toàn lao động",desc:"Loại ngay 'tiếp tục làm' hoặc 'bỏ qua' khi có nguy hiểm",filter:q=>q.rule==="qt7"},
+{id:"qt8",name:"QT8 — Luật lao động",desc:"Có hạn=30 ngày | Không hạn=45 ngày | Cưới=3 ngày | SK=1 năm hoặc 6 tháng",filter:q=>q.rule==="qt8"},
+{id:"qt9",name:"QT9 — Trụ cột",desc:"Không lỗi=Chất lượng | Không tai nạn=An toàn | Dừng máy=Bảo trì | Đào tạo=Giáo dục",filter:q=>q.rule==="qt9"},
+{id:"qt10",name:"QT10 — Lịch sử URC",desc:"1954|2003|2006|2014|2020|2024 — nhớ 6 mốc năm",filter:q=>q.rule==="qt10"},
+{id:"qt11",name:"QT11 — Câu Đúng / Sai",desc:"Chọn 'Đúng' nếu nội dung hợp lý và công bằng với người lao động",filter:q=>q.rule==="qt11"},
+{id:"qt12",name:"QT12 — Số nhỏ nhất",desc:"Câu về thời gian sửa, chi phí, tồn kho → chọn số NHỎ nhất",filter:q=>q.rule==="qt12"},
+{id:"qt13",name:"QT13 — Câu có hình ảnh",desc:"Tìm hình có dấu hiệu vi phạm rõ nhất: thiếu bảo hộ, hành vi sai",filter:q=>q.rule==="qt13"},
 ];
 
-const TOPIC_GROUPS = [
-  {id:"ch1", name:"Chương I: TPM/ISCE", desc:"Kiến thức chung về TPM và ISCE", filter:q=>q.ch==="Chương I"},
-  {id:"ch2", name:"Chương II: AM/BEC", desc:"BEC Steps, Centerline, DCS, EO", filter:q=>q.ch==="Chương II"},
-  {id:"ch3", name:"Chương III: PM Pillar", desc:"Planned Maintenance, MTBF, MTTR", filter:q=>q.ch==="Chương III"},
-  {id:"ch4", name:"Chương IV: FI Pillar", desc:"OEE, Pareto, Ishikawa, 5 Whys", filter:q=>q.ch==="Chương IV"},
-  {id:"ch6", name:"Chương VI: EHS Pillar", desc:"LOTO, PPE, hóa chất, PCCC, môi trường", filter:q=>q.ch==="Chương VI"},
-  {id:"ch7", name:"Chương VII: Supply Chain", desc:"Kho hàng, xe nâng, FIFO/FEFO/WMS", filter:q=>q.ch==="Chương VII"},
-  {id:"ch9", name:"Chương IX: PVA & Nội quy", desc:"Luật lao động, kỷ luật, lịch sử URC", filter:q=>q.ch==="Chương IX"},
-  {id:"ch10", name:"Chương X: Agile", desc:"Agile Overlay, Squad, Retro", filter:q=>q.ch==="Chương X"},
+const TOPIC_GROUPS=[
+{id:"ch1",name:"Chương I — TPM/ISCE",desc:"Kiến thức chung về chương trình ISCE và các trụ cột",filter:q=>q.ch==="Chương I"},
+{id:"ch2",name:"Chương II — Chăm sóc thiết bị",desc:"3 bước chăm sóc, thông số chuẩn, vệ sinh hàng ngày",filter:q=>q.ch==="Chương II"},
+{id:"ch3",name:"Chương III — Bảo trì có kế hoạch",desc:"6 bước bảo trì, MTBF, MTTR, thẻ đỏ, bôi trơn",filter:q=>q.ch==="Chương III"},
+{id:"ch4",name:"Chương IV — Cải tiến tập trung",desc:"OEE, Pareto, sơ đồ xương cá, 5 Tại sao",filter:q=>q.ch==="Chương IV"},
+{id:"ch6",name:"Chương VI — An toàn & Môi trường",desc:"Khóa an toàn, bảo hộ, hóa chất, PCCC, luật lao động",filter:q=>q.ch==="Chương VI"},
+{id:"ch7",name:"Chương VII — Chuỗi cung ứng",desc:"Kho hàng, xe nâng, FIFO/FEFO, hệ thống quản lý kho",filter:q=>q.ch==="Chương VII"},
+{id:"ch9",name:"Chương IX — PVA & Nội quy",desc:"Luật lao động, kỷ luật, lịch sử URC, giá trị công ty",filter:q=>q.ch==="Chương IX"},
+{id:"ch10",name:"Chương X — Làm việc linh hoạt",desc:"Agile, nhóm làm việc, buổi nhìn lại, người hướng dẫn",filter:q=>q.ch==="Chương X"},
 ];
 
-// =============================================
-// STATE
-// =============================================
-let quizQ = [], curIdx = 0, nCorrect = 0, nWrong = 0, answered = false;
-let currentMode = null, currentGroupFilter = null;
-let currentTab = 'tip';
+// ===== STATE =====
+let quizQ=[],curIdx=0,nC=0,nW=0,answered=false;
+let curMode=null,curGroup=null,curTab='tip';
 
-// =============================================
-// NAVIGATION
-// =============================================
-function show(id){['homeScreen','groupScreen','quizScreen','resultScreen'].forEach(s=>{
-  const el=document.getElementById(s);
-  if(el) el.style.display=s===id?'block':'none';
-  if(s==='resultScreen') document.getElementById(s).classList.remove('show');
-});
-if(id==='resultScreen') document.getElementById(id).classList.add('show');
+// ===== UI =====
+function toggleRules(){
+  const p=document.getElementById('rulesPanel');
+  const btn=document.querySelector('.toggle-rules');
+  if(p.style.display==='none'){p.style.display='block';btn.textContent='📌 Ẩn 13 quy tắc chọn nhanh ▲';}
+  else{p.style.display='none';btn.textContent='📌 Xem 13 quy tắc chọn nhanh ▼';}
 }
 
+function show(id){
+  ['homeScreen','groupScreen','quizScreen','resultScreen'].forEach(s=>{
+    const el=document.getElementById(s);
+    if(!el)return;
+    if(s==='resultScreen'){el.style.display='none';el.classList.remove('show');}
+    else el.style.display=s===id?'block':'none';
+  });
+  if(id==='resultScreen'){document.getElementById(id).style.display='block';document.getElementById(id).classList.add('show');}
+}
 function goHome(){show('homeScreen')}
-function goGroups(){show('groupScreen'); buildGroupList()}
-
-function switchTab(tab, el){
-  currentTab = tab;
+function goGroups(){show('groupScreen');buildGroups()}
+function switchTab(tab,el){
+  curTab=tab;
   document.querySelectorAll('.gtab').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
-  buildGroupList();
+  buildGroups();
 }
-
-function buildGroupList(){
-  const groups = currentTab==='tip' ? TIP_GROUPS : TOPIC_GROUPS;
-  const el = document.getElementById('groupList');
-  el.innerHTML = '';
+function buildGroups(){
+  const groups=curTab==='tip'?TIP_GROUPS:TOPIC_GROUPS;
+  const el=document.getElementById('groupList');
+  el.innerHTML='';
   groups.forEach(g=>{
-    const count = ALL_Q.filter(g.filter).length;
-    const div = document.createElement('div');
-    div.className = 'group-item';
-    div.innerHTML = `<div class="gi-left"><div class="gi-name">${g.name}</div><div class="gi-desc">${g.desc}</div></div><div class="gi-count">${count} câu</div>`;
-    div.onclick = ()=>startGroup(g);
+    const count=ALL_Q.filter(g.filter).length;
+    const div=document.createElement('div');
+    div.className='group-item';
+    div.innerHTML=`<div><div class="gi-name">${g.name}</div><div class="gi-desc">${g.desc}</div></div><div class="gi-count">${count} câu</div>`;
+    div.onclick=()=>startGroup(g);
     el.appendChild(div);
   });
 }
 
-// =============================================
-// QUIZ
-// =============================================
+// ===== QUIZ =====
 function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-
-function startGroup(g){
-  currentMode='group'; currentGroupFilter=g;
-  quizQ = shuffle(ALL_Q.filter(g.filter));
-  beginQuiz();
-}
-
-function startRandom(){
-  currentMode='random'; currentGroupFilter=null;
-  quizQ = shuffle([...ALL_Q]);
-  beginQuiz();
-}
-
-function beginQuiz(){
-  curIdx=0; nCorrect=0; nWrong=0; answered=false;
-  show('quizScreen');
-  renderQ();
-}
+function startGroup(g){curMode='group';curGroup=g;quizQ=shuffle(ALL_Q.filter(g.filter));begin()}
+function startRandom(){curMode='random';curGroup=null;quizQ=shuffle([...ALL_Q]);begin()}
+function begin(){curIdx=0;nC=0;nW=0;answered=false;show('quizScreen');renderQ()}
 
 function renderQ(){
-  if(curIdx>=quizQ.length){showResult();return;}
+  if(curIdx>=quizQ.length){showResult();return}
   answered=false;
-  const q=quizQ[curIdx], total=quizQ.length;
-  // Tags
-  const tagsEl=document.getElementById('tagsRow');
-  tagsEl.innerHTML=`<span class="tag tag-chapter">${q.ch}</span>`;
-  if(currentGroupFilter) tagsEl.innerHTML+=`<span class="tag tag-group">${currentGroupFilter.name}</span>`;
-  // Progress
+  const q=quizQ[curIdx],total=quizQ.length;
+  // tags
+  const tags=document.getElementById('tagsRow');
+  tags.innerHTML=`<span class="tag tag-ch">${q.ch}</span><span class="tag tag-rule">${RULES[q.rule].split(' — ')[0]}</span>`;
+  // progress
   document.getElementById('qNum').textContent=`Câu ${curIdx+1} / ${total}`;
-  document.getElementById('progressText').textContent=`Câu ${curIdx+1} / ${total}`;
-  document.getElementById('scoreText').textContent=`${nCorrect} đúng`;
-  document.getElementById('progressFill').style.width=`${(curIdx/total)*100}%`;
-  document.getElementById('sCorrect').textContent=nCorrect;
-  document.getElementById('sWrong').textContent=nWrong;
-  document.getElementById('sLeft').textContent=total-curIdx;
-  // Question
+  document.getElementById('pText').textContent=`Câu ${curIdx+1} / ${total}`;
+  document.getElementById('pScore').textContent=`${nC} đúng`;
+  document.getElementById('pFill').style.width=`${(curIdx/total)*100}%`;
+  document.getElementById('sC').textContent=nC;
+  document.getElementById('sW').textContent=nW;
+  document.getElementById('sL').textContent=total-curIdx;
+  // question
   document.getElementById('qText').textContent=q.q;
-  // Options
+  // options
   const wrap=document.getElementById('opts');
   wrap.innerHTML='';
-  const keys=['A','B','C','D'];
-  q.o.forEach((o,i)=>{
+  ['A','B','C','D'].forEach((k,i)=>{
     const btn=document.createElement('button');
     btn.className='option';
-    btn.innerHTML=`<span class="opt-key">${keys[i]}</span><span class="opt-text">${o}</span>`;
+    btn.innerHTML=`<span class="opt-key">${k}</span><span class="opt-text">${q.o[i]}</span>`;
     btn.onclick=()=>pick(i);
     wrap.appendChild(btn);
   });
-  // Feedback
-  document.getElementById('tipBox').classList.remove('show');
-  document.getElementById('okBox').classList.remove('show');
+  // reset feedback
+  const fb=document.getElementById('fb');
+  fb.className='feedback';
+  fb.style.display='none';
   document.getElementById('btnNext').classList.remove('show');
 }
 
@@ -587,48 +805,52 @@ function pick(idx){
   const opts=document.querySelectorAll('.option');
   opts.forEach((b,i)=>{
     b.disabled=true;
-    if(i===q.a) b.classList.add('correct');
-    else if(i===idx&&idx!==q.a) b.classList.add('wrong');
+    if(i===q.a)b.classList.add('correct');
+    else if(i===idx&&idx!==q.a)b.classList.add('wrong');
     else b.classList.add('dimmed');
   });
-  if(idx===q.a){
-    nCorrect++;
-    document.getElementById('sCorrect').textContent=nCorrect;
-    document.getElementById('okText').textContent=q.tip2;
-    document.getElementById('okBox').classList.add('show');
-  } else {
-    nWrong++;
-    document.getElementById('sWrong').textContent=nWrong;
-    document.getElementById('tipText').textContent=q.tip;
-    document.getElementById('tipBox').classList.add('show');
-  }
+  if(idx===q.a){nC++;document.getElementById('sC').textContent=nC;}
+  else{nW++;document.getElementById('sW').textContent=nW;}
+  showFeedback(q,idx);
   const btn=document.getElementById('btnNext');
   btn.classList.add('show');
   btn.textContent=curIdx<quizQ.length-1?'Câu tiếp theo →':'Xem kết quả →';
+}
+
+function showFeedback(q,picked){
+  const isOk=picked===q.a;
+  const fb=document.getElementById('fb');
+  fb.className='feedback show '+(isOk?'fb-ok':'fb-err');
+  fb.style.display='block';
+  // header
+  document.getElementById('fbHead').textContent=isOk?'✅ Chính xác!':'❌ Chưa đúng — Đáp án đúng là '+['A','B','C','D'][q.a];
+  // rule
+  document.getElementById('fbRule').textContent=RULES[q.rule]+' → '+q.tip;
+  // why
+  const list=document.getElementById('fbWhy');
+  list.innerHTML='';
+  q.why.forEach((w,i)=>{
+    const isAns=i===q.a, isMissed=i===picked&&!isAns;
+    const div=document.createElement('div');
+    div.className='why-row '+(isAns?'wr-correct':isMissed?'wr-missed':'wr-other');
+    div.innerHTML=`<span class="why-icon">${isAns?'✅':isMissed?'❌':'○'}</span><span class="why-key">${['A','B','C','D'][i]}.</span><span>${w}</span>`;
+    list.appendChild(div);
+  });
 }
 
 function nextQ(){curIdx++;renderQ()}
 
 function showResult(){
   show('resultScreen');
-  const pct=Math.round((nCorrect/quizQ.length)*100);
+  const pct=Math.round((nC/quizQ.length)*100);
   document.getElementById('resPct').textContent=pct+'%';
-  document.getElementById('resSub').textContent=`${nCorrect}/${quizQ.length} câu đúng`;
-  document.getElementById('resC').textContent=nCorrect;
-  document.getElementById('resW').textContent=nWrong;
-  const msgs=[
-    [90,'🏆 Xuất sắc! Bạn đã sẵn sàng thi rung chuông vàng rồi!'],
-    [75,'🎯 Rất tốt! Ôn thêm một chút nữa là hoàn hảo!'],
-    [60,'📚 Khá tốt! Xem lại các câu sai để cải thiện thêm.'],
-    [0,'💪 Cần ôn luyện thêm! Đọc lại mẹo và thử lại nhé.'],
-  ];
-  document.getElementById('resMsg').textContent = msgs.find(m=>pct>=m[0])[1];
+  document.getElementById('resSub').textContent=`${nC}/${quizQ.length} câu đúng`;
+  document.getElementById('resC').textContent=nC;
+  document.getElementById('resW').textContent=nW;
+  const msgs=[[90,'🏆 Xuất sắc! Sẵn sàng thi Rung Chuông Vàng rồi!'],[75,'🎯 Rất tốt! Ôn thêm một chút nữa là hoàn hảo!'],[60,'📚 Khá tốt! Xem lại các câu sai nhé.'],[0,'💪 Cần ôn thêm! Nhớ xem 13 quy tắc trước khi thi.']];
+  document.getElementById('resMsg').textContent=msgs.find(m=>pct>=m[0])[1];
 }
-
-function restartQuiz(){
-  if(currentMode==='random') startRandom();
-  else startGroup(currentGroupFilter);
-}
+function restartQuiz(){if(curMode==='random')startRandom();else startGroup(curGroup);}
 </script>
 </body>
 </html>
