@@ -51,9 +51,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .back-btn{display:flex;align-items:center;gap:6px;background:none;border:none;color:#555;font-size:13px;cursor:pointer;font-family:inherit;margin-bottom:14px;padding:4px 0}
 .back-btn:hover{color:#aaa}
 
+/* TIME SETUP */
+.time-custom-row{margin-top:14px;display:flex;gap:8px;align-items:center}
+.time-custom-row input{flex:1;padding:11px 13px;border-radius:8px;border:1.5px solid #222;background:#111;color:#eee;font-size:13px;font-family:inherit}
+.time-custom-row input::placeholder{color:#444}
+.time-custom-btn{padding:11px 16px;background:#c8102e;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;white-space:nowrap}
+.time-custom-btn:hover{background:#a50d26}
+
 /* PROGRESS */
 .progress-wrap{margin-bottom:14px}
-.progress-info{display:flex;justify-content:space-between;font-size:11px;color:#444;margin-bottom:5px}
+.progress-info{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#444;margin-bottom:5px;gap:8px}
 .progress-bar{height:3px;background:#1e1e1e;border-radius:2px;overflow:hidden}
 .progress-fill{height:100%;background:#c8102e;border-radius:2px;transition:width .4s}
 .stats{display:flex;gap:8px;margin-bottom:14px}
@@ -63,6 +70,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .s-correct .val{color:#22c55e}
 .s-wrong .val{color:#ef4444}
 .s-left .val{color:#666}
+
+.exam-timer{font-weight:700;color:#f59e0b;font-size:12px;white-space:nowrap}
+.exam-timer.warn{color:#ef4444;animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
 .tags-row{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
 .tag{display:inline-block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:3px 7px;border-radius:4px}
@@ -119,6 +130,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 /* RESULT */
 .result-screen{display:none;text-align:center;padding:28px 12px}
 .result-screen.show{display:block}
+.result-timeup{display:inline-block;font-size:12px;font-weight:700;color:#ef4444;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);border-radius:8px;padding:6px 12px;margin-bottom:12px}
 .result-pct{font-size:76px;font-weight:700;color:#c8102e;line-height:1}
 .result-sub{font-size:12px;color:#444;margin-top:5px;margin-bottom:24px}
 .result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
@@ -173,10 +185,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         <div class="mc-title">Luyện theo nhóm</div>
         <div class="mc-desc">Nhóm theo quy tắc (QT1→QT13) hoặc nhóm theo chương. Mỗi câu hiển thị quy tắc áp dụng.</div>
       </div>
-      <div class="mode-card" onclick="startRandom()">
+      <div class="mode-card" onclick="goTimeSetup()">
         <div class="mc-icon">🎲</div>
-        <div class="mc-title">Thi ngẫu nhiên 360 câu</div>
-        <div class="mc-desc">Xáo trộn toàn bộ. Trả lời sai → hiện quy tắc + giải thích từng đáp án.</div>
+        <div class="mc-title">Thi ngẫu nhiên 50 câu</div>
+        <div class="mc-desc">50 câu ngẫu nhiên từ ngân hàng câu hỏi + giới hạn thời gian tự chọn. Hết giờ tự nộp bài. Trả lời sai → hiện quy tắc + giải thích từng đáp án.</div>
       </div>
     </div>
   </div>
@@ -191,11 +203,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="group-list" id="groupList"></div>
   </div>
 
+  <!-- TIME SETUP -->
+  <div id="timeSetupScreen" style="display:none">
+    <button class="back-btn" onclick="goHome()">← Quay lại</button>
+    <div class="rules-panel">
+      <div class="rules-title">⏱️ Chọn thời gian làm bài</div>
+      <div class="rule-text" style="margin-bottom:14px">Bài thi gồm <strong>50 câu ngẫu nhiên</strong>. Chọn mốc thời gian bạn muốn hoàn thành — hết giờ bài thi sẽ <strong>tự động nộp</strong>, các câu chưa làm sẽ tính là sai.</div>
+      <div class="group-list" id="timeOptionsList"></div>
+      <div class="time-custom-row">
+        <input type="number" id="customMinutes" min="1" max="180" placeholder="Hoặc nhập số phút tùy chọn">
+        <button class="time-custom-btn" onclick="startCustomTime()">Bắt đầu</button>
+      </div>
+    </div>
+  </div>
+
   <!-- QUIZ -->
   <div id="quizScreen" style="display:none">
     <button class="back-btn" onclick="goHome()">← Thoát</button>
     <div class="progress-wrap">
-      <div class="progress-info"><span id="pText">Câu 1/10</span><span id="pScore">0 đúng</span></div>
+      <div class="progress-info">
+        <span id="pText">Câu 1/10</span>
+        <span id="examTimerDisplay" class="exam-timer"></span>
+        <span id="pScore">0 đúng</span>
+      </div>
       <div class="progress-bar"><div class="progress-fill" id="pFill" style="width:0%"></div></div>
     </div>
     <div class="stats">
@@ -225,6 +255,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
   <!-- RESULT -->
   <div class="result-screen" id="resultScreen">
+    <div id="resTimeUpBanner" class="result-timeup" style="display:none">⏰ Hết giờ! Bài thi đã được tự động nộp</div>
     <div class="result-pct" id="resPct"></div>
     <div class="result-sub" id="resSub"></div>
     <div class="result-grid">
@@ -718,6 +749,8 @@ const TOPIC_GROUPS=[
 // ===== STATE =====
 let quizQ=[],curIdx=0,nC=0,nW=0,answered=false;
 let curMode=null,curGroup=null,curTab='tip';
+let examMinutes=0, examSeconds=0, examTimer=null, examEndTime=0, timeUp=false;
+const TIME_OPTIONS=[10,15,20,30,45,60];
 
 // ===== UI =====
 function toggleRules(){
@@ -728,7 +761,7 @@ function toggleRules(){
 }
 
 function show(id){
-  ['homeScreen','groupScreen','quizScreen','resultScreen'].forEach(s=>{
+  ['homeScreen','groupScreen','timeSetupScreen','quizScreen','resultScreen'].forEach(s=>{
     const el=document.getElementById(s);
     if(!el)return;
     if(s==='resultScreen'){el.style.display='none';el.classList.remove('show');}
@@ -736,8 +769,8 @@ function show(id){
   });
   if(id==='resultScreen'){document.getElementById(id).style.display='block';document.getElementById(id).classList.add('show');}
 }
-function goHome(){show('homeScreen')}
-function goGroups(){show('groupScreen');buildGroups()}
+function goHome(){clearInterval(examTimer);show('homeScreen')}
+function goGroups(){clearInterval(examTimer);show('groupScreen');buildGroups()}
 function switchTab(tab,el){
   curTab=tab;
   document.querySelectorAll('.gtab').forEach(t=>t.classList.remove('active'));
@@ -758,10 +791,83 @@ function buildGroups(){
   });
 }
 
+// ===== TIME SETUP (random 50-question timed exam) =====
+function goTimeSetup(){
+  clearInterval(examTimer);
+  show('timeSetupScreen');
+  const el=document.getElementById('timeOptionsList');
+  el.innerHTML='';
+  const perQ=50;
+  TIME_OPTIONS.forEach(min=>{
+    const secPerQ=Math.round((min*60)/perQ);
+    const div=document.createElement('div');
+    div.className='group-item';
+    div.innerHTML=`<div><div class="gi-name">${min} phút</div><div class="gi-desc">~${secPerQ} giây / câu</div></div><div class="gi-count">Chọn →</div>`;
+    div.onclick=()=>startRandomTimed(min);
+    el.appendChild(div);
+  });
+  const inp=document.getElementById('customMinutes');
+  if(inp) inp.value='';
+}
+function startCustomTime(){
+  const v=parseInt(document.getElementById('customMinutes').value,10);
+  if(!v||v<1){alert('Vui lòng nhập số phút hợp lệ (số nguyên ≥ 1)');return;}
+  startRandomTimed(v);
+}
+
 // ===== QUIZ =====
 function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function startGroup(g){curMode='group';curGroup=g;quizQ=shuffle(ALL_Q.filter(g.filter));begin()}
-function startRandom(){curMode='random';curGroup=null;quizQ=shuffle([...ALL_Q]);begin()}
+
+function startGroup(g){
+  clearInterval(examTimer);
+  const tEl=document.getElementById('examTimerDisplay');
+  if(tEl) tEl.textContent='';
+  curMode='group';curGroup=g;quizQ=shuffle(ALL_Q.filter(g.filter));begin();
+}
+
+function startRandomTimed(minutes){
+  curMode='random';curGroup=null;
+  examMinutes=minutes;
+  const n=Math.min(50,ALL_Q.length);
+  quizQ=shuffle([...ALL_Q]).slice(0,n);
+  timeUp=false;
+  begin();
+  startExamTimer();
+}
+
+function startExamTimer(){
+  clearInterval(examTimer);
+  examSeconds=examMinutes*60;
+  examEndTime=Date.now()+examSeconds*1000;
+  updateTimerDisplay();
+  examTimer=setInterval(()=>{
+    const remain=Math.max(0,Math.round((examEndTime-Date.now())/1000));
+    updateTimerDisplay(remain);
+    if(remain<=0){
+      clearInterval(examTimer);
+      forceFinishExam();
+    }
+  },1000);
+}
+
+function updateTimerDisplay(remainOverride){
+  const remain=remainOverride!==undefined?remainOverride:Math.max(0,Math.round((examEndTime-Date.now())/1000));
+  const el=document.getElementById('examTimerDisplay');
+  if(!el)return;
+  if(curMode!=='random'){el.textContent='';el.classList.remove('warn');return;}
+  const m=Math.floor(remain/60), s=remain%60;
+  el.textContent=`⏱ ${m}:${s.toString().padStart(2,'0')}`;
+  if(remain<=30) el.classList.add('warn'); else el.classList.remove('warn');
+}
+
+function forceFinishExam(){
+  timeUp=true;
+  const answeredCount=nC+nW;
+  const remaining=quizQ.length-answeredCount;
+  if(remaining>0) nW+=remaining;
+  showResult();
+}
+
 function begin(){curIdx=0;nC=0;nW=0;answered=false;show('quizScreen');renderQ()}
 
 function renderQ(){
@@ -779,6 +885,7 @@ function renderQ(){
   document.getElementById('sC').textContent=nC;
   document.getElementById('sW').textContent=nW;
   document.getElementById('sL').textContent=total-curIdx;
+  updateTimerDisplay();
   // question
   document.getElementById('qText').textContent=q.q;
   // options
@@ -841,16 +948,23 @@ function showFeedback(q,picked){
 function nextQ(){curIdx++;renderQ()}
 
 function showResult(){
+  clearInterval(examTimer);
   show('resultScreen');
   const pct=Math.round((nC/quizQ.length)*100);
   document.getElementById('resPct').textContent=pct+'%';
   document.getElementById('resSub').textContent=`${nC}/${quizQ.length} câu đúng`;
   document.getElementById('resC').textContent=nC;
   document.getElementById('resW').textContent=nW;
+  const banner=document.getElementById('resTimeUpBanner');
+  if(banner) banner.style.display=timeUp?'inline-block':'none';
   const msgs=[[90,'🏆 Xuất sắc! Sẵn sàng thi Rung Chuông Vàng rồi!'],[75,'🎯 Rất tốt! Ôn thêm một chút nữa là hoàn hảo!'],[60,'📚 Khá tốt! Xem lại các câu sai nhé.'],[0,'💪 Cần ôn thêm! Nhớ xem 13 quy tắc trước khi thi.']];
   document.getElementById('resMsg').textContent=msgs.find(m=>pct>=m[0])[1];
+  timeUp=false;
 }
-function restartQuiz(){if(curMode==='random')startRandom();else startGroup(curGroup);}
+function restartQuiz(){
+  if(curMode==='random') startRandomTimed(examMinutes||20);
+  else startGroup(curGroup);
+}
 </script>
 </body>
 </html>
